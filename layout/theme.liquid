@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="{{ shop.locale }}" class="no-js"{%- if settings.use_rtl %} dir="rtl"{%- endif-%}>
+<head>
+{% render 'visually_io_sdk' %}
+  
+<!-- Start of TrueVault Polaris Code Block -->
+<script src="https://polaris.truevaultcdn.com/static/pc/3M3ZFSTTV/polaris.js"></script>
+<!-- End of TrueVault Polaris Code Block -->
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KTWBS3F');</script>
+<!-- End Google Tag Manager -->
+  {% render 'pagefly-head' %}
+
+<!-- Begin CJ Code  -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <link rel="canonical" href="{{ canonical_url}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- End CJ Code -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-932146334"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-932146334');
+</script>
+
+
+ <!-- Anti-flicker snippet (recommended)  -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-WBV8HC4':true});</script>
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WBV8HC4');</script>
+<!-- End Google Tag Manager -->
+
+  <!-- Reddit Conversion Pixel -->
+
+
+<!-- End Reddit Conversion Pixel -->
+
+  <!-- Facebook Domain Verification -->
+  <meta name="facebook-domain-verification" content="bu6obcs083peemn95hxhlevzkvti03" />
+  <!-- End Facebook Domain Verification -->
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="google-site-verification" content="_ehhfg_Z5gafY07_ND9eC3j6nDXfmPEHoYyIIbJLSbg" />
+  <script type="text/javascript">document.documentElement.className = document.documentElement.className.replace('no-js', 'yes-js js_active js')</script>
+  {%- if request.host contains 'demo-gecko-plus' -%}
+  <script type="text/javascript">(function(){var externallyFramed=false;try{externallyFramed=top.location.host!=location.host;}catch(err){externallyFramed=true;}if(externallyFramed){top.location='{{ shop.secure_url }}';}})();</script>
+  {% endif %}
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" type="image/png" href="{{ settings.favicon | img_url: '32x' }}">
+  {% endif %}
+   {%- if settings.favicon_apple != blank and settings.favicon_counter == false -%}
+  <link rel="apple-touch-icon-precomposed" type="image/png" sizes="152x152" href="{{ settings.favicon_apple | img_url: '152x' }}">
+  {%- endif -%}
+  {%- capture seo_title -%}
+    {{ page_title }}
+    {%- if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.seo.tags' | t: tags: meta_tags -}}
+    {% endif %}
+    {%- if current_page != 1 -%}
+      &ndash; {{ 'general.seo.page' | t: page: current_page }}
+    {%- endif -%}
+    {%- unless page_title contains shop.name -%}
+      &ndash; {{ shop.name }}
+    {%- endunless -%}
+  {%- endcapture -%}
+  <title>
+    {% if page_title == 'Account' %}
+    Account Login/Register | Rockin Green
+      {% else %}
+        {{ seo_title | strip }}
+    {% endif %}
+  </title>
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+  {%- if template contains 'index' -%}
+      {%- if settings.home_page_keywords != '' and settings.home_page_keywords != null -%}
+        <meta name="keywords" content="{{settings.home_page_keywords}}"/>
+      {%- else- %}
+        <meta name="keywords" content="{{shop.name}}, {{shop.domain}}"/>
+      {%- endif- %}
+    {%- elsif template contains 'product'-%}
+      <meta name="keywords" content="{{product.name}},
+                                     {%- for collection in product.collections -%}{{collection.name}}, {%- endfor -%}
+                                     {%- if product.tags.size > 0 -%}{%- for tag in product.tags -%}{{tag}}, {%- endfor -%}{%- endif -%}{{shop.name}}, {{shop.domain}}"/>
+    {%- elsif template contains 'collection' -%}
+      <meta name="keywords" content="{{collection.name }}, {{shop.name}}, {{shop.domain}}"/>
+    {%- elsif template contains 'blog' -%}
+      <meta name="keywords" content="{{blog.name }}, {{shop.name}}, {{shop.domain}}"/>
+    {%- elsif template contains 'article' -%}
+      <meta name="keywords" content="{{article.title}}, {{blog.name}},
+                                     {%- if article.tags.size > 0-%}{%- for tag in article.tags -%}{{tag}}, {%- endfor -%}{%- endif -%}
+                                     {{shop.name}}, {{shop.domain}}"/>
+    {%- else -%}
+      <meta name="keywords" content="{{page_title}}, {{shop.name}}, {{shop.domain}}"/>
+    {%- endif -%}
+  <meta name="author" content="{{ settings.home_page_author | default:'The4' }}">
+  {%- include 'social-meta-tags' -%}
+  {%- include 'head_css' -%}
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+   <script>
+      {%- assign font_body_text = settings.font_body_text -%}
+   {%- assign font_titles_text = settings.font_titles_text -%}
+   {%- assign font_sub_title_text = settings.font_sub_title_text -%}
+     WebFont.load({
+       google: {
+         families: [
+        {%- if font_body_text != blank -%}"{{font_body_text}}:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic"{%- endif -%}
+        {%- if font_titles_text != blank and font_titles_text != font_body_text -%},"{{ font_titles_text }}:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic"{%- endif -%}
+        {%- if font_sub_title_text != blank and font_sub_title_text != font_body_text and font_sub_title_text != font_titles_text -%},"{{ font_sub_title_text }}:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic"{%- endif -%}
+       ]
+       }
+     });
+   </script>
+  {%- include 'theme_css' -%}
+  {%- if settings.use_rtl -%}
+  <style>
+  .rtl {
+    direction: rtl;
+}
+    body {
+        direction: rtl;
+        unicode-bidi: embed;
+        letter-spacing: 0;
+    }
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBV8HC4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    caption,
+    th,
+    td {
+        text-align: right;
+    }
+    caption,
+    th,
+    td {
+        text-align: right;
+    }
+    .fl {
+        float: right;
+    }
+    .fr {
+        float: left;
+    }
+    .alignleft {
+        float: right;
+        margin: 0.375em 0 1.75em 1.75em;
+    }
+    .alignright {
+        float: left;
+        margin: 0.375em 1.75em 1.75em 0;
+    }
+    h1, h2, h3, h4, h5, h6,
+    input:not([type="submit"]):not([type="checkbox"]),
+    textarea,
+    select,
+    input[type="submit"],
+    button,
+    a.button,
+    a.button-o,
+    input.button-o,
+    button.button-o,
+    a.button-o-w,
+    .header__search input[type="text"],
+    .jas-menu > li > a,
+    #jas-mobile-menu ul li a,
+    #jas-mobile-menu ul ul li a,
+    #jas-footer .column .widget_nav_menu ul li a,
+    .error-404.not-found,
+    .error-404.not-found h1,
+    .more-link,
+    .post-related h5,
+    .comment-reply-title,
+    #wp-calendar caption,
+    .shopify-message a,
+    .jas-mini-cart .button,
+    .sidebar .widget_shopping_cart .button,
+    .jas-top-sidebar .yith-shopify-ajax-product-filter h4.widget-title,
+    .shopify .product-category h2,
+    .product-category h2,
+    .shopify .product-category h3,
+    .product-category h3,
+    .entry-summary .single_add_to_cart_button,
+    .entry-summary .external_single_add_to_cart_button,
+    .star-rating,
+    .stars,
+    .popup__cart-product .modal_btn_add_to_cart,
+    .edit-account legend,
+    .jas-sc-blog .post-info h4,
+    .metaslider .flexslider .caption-wrap h2 {
+        letter-spacing: 0;
+    }
+    button,
+    input[type="submit"] {
+        white-space: nowrap;
+    }
+    #jas-header .jas-currency .current i {
+        margin-left: 0;
+        margin-right: 5px;
+    }
+    .jas-menu > li {
+        float: right;
+    }
+    .jas-menu > li:not(:first-child) {
+        margin-right: 50px;
+        margin-left: 0;
+    }
+    .jas-mini-cart {
+        right: auto;
+        left: -320px;
+    }
+    .cart-opened .jas-mini-cart {
+        right: auto;
+        left: 0;
+    }
+    .jas-canvas-menu {
+        left: auto;
+        right: -320px;
+    }
+    .jas-mini-cart img,
+    .widget_shopping_cart img {
+        float: right;
+        margin-right: 0;
+        margin-left: 15px;
+    }
+    .jas-mini-cart .mini_cart_item, .widget_shopping_cart .mini_cart_item {
+        text-align: right;
+    }
+    .jas-mini-cart .variation dt, .cart_item .variation dt, .widget_shopping_cart .variation dt {
+        float: right;
+        margin: 0 0 0 3px;
+    }
+    .menu-opened .jas-canvas-menu {
+        left: auto;
+        right: 0;
+    }
+    .jas-push-menu h3 i {
+        left: auto;
+        right: 8px;
+    }
+    .jas-push-menu h3 i.close-menu {
+        left: 8px;
+        right: auto;
+    }
+    #jas-mobile-menu,
+    #jas-mobile-menu ul,
+    #jas-mobile-menu ul li,
+    #jas-mobile-menu ul li a {
+        text-align: right;
+    }
+    .holder {
+        left: -10px;
+        right: auto;
+    }
+    .entry-summary .single_add_to_cart_button, .entry-summary .external_single_add_to_cart_button,.btn-atc .yith-wcwl-add-to-wishlist {
+        float: right;
+        margin-left: 0;
+        margin-right: 15px;
+    }
+    .content-quickview {
+        padding: 20px 0 20px 20px;
+        text-align: right;
+    }
+    .product-extra .slick-prev {
+        right: -4px;
+        left: auto;
+    }
+    .product-extra .slick-next {
+        right: auto;
+        left: -4px;
+    }
+    .style-checkbox input {
+        float: right;
+        margin: 0 0 0 10px;
+    }
+    .style-checkbox label {
+        left: auto;
+        right: 0;
+    }
+    .shopify-MyAccount-navigation {
+        float: right;
+    }
+    .shopify-MyAccount-content {
+        float: left;
+    }
+    .shopify-MyAccount-navigation ul li {
+        padding-left: 0;
+        padding-right: 15px;
+    }
+    .shopify-MyAccount-navigation ul li::before {
+        left: auto;
+        right: 0;
+    }
+    .sub-categories+.result-count-order .shopify-ordering:after,
+    .shopify-message+.result-count-order .shopify-ordering:after {
+        left: 10px;
+        right: auto;
+    }
+    .shopify-ordering select {
+        width: 100%;
+    }
+    .product-category h2:before, .product-category h3:before {
+      left: auto;
+      right: 25px;
+    }
+    .product-category h2:after,
+    .product-category h3:after {
+      content: '\f177';
+      right: 100px;
+    }
+    .shopify .product-category h2,
+    .product-category h2,
+    .shopify .product-category h3,
+    .product-category h3 {
+      left: auto;
+      right: 15px;
+    }
+    #add_payment_method #payment div.payment_box::before,
+    .shopify-checkout #payment div.payment_box::before {
+        left: auto;
+        margin: -1em 2em 0 0;
+        right: 0;
+    }
+    .footer-contact {
+        text-align: right;
+    }
+    .footer-contact i {
+        margin-left: 5px;
+        margin-right: 0;
+    }
+    .ypop-checkzone {
+        text-align: right;
+    }
+    .ypop-checkzone input.no-view+span {
+        float: right;
+        margin-right: 0;
+        margin-left: 8px;
+    }
+    .wpcf7-form p {
+        text-align: right;
+    }
+    .wpcf7-form input:not([type="submit"]):not([type="checkbox"]),
+    .wpcf7-form textarea,
+    .wpcf7-form select {
+        text-align: right;
+    }
+    .sidebar .widget ul li {
+        padding-left: 0;
+        padding-right: 15px;
+    }
+    .sidebar .widget ul li::before {
+        right: 0;
+        left:  auto;
+    }
+    #jas-footer-menu li {
+        float: right;
+        margin-left: 0;
+        margin-right: 20px;
+    }
+    .p-nav .slick-slide {
+        padding-right: 0;
+        padding-left: 10px;
+    }
+    .p-video {
+        right: auto;
+        left: 20px;
+    }
+    .stars [class*="star"]::before {
+        left: auto;
+        right: 0;
+    }
+    .star-rating {
+        letter-spacing: 3px !important;
+    }
+    .entry-summary .star-rating {
+        margin: 0 0 0 5px;
+    }
+    .comment-text .star-rating,
+    .entry-summary .star-rating {
+        float: left;
+        text-align: right;
+    }
+    .star-rating::before, .star-rating span::before {
+        left: auto;
+        right: 0;
+    }
+    .products .star-rating {
+        text-align: center;
+        letter-spacing: 3px !important;
+    }
+    .products  .star-rating span {
+        right:  0;
+    }
+    .page-numbers li {
+        float: right;
+    }
+    .rtl .mr__10 {
+    margin-left: 10px;
+        margin-right: 0;
+    }
+    .rtl .ml__5 {
+        margin-right: 5px;
+            margin-left: 0;
+    }
+    .rtl .jas-canvas-menu {
+      left: auto;
+      right: 0;
+      transform: translate3d(320px,0,0);
+      -webkit-transform: translate3d(320px,0,0);
+      -ms-transform: translate3d(320px,0,0);
+      -sand-transform: translate3d(320px,0,0);
+      direction: ltr;
+  }
+  .rtl.menu-opened .jas-canvas-menu {
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+}
+.rtl .jas-mini-cart {
+    right: auto;
+    left: 0;
+    transform: translate3d(-320px,0,0);
+    -webkit-transform: translate3d(-320px,0,0);
+    -ms-transform: translate3d(-320px,0,0);
+    -sand-transform: translate3d(-320px,0,0);
+}
+.rtl.cart-opened .jas-mini-cart {
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -sand-transform: translate3d(0,0,0);
+}
+.rtl #jas-mobile-menu #menu-main-menu {
+    padding: 5px 20px 25px 0;
+}
+.rtl .holder {
+     margin-left: 10px;
+}
+.cart__popup .cart__popup-title { margin-bottom: 0 }
+.cart__popup_upsell .popup__cart-product .price {display: block;}
+.rtl .ypop-checkzone input.no-view+span, input.jas_agree+span { margin-left: 8px;}
+.rtl .btn-products-load-more .loading-label:before {
+    margin-left: 8px;
+    margin-right: -8px;
+}
+.rtl .product-category-gecko .hover-wrap a:not(.jas-cat-url-overlay):after {
+    margin-right: 5px;
+    margin-left: 0;
+}
+.rtl .signup-newsletter-form input.submit-btn {
+    right: auto;
+    left: 4px;
+}
+.rtl .jas-menu-label {
+    right: auto;
+    left: -28px;
+}
+.rtl .widget h4.widget-title:after {
+    left: auto;
+    right: 0;
+}
+.rtl .yith-wcan-color li,.rtl .yith-wcan-label li {
+    float: right;
+}
+.rtl .shopify .widget_layered_nav ul.yith-wcan-label li a,.rtl .shopify .widget_layered_nav ul.yith-wcan-label li span,
+.rtl .sidebar .widget_layered_nav ul.yith-wcan-label li a,.rtl .sidebar .widget_layered_nav ul.yith-wcan-label li span,
+.rtl .shopify .widget_layered_nav ul.yith-wcan-color li a,
+.rtl .shopify .widget_layered_nav ul.yith-wcan-color li span, .rtl .sidebar .widget_layered_nav ul.yith-wcan-color li a,
+.rtl .sidebar .widget_layered_nav ul.yith-wcan-color li span {
+        margin-right: 0;
+            margin-left: 10px;
+}
+.rtl .jas-currency ul {
+    right: auto;
+    left: -15px;
+}
+.rtl .shopify-message+.result-count-order .shopify-ordering select,
+.rtl.template-collection .result-count-order .shopify-ordering select {
+    background-position: left 10px center;
+    padding-right: 10px;
+    padding-left: 28px;
+}
+.rtl blockquote,.rtl q {
+    padding: 30px 60px 30px 25px;
+}
+.rtl blockquote::before, .rtl q::before {
+  content: '”';
+    left: 0;
+    right: 25px;
+}
+  </style>
+  {%- endif -%}
+  {%- include 'css_setting' -%}
+  {%- if settings.show_custom_css -%}{{ 'custom.css' | asset_url | stylesheet_tag }}{%- endif-%}
+  {%- if template contains 'product' -%}{%- include 'gecko_check_variant' -%}{%- endif-%}
+  {%- assign admin_shopify = false -%}
+   {%- capture check_admin -%}{{ content_for_header }}
+{{ 'nitro-bundle-upsell.scss.css'| asset_url | stylesheet_tag   }}{%- endcapture -%}
+   {%- if check_admin contains 'design_mode' -%}{%- assign admin_shopify = true -%}{%- endif -%}
+   {%- if settings.enable_ave_verification and admin_shopify == false -%}
+   <noscript>
+    <meta http-equiv="refresh" content="1; url={{settings.link_age_exit | default:'https://google.com/'}}" />
+    </noscript>
+    {%- endif -%}
+{{ 'cj-event-storage2.js' | asset_url | script_tag }}
+  {{ content_for_header }}
+
+{% include 'pagefly-header' %}
+
+<!-- Start of Littledata - Fix Google Analytics Script-->
+
+<!-- End of Littledata - Fix Google Analytics Script -->
+
+<script src='https://affilo.io/libs/affiliate.lib.js'></script>
+
+{% render 'pagefly-header' %}
+
+<!-- Start of Littledata - Fix Google Analytics Script-->
+{% include 'LittledataLayer' %}
+<!-- End of Littledata - Fix Google Analytics Script -->
+
+{% if template == 'page.wholesale_inquiry' %}
+<!-- Wholesale Lead Gen Form Google reCaptcha -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+  function enableBtn(){
+   document.getElementById("submitBtn").disabled = false;
+   document.getElementById("myform").action = 'https://4901978.extforms.netsuite.com/app/site/crm/externalleadpage.nl';
+  }
+</script>
+{% endif %}
+
+  {{ shop.metafields.okendo.ReviewsWidgetStyleTag }}
+  {{ shop.metafields.okendo.StyleCustomizations }}
+  {% render 'okendo-reviews-json-ld' %}
+
+  <!-- ShipScout start -->
+  <style type="text/css">
+  .shipscout-banner {
+    font-size: 14px!important;
+    padding: 10px 7px!important;
+  }
+  </style>
+  <!-- ShipScout end -->
+
+</head>
+{%- include 'catelog_mod' -%}
+<body class="template-{{template.name}} wrapper-{{settings.general_layout}} ajax-shop-{{settings.ajax_shop}} jas_action_{{settings.gecko_options_add_to_cart_action}}{%- if settings.header_design == '7' %} header-lateral{%- endif %}{%- if settings.sticky_footer_enable %} footer_sticky{%- endif %}{%- if settings.body_bg_image != blank %} lazyload{%- endif %}{%- if settings.use_rtl %} rtl{%- endif %}{%- if customer %} logged-in{%- endif %}{% if checkout_active == false %} catalog_mode_on{%- endif -%}"{%- if settings.body_bg_image != blank %} data-bgset="{%- include 'bgset', image: settings.body_bg_image -%}" data-sizes="auto" data-parent-fit="cover" style="background-image: url({{ settings.body_bg_image | img_url: '50x50' }});"{%- endif -%}>
+   <div class="jas-canvas-menu jas-push-menu">
+         {%- include 'jas_mobile_menu' -%}
+   </div>
+   {%- if settings.cart_position == 'side' -%}
+     {%- include 'cart_widget_side'-%}
+     <!-- .jas-mini-cart -->
+   {%- endif -%}
+   <div id="jas-wrapper">
+      {% comment %}include header{% endcomment %}
+      {%- include 'header' -%}
+      <!-- #jas-header -->
+      <div id="jas-content" class="main-page-wrapper">
+      {%- if template == 'collection' and settings.use_top_categories -%}{%- include 'shop_top_sidebar' -%}{%- endif -%}
+          {{ content_for_layout }}
+ {% include 'stockify' %}
+ {%- comment -%} {% include 'stockify' %}{%- endcomment -%}
+      </div>
+      {% comment %}include footer{% endcomment %}
+      {%- include 'footer' -%}
+      <!-- #jas-footer -->
+      {%- if settings.enable_cookies_popup -%}{%- include 'gecko-cookies-popup' -%}{%- endif -%}
+      {%- if settings.show_sticky_add and template.name == 'product' -%}{%- include 'sticky_add_to_cart' -%}{%- endif -%}
+      {%- if settings.enable_suggest_products -%}{%- include 'jas_suggest' -%}{%- endif -%}
+   </div>
+   <!-- #jas-wrapper -->
+   {%- if settings.show_backtop -%}<a id="jas-backtop" class="pf br__50"><span class="tc bgp br__50 db cw"><i class="pr pe-7s-angle-up"></i></span></a>{%- endif -%}
+   <div class="mask-overlay"></div>
+   {%- if settings.swatch_style == '1' or settings.product_layout_setting == '1' or settings.quick_layout_setting == '1' -%}{%- section 'gl_custom_color' -%}{%- endif -%}
+   {%- include 'gecko_settings' -%}
+   {%- if template.name == 'collection' or template.name == 'product' -%}{%- include 'seo_json' -%}{%- endif -%}
+   {%- if pages[settings.delivery_return].content != blank and template contains 'product' -%}
+  <div id="delivery-return" class="mfp-with-anim mfp-hide popup-quick-view">
+    {%- unless pages[settings.delivery_return].content contains 'wc-content-help' -%}
+    <div class="wc-content-help pr">{{ pages[settings.delivery_return].content }}</div>
+    {%- else -%}
+    {{ pages[settings.delivery_return].content }}
+    {%- endunless -%}
+  </div>
+  {%- endif -%}
+   {%- include 'theme_js' -%}
+      {%- if admin_shopify -%}
+       {{ 'fix.scss.css' | asset_url | stylesheet_tag }}
+   {%- include 'adminThemeTool' -%}
+   {%- endif -%}
+   {%- include 'gecko-promo-popup' -%}
+   {%- if settings.enable_ave_verification -%}{%- include 'age-check' -%}{%- endif -%}
+   {%- if settings.show_product_rating and settings.app_review == '2'-%}
+   <!--  RYVIU APP -->
+   <script src="https://ryviu-app.firebaseapp.com/client/reviews.js?shop={{shop.permanent_domain}}"></script>
+   <!--  / RYVIU APP -->
+   {%- elsif settings.show_product_page_rating and settings.app_review == '2'-%}
+   <!--  RYVIU APP -->
+   <script src="https://ryviu-app.firebaseapp.com/client/reviews.js?shop={{shop.permanent_domain}}"></script>
+   <!--  / RYVIU APP -->
+   {%- endif -%}
+   {%- if settings.custom_js != blank -%}
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'custom_js.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+    <!--[if lte IE 9]><script src="{{ 'custom_js.js' | asset_url }}"></script><![endif]-->
+  {%- endif -%}
+  {% comment %}{% include 'nitro-bundle-upsell'  %}
+  {{ 'https://lookbook.teathemes.net/public/shop-libs/nitro-lookbook.js' | script_tag }}{% endcomment %}
+
+
+{% include 'segment-client-side' %}
+
+<!-- Back in Stock helper snippet -->
+{% render 'back-in-stock-helper' %}
+<!-- End Back in Stock helper snippet -->
+
+
+
+<!--Gorgias Chat Widget Start--><script id="gorgias-chat-widget-install">!function(_){_.GORGIAS_CHAT_APP_ID="3440",_.GORGIAS_CHAT_BASE_URL="us-east1-898b.production.gorgias.chat",_.GORGIAS_API_BASE_URL="config.gorgias.chat";var e=new XMLHttpRequest;e.open("GET","https://config.gorgias.chat/applications/3440",!0),e.onload=function(t){if(4===e.readyState)if(200===e.status){var n=JSON.parse(e.responseText);if(!n.application||!n.bundleVersion)throw new Error("Missing fields in the response body - https://config.gorgias.chat/applications/3440");if(_.GORGIAS_CHAT_APP=n.application,_.GORGIAS_CHAT_BUNDLE_VERSION=n.bundleVersion,n&&n.texts&&(_.GORGIAS_CHAT_TEXTS=n.texts),n&&n.sspTexts&&(_.GORGIAS_CHAT_SELF_SERVICE_PORTAL_TEXTS=n.sspTexts),!document.getElementById("gorgias-chat-container")){var o=document.createElement("div");o.id="gorgias-chat-container",document.body.appendChild(o);var r=document.createElement("script");r.setAttribute("defer",!0),r.src="https://storage.googleapis.com/gorgias-chat-production-client-builds/{bundleVersion}/static/js/main.js".replace("{bundleVersion}",n.bundleVersion),document.body.appendChild(r)}}else console.error("Failed request GET - https://config.gorgias.chat/applications/3440")},e.onerror=function(_){console.error(_)},e.send()}(window||{});</script><script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});</script><!--Gorgias Chat Widget End-->
+
+
+{% if template == 'page.wholesale_inquiry' %}
+<!-- Wholesale Lead Gen Form Google reCaptcha -->
+<script src="{{ 'jquery.validate.min.js' | asset_url }}"></script>
+<script>
+jQuery('#myform').validate({
+    rules: {
+      companyname: {
+        required: true,
+        minlength: 2
+      },
+      phone: {
+        required: true,
+        minlength: 2
+      },
+      email: {
+        required: true,
+        email: true
+      }
+    },
+    submitHandler: function(form) {
+      jQuery('#submitBtn').val('Loading...');
+      form.submit();
+    }
+  });
+</script>
+{% endif %}
+
+  <!-- Klaviyo Analytics -->
+  <script type="text/javascript">
+    var _learnq = _learnq || [];
+
+    _learnq.push(['account', 'KNp8kv']);
+
+    (function () {
+    var b = document.createElement('script'); b.type = 'text/javascript'; b.async = true;
+    b.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'a.klaviyo.com/media/js/analytics/analytics.js';
+    var a = document.getElementsByTagName('script')[0]; a.parentNode.insertBefore(b, a);
+    })();
+
+    if ('{{ customer.email }}') {
+     _learnq.push(['identify', {
+         '$email' : '{{ customer.email }}'
+       }]);
+    }
+  </script>
+
+<!-- Attentive snippet -->
+<script src="https://cdn.attn.tv/rockingreen/dtag.js"></script>
+<!-- End Attentive snippet -->
+
+
+</body>
+</html>

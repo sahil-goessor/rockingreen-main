@@ -1,0 +1,838 @@
+{%- if settings.show_sticky_add -%}
+   <script type="text/javascript">
+     (function( $ ) {
+       "use strict";
+       {% if product.has_only_default_variant == false %}
+        {%- if settings.show_sticky_add_mobile == false -%}
+        if( $(window).width() < 768 ) return;
+        {%- endif -%}
+         var $variation_form_sticky = $('#cart_form_sticky');
+         $variation_form_sticky.on('click', '.swatch_list_sticky > .swatch_sticky', function(e) {
+           e.preventDefault();
+           var value = $(this).data('val'),
+               inventory = $(this).data('inventory'),
+               img_st = $(this).data('img'),
+               $sticky_img = $('#pr_img_sticky>.sticky_img'),
+               $quantity_sticky = $('#quantity_sticky');
+           $variation_form_sticky.find('select#productselect-sticky').val(value).trigger('change');
+           $(this).parent().find('.selected').removeClass('selected');
+           $(this).addClass('selected');
+           if(typeof inventory !== 'undefined') {
+             $quantity_sticky.html({{ 'products.product.only_left' | t: count: '1' | json }}.replace('1', inventory)).removeClass('hide');
+             $('#number_sticky').attr('max',inventory);
+           }else{
+             $quantity_sticky.addClass('hide');
+              $('#number_sticky').attr('max','1');
+           }
+           if(typeof img_st !== 'undefined') {
+            $sticky_img.css('background-image', 'url(' + img_st + ')');
+           }
+         });
+       {% endif %}
+         $(window).scroll(function(event) {
+           var sc = $(window).scrollTop();
+           if (sc > {{settings.scrolltop}}) {
+             $('.jas-sticky-nt-atc').addClass('popup-display');
+             $('body').addClass('add_sticky_nt');
+           }
+           else{
+             $('.jas-sticky-nt-atc').removeClass('popup-display');
+            $('body').removeClass('add_sticky_nt');
+           }
+         });
+       })( jQuery );
+   </script>
+   {%- endif -%}
+{%- if linklists[product.handle].links.size == 0 -%}
+      {%- if product.available and settings.gecko_stock_countdown -%}
+      <script type="text/javascript">
+           function randomIntFromInterval(min, max) {return Math.floor(Math.random() * (max - min + 1) + min);}
+            // Settings are here
+            var total_items = 60;
+            var min_items_left = {{settings.stock_from}};
+            var max_items_left = {{settings.stock_to}};
+            var remaining_items = randomIntFromInterval(min_items_left, max_items_left);
+            var check_stock = false;
+            var timer = null,timerinterval = null;
+         var min_of_remaining_items = 1;
+         var decrease_after = 1.7;
+         var decrease_after_first_item = 0.17;
+         {% assign stock_message = settings.stock_message | split:'{{stock_number}}' %}
+         function progressbar(remaining_items) {
+              $(".jas_progress_bar_pr").html('');
+              var $this = $(".jas_progress_bar_pr"),a = "<p>{{ stock_message[0] | strip }} <span id='jas_count_page' class='count'>" + remaining_items + "</span> {{ stock_message[1] | strip }}</p>" + "<div class='progressbar'><div style='width:100%'></div></div>";
+              $this.addClass('items-count');
+              $this.html(a + $this.html());
+              updateMeter($this,remaining_items);
+              var b = $this;
+              timer = setTimeout(function() {
+                  remaining_items--;
+                  if (remaining_items < min_of_remaining_items) {
+                      remaining_items = randomIntFromInterval(min_items_left, max_items_left)
+                  }
+                  $('.jas_progress_bar_pr .count').css('background-color', '{{settings.stock_bg_process}}');
+                  $('.jas_progress_bar_pr .count').css('color', '#fff');
+                  setTimeout(function() {
+                      $('.jas_progress_bar_pr .count').css('background-color', '#fff');
+                      $('.jas_progress_bar_pr .count').css('color', '{{settings.stock_bg_process}}')
+                  }, 1000 * 60 * 0.03);
+                  b.find(".count").text(remaining_items);
+                  updateMeter(b,remaining_items)
+              }, 1000 * 60 * decrease_after_first_item );
+              //1000 * 60 * decrease_after_first_item
+              timerinterval = setInterval(function() {
+                  remaining_items--;
+                  if (remaining_items < min_of_remaining_items) {
+                      remaining_items = randomIntFromInterval(min_items_left, max_items_left)
+                  }
+                  $('jas_progress_bar_pr .count').css('background-color', '{{settings.stock_bg_process}}');
+                  $('jas_progress_bar_pr .count').css('color', '#fff');
+                  setTimeout(function() {
+                      $('jas_progress_bar_pr .count').css('background-color', '#fff');
+                      $('jas_progress_bar_pr .count').css('color', '{{settings.stock_bg_process}}')
+                  }, 1000 * 60 * 0.03);
+                  b.find(".count").text(remaining_items);
+                  updateMeter(b,remaining_items)
+              }, 1000 * 60 * decrease_after)
+              //1000 * 60 * decrease_after
+          }
+          function updateMeter(a,remaining_items) {
+            console.log('remaining_items b: '+ remaining_items)
+              var b = 100 * remaining_items / total_items;
+              if (remaining_items < 10) {
+                  a.find('.progressbar div:first').addClass('less-than-ten')
+              }
+              a.find('.progressbar').addClass('active progress-striped');
+              setTimeout(function() {
+                  a.find('.progressbar div:first').css('width', b + '%');
+                  a.find('.progressbar').removeClass('active progress-striped')
+              }, 300);
+         }
+          progressbar(remaining_items);
+   </script>
+   {%- endif-%}
+   {%- if product.has_only_default_variant == false and product.variants.size > 1 -%}
+   {%- if product.has_only_default_variant == false or product.available -%}
+      {%- include 'json_arr' -%}
+      {% if product.options.size == 1 %}
+        <script type="text/javascript">
+        var $addToCartForm = $('#callBackVariant form[action="/cart/add" data-productid="{{ product.id }}"]');
+        if (window.MutationObserver && $addToCartForm.length) {
+          if (typeof observer === 'object' && typeof observer.disconnect === 'function') {
+            observer.disconnect();
+          }
+          var config = { childList: true, subtree: true };
+          var observer = new MutationObserver(function() {
+            {% for variant in product.variants %}
+              {% if variant.available == false %}
+                 {%- if settings.remove_sold_out -%}
+                    jQuery('#callBackVariant .swatch .gecko-swatch.bg_css_{{ variant.title | handle }}').addClass('jas_soldout');
+                    jQuery('#callBackVariant .single-option-selector option').filter(function() { return jQuery(this).text() === {{ variant.title | handle | json }}; }).remove();
+                 {%- else -%}
+                    jQuery('#callBackVariant .swatch .gecko-swatch.bg_css_{{ variant.title | handle }}').addClass('jas_soldout');
+                    jQuery('#callBackVariant .single-option-selector option:eq({{ forloop.index0 }})').prop('disabled', true);
+                 {%- endif -%}
+              {% endif %}
+            {% endfor %}
+            jQuery('#callBackVariant .single-option-selector').trigger('change');
+            observer.disconnect();
+          });
+          observer.observe($addToCartForm[0], config);
+        }
+        </script>
+      {% endif %}
+      {%- if product.options.size > 1 -%}
+      <script type="text/javascript">
+        var Shopify = Shopify || {};
+        Shopify.optionsMap = {};
+          Shopify.optionsMapJas = {};
+        Shopify.updateOptionsInSelector = function(selectorIndex) {
+
+          switch (selectorIndex) {
+            case 0:
+              var key = 'root';
+              var selector = jQuery('#callBackVariant .single-option-selector:eq(0)');
+              break;
+            case 1:
+              var key = jQuery('#callBackVariant .single-option-selector:eq(0)').val();
+              var selector = jQuery('#callBackVariant .single-option-selector:eq(1)');
+              break;
+            case 2:
+              var key = jQuery('#callBackVariant .single-option-selector:eq(0)').val();
+              key += ' / ' + jQuery('#callBackVariant .single-option-selector:eq(1)').val();
+              var selector = jQuery('#callBackVariant .single-option-selector:eq(2)');
+          }
+
+          var initialValue = selector.val();
+          selector.empty();
+          var availableOptions = Shopify.optionsMap[key];
+          var availableOptionsJas = Shopify.optionsMapJas[key];
+          for (var i=0; i<availableOptions.length; i++) {
+            var option = availableOptions[i];
+            var newOption = jQuery('<option></option>').val(option).html(option);
+            selector.append(newOption);
+          }
+           console.log(availableOptionsJas);
+          jQuery('#callBackVariant .swatch[data-option-index="' + selectorIndex + '"] .gecko-swatch').each(function() {
+            //console.log('sdffsdfds');
+            if (jQuery.inArray($(this).attr('data-value'), availableOptions) !== -1) {
+              $(this).removeClass('jas_unavailable')
+            }
+            else {
+              $(this).addClass('jas_unavailable')
+            }
+          });
+          jQuery('#callBackVariant .swatch[data-option-index="' + selectorIndex + '"] .gecko-swatch').each(function() {
+            //console.log('sdffsdfds');
+            if (jQuery.inArray($(this).attr('data-value'), availableOptionsJas) !== -1) {
+              $(this).removeClass('jas_soldout')
+            }
+            else {
+              $(this).addClass('jas_soldout')
+            }
+          });
+          if (jQuery.inArray(initialValue, availableOptions) !== -1) {
+            selector.val(initialValue);
+          }
+          selector.trigger('change');
+
+        };
+        Shopify.linkOptionSelectors = function(product) {
+          // Building our mapping object.
+          for (var i=0; i<product.variants.length; i++) {
+            var variant = product.variants[i];
+
+            if ({%- if settings.remove_sold_out -%}variant.available{%- else -%}variant{%- endif -%}) {
+              // Gathering values for the 1st drop-down.
+              Shopify.optionsMap['root'] = Shopify.optionsMap['root'] || [];
+              Shopify.optionsMap['root'].push(variant.option1);
+              Shopify.optionsMap['root'] = Shopify.uniq(Shopify.optionsMap['root']);
+              // Gathering values for the 2nd drop-down.
+              if (product.options.length > 1) {
+                var key = variant.option1;
+                Shopify.optionsMap[key] = Shopify.optionsMap[key] || [];
+                Shopify.optionsMap[key].push(variant.option2);
+                Shopify.optionsMap[key] = Shopify.uniq(Shopify.optionsMap[key]);
+              }
+              // Gathering values for the 3rd drop-down.
+              if (product.options.length === 3) {
+                var key = variant.option1 + ' / ' + variant.option2;
+                Shopify.optionsMap[key] = Shopify.optionsMap[key] || [];
+                Shopify.optionsMap[key].push(variant.option3);
+                Shopify.optionsMap[key] = Shopify.uniq(Shopify.optionsMap[key]);
+              }
+            }
+            if (variant.available) {
+              // Gathering values for the 1st drop-down.
+              Shopify.optionsMapJas['root'] = Shopify.optionsMapJas['root'] || [];
+              Shopify.optionsMapJas['root'].push(variant.option1);
+              Shopify.optionsMapJas['root'] = Shopify.uniq(Shopify.optionsMapJas['root']);
+              // Gathering values for the 2nd drop-down.
+              if (product.options.length > 1) {
+                var key = variant.option1;
+                Shopify.optionsMapJas[key] = Shopify.optionsMapJas[key] || [];
+                Shopify.optionsMapJas[key].push(variant.option2);
+                Shopify.optionsMapJas[key] = Shopify.uniq(Shopify.optionsMapJas[key]);
+              }
+              // Gathering values for the 3rd drop-down.
+              if (product.options.length === 3) {
+                var key = variant.option1 + ' / ' + variant.option2;
+                Shopify.optionsMapJas[key] = Shopify.optionsMapJas[key] || [];
+                Shopify.optionsMapJas[key].push(variant.option3);
+                Shopify.optionsMapJas[key] = Shopify.uniq(Shopify.optionsMapJas[key]);
+              }
+            }
+          }
+          // Update options right away.
+          Shopify.updateOptionsInSelector(0);
+          if (product.options.length > 1) Shopify.updateOptionsInSelector(1);
+          if (product.options.length === 3) Shopify.updateOptionsInSelector(2);
+          // When there is an update in the first dropdown.
+          jQuery("#callBackVariant .single-option-selector:eq(0)").change(function() {
+            Shopify.updateOptionsInSelector(1);
+            if (product.options.length === 3) Shopify.updateOptionsInSelector(2);
+            return true;
+          });
+          // When there is an update in the second dropdown.
+          jQuery("#callBackVariant .single-option-selector:eq(1)").change(function() {
+            if (product.options.length === 3) Shopify.updateOptionsInSelector(2);
+            return true;
+          });
+        };
+
+        {% if product.available and product.options.size > 1 %}
+            var product = {{ json_arr | strip_newlines | remove:"  "}};
+          var $addToCartForm = $('#callBackVariant form[action="/cart/add" data-productid="{{ product.id }}"]');
+          if (window.MutationObserver && $addToCartForm.length) {
+            if (typeof observer === 'object' && typeof observer.disconnect === 'function') {
+              observer.disconnect();
+            }
+            var config = { childList: true, subtree: true };
+            var observer = new MutationObserver(function() {
+              Shopify.linkOptionSelectors(product);
+              observer.disconnect();
+            });
+            observer.observe($addToCartForm[0], config);
+          }
+        {% endif %}
+      </script>
+      {%- endif -%}
+       <script type="text/javascript">
+          (function($) {
+            "use strict";
+               var featured_image_id = null,$variantId,cout=0,check_stock = false{%- if product.available and settings.gecko_stock_countdown -%},stock_num=parseInt(remaining_items) - 3{%- endif -%};
+               var selectCallback = function(variant, selector) {
+                 var $variantQuantity = $('#variantQuantity'),
+                     $single_variation_wrap = $('.single_variation_wrap'),
+                     $productPrice = $('#productPrice'),
+                     $quantityElements = $('#shopify_quantity'),
+                     $outofstock = $('#out-of-stock-gl'),
+                     $productsku = $('#product-sku'),
+                     $input = $('#shopify_quantity input.qty'),
+                     $addToCart = $('#shopify_add_to_cart'),
+                     $payment_btn = $('.shopify-payment-button'),
+                     $cookieCurrency = gl_Currency.cookie.read(),
+                     $addToCart_text = $('#cart-form .ajax_form_cart');
+                     {%- if product.has_only_default_variant == false %}
+                        {%- if product.options.size == 2 -%}
+                         $('#callBackVariant').attr('class','jas_'+ $('#product-select-option-0').val());
+                        $('#callBackVariant').addClass('jas_' + $('#product-select-option-1').val());
+                        {%- elsif product.options.size == 3 -%}
+                         $('#callBackVariant').attr('class','jas_'+ $('#product-select-option-0').val());
+                         $('#callBackVariant').addClass('jas_' + $('#product-select-option-1').val());
+                         $('#callBackVariant').addClass('jas_' + $('#product-select-option-2').val());
+                        {%- endif -%}
+                     {%- endif %}
+                    var index_color = $('.gl_select-is-color-{{product.id}}').attr("data-option-index"),
+                        val_color = $('#product-select-option-'+index_color).val(),
+                        name_color = $('.gl_select-is-color-{{product.id}} .bg_css_'+val_color+' .gecko-tooltip-label').text();
+                    $('.gl_select-is-color-{{product.id}} .jas_name_color').html(name_color);
+                 if(variant){
+                   $variantId = variant.id;
+                   {%- if product.options.size == 2 -%}
+                     if($('#gl_select_1 .gecko-swatch.is-selected').css('display') == 'none') {
+                        var class_name = $('#product-select-option-1 option:first').val(),
+                           selector_1 = $('#gl_select_1 .bg_css_'+class_name);
+                           $('#gl_select_1 .gecko-swatch').removeClass('is-selected');
+                           $('#gl_select_1 .input-dropdown-inner >a').text(selector_1.children('a').text());
+                           selector_1.addClass('is-selected');
+                     }
+                     {%- elsif product.options.size == 3 -%}
+                     if($('#gl_select_1 .gecko-swatch.is-selected').css('display') == 'none') {
+                        var class_name = $('#product-select-option-1 option:first').val(),
+                           selector_1 = $('#gl_select_1 .bg_css_'+class_name);
+                           $('#gl_select_1 .gecko-swatch').removeClass('is-selected');
+                           $('#gl_select_1 .input-dropdown-inner >a').text(selector_1.children('a').text());
+                           selector_1.addClass('is-selected');
+                     }
+                     if($('#gl_select_2 .gecko-swatch.is-selected').css('display') == 'none') {
+                        if($('#gl_select_2 .swatches-select').children(':visible').length != 0) {
+                           var class_name_2 = $('#product-select-option-2 option:first').val(),
+                           selector_2 = $('#gl_select_2 .bg_css_'+class_name_2);
+                           $('#gl_select_2 .gecko-swatch').removeClass('is-selected');
+                           $('#gl_select_2 .input-dropdown-inner >a').text(selector_2.children('a').text());
+                           selector_2.addClass('is-selected');
+                        }
+                     }
+                     {%- endif -%}
+                   // Select a valid variant if available
+                   if (variant.available) {
+                     $addToCart.show();
+                     $payment_btn.show();
+                     $quantityElements.show();
+                     $outofstock.css("display", "none");
+                     {%- if settings.show_sticky_add -%}
+                       $(".swatch_list_sticky li").removeClass('is-selected')
+                       $(".swatch_list_sticky li[data-val='"+$variantId+"']").trigger('click').addClass('is-selected');
+                       var html = $(".swatch_list_sticky li[data-val='"+$variantId+"'] a").html();
+                       $("#cart_form_sticky .input-dropdown-inner_pr>a").html(html);
+                     {% endif %}
+                     // Show how many items are left, if below 10
+                     {% if settings.product_quantity_message %}
+                     if (variant.inventory_management) {
+                       if (variant.inventory_quantity < 10 && variant.inventory_quantity > 0) {
+                         $variantQuantity.html({{ 'products.product.only_left' | t: count: '1' | json }}.replace('1', variant.inventory_quantity)).addClass('is-visible');
+                       } else if (variant.inventory_quantity <= 0 && variant.incoming) {
+                         $variantQuantity.html({{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }}.replace('[date]', {{variant.next_incoming_date | date: format: 'day_month_year' | json }})).addClass('is-visible');
+                       } else {
+                         $variantQuantity.removeClass('is-visible');
+                       }
+                     }
+                     else {
+                       $variantQuantity.removeClass('is-visible');
+                     }
+                     {% endif %}
+                     // Update quantity.
+                     if (variant.inventory_quantity <= 0 && variant.available && variant.inventory_management != null){
+                        $addToCart_text.html({{ 'products.product.pre_orders' | t | json }});
+                     }else{
+                       $addToCart_text.html({{ 'products.product.add_to_cart' | t | json }});
+                     }
+                      if (variant.inventory_quantity <= 0 && variant.available && variant.inventory_management != null){
+                       $input.attr('max',999);
+                      } else if(variant.inventory_management != null ){
+                       //Check if inventory management by shopify
+                       $input.attr('max',variant.inventory_quantity).val(1).attr('value',1);
+                       {%- if settings.gecko_stock_countdown and product.available -%}
+                           if (max_items_left > variant.inventory_quantity ) {
+                           $('.gecko_progress_bar').show('slow');
+                            clearTimeout(timer);
+                           clearInterval(timerinterval);
+                           check_stock = true;
+                           progressbar(variant.inventory_quantity);
+                           }
+                        {%- endif -%}
+                     }else{
+                        {%- if settings.gecko_stock_countdown and product.available -%}
+                           if (check_stock) {
+                              $('.gecko_progress_bar').show('slow');
+                              clearTimeout(timer);
+                              clearInterval(timerinterval);
+                              progressbar(stock_num);
+                               check_stock = false;
+                           }
+                         {%- endif -%}
+                       $input.attr('max',999);
+                     }
+                   } else {
+                     {%- if settings.gecko_stock_countdown and product.available -%}
+                           clearTimeout(timer);
+                           clearInterval(timerinterval);
+                           //progressbar(stock_num);
+                            $('.gecko_progress_bar').hide('slow');
+                            check_stock = true;
+                     {%- endif -%}
+                     $addToCart.hide();
+                     $payment_btn.hide();
+                     $variantQuantity.removeClass('is-visible');
+                     {% if settings.product_quantity_message -%}
+                     if (variant.incoming) {
+                       $variantQuantity.html({{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }}.replace('[date]', variant.next_incoming_date)).addClass('is-visible');
+                     }
+                     else {
+                       $variantQuantity.removeClass('is-visible');
+                     }
+                     {%- endif %}
+                     $quantityElements.hide();
+                     $outofstock.css("display", "inline-block");
+                   }
+                    // Update price display.
+                   var customPrice = Shopify.formatMoney(variant.price, gecko_settings.moneyFormat);
+                   console.log($productPrice)
+                   if (variant.compare_at_price > variant.price) {
+                     var comparePrice = Shopify.formatMoney(variant.compare_at_price, gecko_settings.moneyFormat);
+                     var customPriceFormat = '<ins id="product-price">' + customPrice + '</ins>';
+                         customPriceFormat += '<del id="old-product-price">' + comparePrice + '</del>';
+                     $productPrice.html(customPriceFormat);
+                   }else{
+                      $productPrice.html(customPrice);
+                   }
+                   if (gecko_settings.show_multiple_currencies && $cookieCurrency !== null ) {
+                      Currency.convertAll(shopCurrency, $cookieCurrency, '.entry-summary span.money');
+                    }
+                   //Update sku
+                   if(variant.sku){
+                      $productsku.text(variant.sku);
+                   }else{
+                       $productsku.text(gecko_settings.na);
+                    }
+
+                   if(variant.featured_image) {
+                     featured_image_id = variant.featured_image.id;
+                     $(".p-nav").find('.slick-slide:not(.slick-cloned):not(.slick-current) img[data-image-id="'+featured_image_id+'"]').closest('div').trigger('click');
+                   }
+                 }else{
+                  $variantId = null;
+                  $productsku.html(gecko_settings.na);
+                 }
+               };
+               var product = {{ json_arr | strip_newlines | remove:"  "}};
+
+                 var optionSelectors = new Shopify.OptionSelectors('product-select', {
+                   product: product,
+                   onVariantSelected: selectCallback,
+                   enableHistoryState: true
+                 });
+                 var $variation_form = $('.jas-wc-single .variations_form');
+                 $variation_form.on('click', '.swatches-select > .gecko-swatch', function(e) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+                    var value = $(this).data('value'),
+                         bcvalue = $(this).data('bcvalue'),
+                        jas_group_slick = $(".jas-group-carousel"),
+                        $productGallery = $('.shopify-product-gallery'),
+                     id = $(this).parent().data('id');
+                     $variation_form.find('select#product-select-option-' + id).val(value).trigger('change');
+                     $(this).parent().find('.is-selected').removeClass('is-selected');
+                     $(this).addClass('is-selected');
+                     {%- if cv_color != 'jas-p-item' -%}
+                     if ($(this).parent().parent().hasClass('is-color')) {
+                        {%- if singles_wc == 'wc-single-2' or product.template_suffix == 'layout_2' or singles_wc == 'wc-single-3' or product.template_suffix == 'layout_3' or singles_wc == 'wc-single-4' or product.template_suffix == 'layout_4' -%}
+                           $('.jas-masonry').isotope({ filter: '.'+bcvalue });
+                           $('.p-item').removeClass('jas_img_ptw');
+                           $('.p-item.'+bcvalue).addClass('jas_img_ptw');
+                        {%- else -%}
+                           jas_group_slick.removeClass('slick_loaded').slick("slickUnfilter").slick("unslick");
+                           jas_group_slick.slick().slick('slickFilter', '.'+bcvalue).slick("refresh").addClass('slick_loaded');
+                        {%- endif -%}
+                        if( $productGallery.hasClass( 'image-action-zoom') ) {
+                          var zoom_target   = $( '.shopify-product-gallery__image img' );
+                          var image_to_zoom = zoom_target.find( 'img' );
+                          // But only zoom if the img is larger than its container.
+                          zoom_target.each(function() {
+                           var $this = $(this);
+                             if ( $this.attr( 'data-large_image_width' ) > $( '.shopify-product-gallery__image' ).width() ) {
+                                 $this.trigger( 'zoom.destroy' );
+                                 var zoom_parent = $this.closest('.shopify-product-gallery__image')
+                                 zoom_parent.zoom({
+                                    url: $this.attr( 'data-large_image' ),
+                                     touch: false
+                                 });
+                             }
+                          });
+                        }
+                     }
+                     {%- endif -%}
+                 });
+               {%- if settings.use_clicking_variant_image and product.has_only_default_variant == false -%}
+               $(document).on('click', '.p-nav img', function(ev) {
+                  ev.preventDefault();
+                  var $this = $(this),
+                      value = $this.data('variant_id');
+                  if (value != undefined ) {
+                     optionSelectors.selectVariant(value);
+                     $('#callBackVariant select').on('change', function() {
+                       {%- if product.options.size == 2 -%}
+                           var class_name_0 = $('#product-select-option-0 option:selected').val(),
+                              selector_0 = $('#gl_select_0 .bg_css_'+class_name_0);
+                              $('#gl_select_0 .gecko-swatch').removeClass('is-selected');
+                              $('#gl_select_0 .input-dropdown-inner >a').text(selector_0.children('a').text());
+                              selector_0.addClass('is-selected');
+                           var class_name = $('#product-select-option-1 option:selected').val(),
+                              selector_1 = $('#gl_select_1 .bg_css_'+class_name);
+                              $('#gl_select_1 .gecko-swatch').removeClass('is-selected');
+                              $('#gl_select_1 .input-dropdown-inner >a').text(selector_1.children('a').text());
+                              selector_1.addClass('is-selected');
+                        {%- elsif product.options.size == 3 -%}
+                           var class_name_0 = $('#product-select-option-0 option:selected').val(),
+                              selector_0 = $('#gl_select_0 .bg_css_'+class_name_0);
+                              $('#gl_select_0 .gecko-swatch').removeClass('is-selected');
+                              $('#gl_select_0 .input-dropdown-inner >a').text(selector_0.children('a').text());
+                              selector_0.addClass('is-selected');
+                           var class_name = $('#product-select-option-1 option:selected').val(),
+                              selector_1 = $('#gl_select_1 .bg_css_'+class_name);
+                              $('#gl_select_1 .gecko-swatch').removeClass('is-selected');
+                              $('#gl_select_1 .input-dropdown-inner >a').text(selector_1.children('a').text());
+                              selector_1.addClass('is-selected');
+                           var class_name_2 = $('#product-select-option-2 option:selected').val(),
+                              selector_2 = $('#gl_select_2 .bg_css_'+class_name_2);
+                              $('#gl_select_2 .gecko-swatch').removeClass('is-selected');
+                              $('#gl_select_2 .input-dropdown-inner >a').text(selector_2.children('a').text());
+                              selector_2.addClass('is-selected');
+                        {%- endif -%}
+                     });
+                  }
+               });
+               {%- endif %}
+            }(jQuery));
+         </script>
+   {%- endif -%}
+   {%- endif-%}
+{%- elsif linklists[product.handle].links.size > 0 -%}
+   <script>
+     jQuery(function($) {
+      $('.jas-wc-single table.group_table .quantity:first').focus();
+        $('[max]').change(function() {
+          var max = parseInt($(this).attr('max'), 10);
+          var value = parseInt($(this).val(), 10) || 0;
+          if (value > max) {
+            alert({{ 'products.product.we_only_stock' | t: max: '[max]' | json }}.replace('[max]', max));
+               //$variantQuantity.html({{ 'products.product.we_only_stock' | t: max: '[max]' | json }}.replace('[max]', max));
+            $(this).val(max);
+          }
+        });
+      $('.jas-wc-single .product-form_group_variants').on('change', function() {
+         var $this = $(this).find('option:selected'),
+             parent = $(this).parent().parent();
+             input = $(this).parent().find('.jas_group_quantity');
+             onsale = $this.data('onsale'),
+             compare = $this.data('compare'),
+             price = $this.data('price'),
+             quantity = $this.data('quantity'),
+             value = $this.attr('value'),
+             $cookieCurrency = gl_Currency.cookie.read(),
+             image = $this.data('image');
+             console.log(quantity)
+             input.attr('max',quantity).attr('data-variant-id',value).val(1).attr('value',1);
+             parent.find('img').attr('src',image);
+              var variantPrice = Shopify.formatMoney(price, gecko_settings.moneyFormat);
+             if (onsale === 'true' || onsale === true ) {
+               var variantcomparePrice = Shopify.formatMoney(compare, gecko_settings.moneyFormat);
+               var variantPriceFormat = '<ins id="product-price">' + variantPrice + '</ins>';
+                   variantPriceFormat += '<del id="old-product-price">' + variantcomparePrice + '</del>';
+               parent.find('.price').html(variantPriceFormat);
+             } else {
+               parent.find('.price').html(variantPrice);
+             }
+             if (gecko_settings.show_multiple_currencies && $cookieCurrency !== null ) {
+                      Currency.convertAll(shopCurrency, $cookieCurrency, '.entry-summary span.money');
+                    }
+      });
+      $( document ).on('click', '#multi-variant-add', function(e) {
+         e.preventDefault();
+         var $this = $(this);
+         $this.attr('disabled', 'disabled').css('pointer-events', 'none').addClass('loading');
+         Shopify.queue = [];
+         jQuery('.jas_group_quantity').each(function() {
+            var a=jQuery(this),id=a.data('variant-id'),qty=a.val();
+            if ( qty > 0 && id !== '') {
+               Shopify.queue.push({
+                   variantId: id,
+                   quantity: parseInt(qty, 10) || 0
+               });
+            }
+         });
+         Shopify.moveAlong = function() {
+           // If we still have requests in the queue, let's process the next one.
+           console.log(Shopify.queue);
+           if (Shopify.queue.length) {
+             var request = Shopify.queue.shift();
+               $.ajax({
+                  type: 'POST',
+                  url: '/cart/add.js',
+                  data: {quantity: request.quantity, id:request.variantId},
+                  dataType: 'json',
+                  success:function(cart) {
+                    Shopify.moveAlong();
+                  },
+                  error: function(XMLHttpRequest, textStatus) {
+                    $this.removeAttr("disabled").css('pointer-events', 'auto').removeClass("loading");
+                    geckoShopify.onError(XMLHttpRequest, textStatus);
+                  }
+               });
+           }
+           // If the queue is empty, we will redirect to the cart page.
+           else {
+               jQuery.get('/cart?view=json', function(data) {
+                  /*optional stuff to do after success */
+                  $('.widget_shopping_cart_content').html(data);
+                }).always(function() {
+                  var $cookieCurrency = gl_Currency.cookie.read();
+                  $(".cartCount").html($('.widget_shopping_cart_body').data('count'));
+                  geckoShopify.nanoScroller();
+                  if (gecko_settings.show_multiple_currencies && $cookieCurrency !== null ) {
+                      Currency.convertAll(shopCurrency, $cookieCurrency, '.entry-summary span.money');
+                    }
+                  geckoShopify.initAddToCart();
+                  $this.removeAttr("disabled").css('pointer-events', 'auto').removeClass("loading");
+               });
+           }
+         };
+         Shopify.moveAlong();
+       });
+     });
+     </script>
+{%- endif -%}
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+   {%- if cv_color != 'jas-p-item' -%}
+         {%- if singles_wc == 'wc-single-2' or product.template_suffix == 'layout_2' or singles_wc == 'wc-single-3' or product.template_suffix == 'layout_3' or singles_wc == 'wc-single-4' or product.template_suffix == 'layout_4' -%}
+            $('.jas-masonry').isotope({ filter: '.bc_{{cv_color}}' });
+         {%- else -%}
+            $(".jas-group-carousel").slick().slick('slickFilter', '.bc_{{cv_color}}');
+            $(".jas-group-carousel").slick("refresh").addClass('slick_loaded');
+         {%- endif -%}
+      {%- endif -%}
+    $(document).on("click",".shopify-product-rating", function(e) {
+       var anchor = $(this);
+       jQuery(".reviews_tab > a,.reviews_tab .tab-heading").trigger("click");
+       setTimeout(function() {
+           window.scrollTo(0, 0);
+       }, 1);
+       setTimeout(function() {
+           $('html, body').stop().animate({
+               scrollTop: $(anchor.attr('href')).offset().top - 100
+           }, 400);
+       }, 10);
+       e.preventDefault();
+     });
+    $("body").on("init", ".sp-tabs-wrapper, .shopify-tabs", function() {
+        $(".sp-tab, .shopify-tabs .sp_panel").hide();
+        var b = window.location.hash
+          , c = window.location.href
+          , d = $(this).find(".sp-tabs, ul.tabs").first();
+        b.toLowerCase().indexOf("comment-") >= 0 || "#reviews" === b || "#tab-reviews" === b ? d.find("li.reviews_tab a").click() : c.indexOf("comment-page-") > 0 || c.indexOf("cpage=") > 0 ? d.find("li.reviews_tab a").click() : d.find("li:first a").click()
+    }).on("click", ".sp-tabs li a, ul.tabs li a", function(b) {
+        b.preventDefault();
+        var c = $(this)
+          , d = c.closest(".sp-tabs-wrapper, .shopify-tabs")
+          , e = d.find(".sp-tabs, ul.tabs");
+        e.find("li").removeClass("active"),
+        d.find(".sp-tab, .sp_panel").hide(),
+        c.closest("li").addClass("active"),
+        d.find(c.attr("href")).show()
+    }),
+    void $(".sp-tabs-wrapper, .shopify-tabs").trigger("init");
+  });
+</script>
+<script type="text/javascript">
+  jQuery( window ).load( function() {
+   var ls = gl_Currency.cookie.jasread('jas_recent'),
+       $cookieCurrency = gl_Currency.cookie.read();
+    if(ls != null){
+      ls = ls.split(',');
+      var ls = ls.reverse();
+      {%- if settings.show_recently_products and pages['recently-viewed-products'].empty? != true -%}
+         if(ls.length > 1){
+           $("#recently-viewed-products").show();
+         } else if (ls != '{{product.handle}}') {
+           $("#recently-viewed-products").show();
+         }
+         jQuery.ajax({
+           url: '/pages/recently-viewed-products/'+ls+'?q={{product.id}}{%- if collection -%}+{{collection.handle}}{%- endif -%}',
+           dataType: 'html',
+           type: 'GET',
+           success: function(responsive) {
+             //console.log(responsive);
+              $('#recently_wrap').html(responsive).addClass('jas-carousel');
+           },
+           error: function(data) {
+             console.log('ajax error');
+           },
+           complete: function() {
+            $( '#recently_wrap.jas-carousel' ).not( '.slick-initialized' ).slick();
+             if( $('#recently_wrap').hasClass('jas_section_eqh') ) {
+                  geckoShopify.resizeElements();
+                  setTimeout(function(){ geckoShopify.resizeElements(); }, 300);
+               }
+             //countDown
+             geckoShopify.initCountdown();
+              //currency
+              if (gecko_settings.show_multiple_currencies && $cookieCurrency !== null) {
+                 Currency.convertAll(shopCurrency, $cookieCurrency, '#recently_wrap span.money');
+               }
+              //product review
+              if (gecko_settings.productreviews && $(".spr-badge").length > 0 ) {
+                return window.SPR.registerCallbacks(), window.SPR.initRatingHandler(), window.SPR.initDomEls(), window.SPR.loadProducts(), window.SPR.loadBadges();
+               }
+           }
+         });
+      {%-endif-%}
+    }else{
+      ls = new Array();
+    }
+    var c = '{{product.handle}}';
+    if(ls.indexOf(c)< 0 ){
+      if(ls.length >= 21){
+     ls.pop();
+      }
+   ls[ls.length]= (c);
+      try{ ls = ls.join(',');}catch(ex){}
+      gl_Currency.cookie.jaswrite('jas_recent',ls);
+    }
+    {%- if product.metafields.meta.hashtag != blank -%}
+       var tag = '{{product.metafields.meta.hashtag}}',
+         limit = '12',
+         target = '_self',
+         user_name = tag,
+         ul_ins = $(".instagram-pics");
+       jQuery.ajax({
+         url: 'https://api.teathemes.net/instagram?username='+tag+'&hash=true',
+         dataType: 'json',
+         type: 'GET',
+         success: function(responsive) {
+           //console.log(responsive);
+           var html = '',
+               data = responsive.entry_data.ProfilePage[0].user.media.nodes;
+           jQuery.each(data,function(index,element){
+              if(index >= limit ) return 0;
+              var img_url_150 = element.thumbnail_resources[0].src,
+              img_url_240 = element.thumbnail_resources[1].src,
+              img_url_320 = element.thumbnail_resources[2].src,
+              img_url_480 = element.thumbnail_resources[3].src,
+              img_url_640 = element.thumbnail_resources[4].src;
+              console.log(img_url_150);
+              html += '<div class="item pr fl"><a class="db pr oh" href="//instagram.com/p/'+element.code+'" target="'+target+'"><img src="'+img_url_150+'" data-src="'+img_url_150+'" data-sizes="auto" data-srcset="'+img_url_150+' 150w,'+img_url_240+' 240w,'+img_url_320+' 320w,'+img_url_480+' 480w,'+img_url_640+' 640w" class="w__100 lazyload" alt="'+user_name+'"><div class="jas-wrap-lazy"></div><div class="info pa tc flex ts__03 center-xs middle-xs"><span class="pr cw mgr10"><i class="fa fa-heart-o mr__5"></i>'+element.likes.count+'</span><span class="pr cw"><i class="fa fa-comments-o mr__5"></i>'+element.comments.count+'</span></div></a></div>';
+            });
+           ul_ins.html(html);
+         },
+         error: function(data) {
+           console.log('ajax error');
+         }
+       });
+    {%- elsif product.metafields.meta.username != blank -%}
+       var user_name = '{{product.metafields.meta.username}}',
+         limit = '12',
+         target = '_self',
+         ul_ins = $(".instagram-pics");
+       jQuery.ajax({
+         url: 'https://api.teathemes.net/instagram?username='+user_name,
+         dataType: 'json',
+         type: 'GET',
+         success: function(responsive) {
+           //console.log(responsive);
+           var html = '',
+               data = responsive.entry_data.ProfilePage[0].user.media.nodes;
+           jQuery.each(data,function(index,element){
+            console.log(element.thumbnail_resources[0]);
+              if(index >= limit ) return 0;
+              var img_url_150 = element.thumbnail_resources[0].src,
+              img_url_240 = element.thumbnail_resources[1].src,
+              img_url_320 = element.thumbnail_resources[2].src,
+              img_url_480 = element.thumbnail_resources[3].src,
+              img_url_640 = element.thumbnail_resources[4].src;
+              html += '<div class="item pr fl"><a class="db pr oh" href="//instagram.com/p/'+element.code+'" target="'+target+'"><img src="'+img_url_150+'" data-src="'+img_url_150+'" data-sizes="auto" data-srcset="'+img_url_150+' 150w,'+img_url_240+' 240w,'+img_url_320+' 320w,'+img_url_480+' 480w,'+img_url_640+' 640w" class="w__100 lazyload" alt="'+user_name+'"><div class="jas-wrap-lazy"></div><div class="info pa tc flex ts__03 center-xs middle-xs"><span class="pr cw mgr10"><i class="fa fa-heart-o mr__5"></i>'+element.likes.count+'</span><span class="pr cw"><i class="fa fa-comments-o mr__5"></i>'+element.comments.count+'</span></div></a></div>';
+            });
+           ul_ins.html(html);
+         },
+         error: function(data) {
+           console.log('ajax error');
+         }
+       });
+    {%- endif -%}
+  });
+</script>
+{%- if images_alt contains 'jas_360' -%}
+  {%- capture _array_view_360 -%}
+     {%- for image in product.images -%}
+        {%- if image.alt contains 'jas_360' -%}
+           {%- assign image_first = image -%}
+           {{image.src | img_url: "master" }}{%- if forloop.last == false -%},{%- endif -%}
+        {%- endif -%}
+     {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign array_view_360 = _array_view_360 | replace: ' ,', ',' | replace: ', ', ',' | split: ',' -%}
+  {%- assign image_first_width = image_first.width -%}
+  <script type="text/javascript">
+     jQuery(document).ready(function( $ ) {
+         $('.threed-id-{{product.id}}').ThreeSixty({
+             totalFrames: {{array_view_360.size | json }},
+             endFrame: {{array_view_360.size | json }},
+             currentFrame: 1,
+             imgList: '.threed-view-images',
+             progress: '.spinner',
+             imgArray: {{array_view_360 | json}},
+             height: {{ image_first.height | json }},
+             width: {{ image_first.width | json }},
+             responsive: true,
+             navigation: true
+         });
+     });
+  </script>
+  {%- if image_first_width < 700 -%}
+  <style>
+    .product-360-view-wrapper {
+      max-width: {{image_first_width}}px;
+  }
+  </style>
+  {%- endif -%}
+{%- endif -%}
+{%- if product.has_only_default_variant == false and product.images.size > 1 -%}
+  {%- if settings.swatch_style != '1' or settings.quick_layout_setting != '1' -%}
+  <script>
+    jQuery( window ).load( function() {
+      Shopify.Image.preload({{ product.images | json }}, '118x');
+    });
+  </script>
+  {%- endif -%}
+{%- endif -%}

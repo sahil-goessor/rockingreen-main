@@ -1,0 +1,69 @@
+#fo_mobile {
+	display: none !important;
+}	#ssss2{
+ 			display:block !important;
+
+ 	}
+@media screen and (max-width: 528px) {
+	#fo_mobile{
+		display:block !important;
+	}
+	#ssss2{
+			display:none !important;
+
+	}
+}/*-----------------------------------------------------------------------------// Custom Theme CSS/-----------------------------------------------------------------------------*//*---------------- Global Custom CSS -------------------*/.imgg{display:none;}.button.checkout.wc-forward.check{width:100%!important}#shopify-section-1542220652634{width:750px;}.counter_real_time{display:none!important;}.fordesc{display:block;}#shopify-section-1542220652634.rte{text-align: center;width: 750px!important;margin: 0 auto;}.template-cart .cart_note.cross-sells{display: none!important;}button.checkout-button.alt{	background-color: #4fb84f!important;}@media screen and (max-width: 480px) {.imgg{display:block;width:48%!important;display:inline;}.fordesc{display:none;}}.button.checkout.wc-forward check{width:100%!important}input[type="submit"]:not(.button-o), button, input.button-o:hover, .slick-prev, .slick-next {background-color: transparent;}.counter_real_time{display:none;}.template-collection .jas-container.pr{max-width:750px!important;}.template-collection .jas-container.pr p{line-height:20px!important;}.slick-slider .slick-prev:hover,.slick-slider .slick-next:hover {	opacity: 0;}.slick-next:before {content: ''!important;}#shopify-section-1546894897912 .jas_banner_img img{width:200px;}#shopify-section-1513736761998 .cd.chp{ font-weight: 900;font-size: 18px;}.jas_title_1 {line-height: 40px;}a.button-o-w { background:#FFF!important; color:green;border:1px solid green;}#shopify-section-1628078038b5dcec46{margin-top:60px!important;}#shopify-section-1628078038b5dcec46 .placeholder-noblocks.tc{display:none!important;}#shopify-section-1628078038b5dcec46 .jas_title_1.pr.mb__40{font-size: 36px!important;font-family: "lato"!important;font-weight: 400;font-style: normal;font-style: normal!important;}a.button-o-w:hover { background:green!important; color:white;border:1px solid white;}#shopify-section-1546873178339 .fs__18.lh__1.f__libre.tc.cw{font-size: 23px!important;font-family: "lato"!important;font-weight: 900!important;font-style: normal!important;padding-top: 10px!important;padding-bottom: 10px;font-weight:bold;}	.for_mobile{display: none;}@media screen and (max-width: 860px) {	.for_mobile{display: block;}}p a {color: #4fb84f;text-decoration: underline;}.template-blog span.cat.pr {display: none;}.jas-row.categories-style-default.categories-space-30{text-align:center;}.form-row input[type='submit'] {background-color:#4fb84f!important;}/*---------------- Custom CSS for desktop -------------------*/@media (min-width: 992px) {}/*---------------- Custom CSS for tablet -------------------*/@media (min-width: 768px) and (max-width: 991px) {}/*---------------- Custom CSS for mobile landscape -------------------*/@media (min-width: 481px) and (max-width: 767px) {}/*---------------- Custom CSS for mobile -------------------*/@media (max-width: 480px){}
+
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+/*---------------- Center the Burke Video on the Homepage -------------------*/
+
+#shopify-section-b636ace275b0 .custom__item {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 750px;
+}
+
+/* Responsive Video */
+.el-responsive-video {
+ position: relative;
+ padding-bottom: 56.17021276595745%; /* 56.25% = 16:9 */
+ height: 0;
+}
+
+.el-responsive-video iframe {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+
+/* Cart & Discount Widget */
+
+.checkout-button {
+  width: 100%;
+}
+
+.cart_totals .docapp-cart-with-coupon-summary {
+  max-width: 738px !important;
+}
+
+.cart_totals .docapp-cart-with-coupon-summary .docapp-coupon-input--button .docapp-coupon-input--button-text,
+.widget_shopping_cart .docapp-cart-with-coupon-summary .docapp-coupon-input--button .docapp-coupon-input--button-text {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}

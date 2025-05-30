@@ -1,0 +1,252 @@
+{%- include 'style_mp_section' -%}
+<div class="jas_custom_{{section.id}} {{section.settings.style_slider}}">
+   <div class="metaslider metaslider-flex ml-slider">
+      <div id="metaslider_container_{{section.id}}">
+         <div id="metaslider_{{section.id}}" class="flexslider{%- if section.settings.use_background_overlay == false %} off_overlay{%- endif -%}">
+            {%- if section.blocks.size > 0 -%}
+            <div class="slides jas-carousel" data-slick='{"slidesToShow": 1,"slidesToScroll": 1,"fade": true,"infinite": {{ section.settings.use_loop }},"slidesToScroll": 1,"rtl": {{ settings.use_rtl }},"autoplay": {{ section.settings.use_autoplay }}, "autoplaySpeed": {{ section.settings.slider_speed }}000,"adaptiveHeight": true,"arrows": {{section.settings.use_arrows}},"dots": {{section.settings.use_dots}}}'>
+               {%- for block in section.blocks -%}
+               <div {{ block.shopify_attributes }}>
+                  {%- if block.settings.image == blank -%}
+                  {%- capture current -%}{%- cycle 1, 2 -%}{%- endcapture -%}
+                  {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- else -%}
+                    {%- assign image = block.settings.image -%}
+                    {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                    <img class="w__100 grid-view-item__image lazyload{%- if forloop.first == false %} lazypreload{%- endif -%}" src="{{ image | img_url: '50x50' }}" data-src="{{ img_url }}" data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]" data-aspectratio="{{ image.aspect_ratio }}" data-sizes="auto" alt="{{ image.alt | escape }}">
+                    <div class="jas-wrap-lazy"></div> <span class="placeholder_jas pa w__100 h__100"></span>
+                    {%- if block.settings.link != blank -%}</a>{%- endif -%}
+                  {%- endif -%}
+                  <div class="caption-wrap">
+                     {%- if block.settings.link != blank -%}<a href="{{block.settings.link}}" class="jas_category-link-overlay"></a>{%- endif -%}
+                     <div class="caption">
+                        <div class="{{block.settings.alignment}}">
+                           {%- if block.settings.title != blank and section.settings.style_slider != 'handmade-slider' -%}{%- if section.settings.style_slider == 'furniture-slider' -%}<h3 class="tu fs__30 cw separate_bg">{%- else -%}<h3 class="tu fs__14 cw">{%- endif -%}{{block.settings.title}}</h3>
+                           {%- elsif block.settings.title != blank -%}<h2>{{block.settings.title}}</h2>
+                           {%- endif -%}
+                           {%- if block.settings.subheading != blank -%}<h2 class="tu fs__50 cw">{{block.settings.subheading}}</h2>{%- endif -%}
+                           {%- if block.settings.text_content != blank and section.settings.style_slider == 'furniture-slider' -%}<p>{{block.settings.text_content}}</p>{%- elsif block.settings.text_content != blank -%}<h4>{{block.settings.text_content}}</h4>{%- endif -%}
+                           {%- if block.settings.btn_title != blank and block.settings.link != blank -%}<a href="{{block.settings.link}}" target="_blank" class="button{%- if block.settings.style_btn == '2' -%}-o-w{%- endif -%}">{{block.settings.btn_title}}</a>{%- endif -%}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               {%- endfor -%}
+            </div>
+            {%- endif -%}
+            {%- if section.blocks.size == 0 -%}
+               <div class="tc placeholder-noblocks">
+                  {{ 'homepage.onboarding.no_content' | t }}
+               </div>
+            {%- endif -%}
+         </div>
+      </div>
+   </div>
+</div>
+{% schema %}
+  {
+    "name": "Slideshow",
+    "class": "jas-section type_slideshow",
+    "max_blocks": 10,
+    "settings": [
+      {
+         "type": "select",
+         "id": "style_slider",
+         "label": "Slider Style",
+         "default": "fashion-slider",
+         "options": [
+           {
+             "value": "fashion-slider",
+             "label": "fashion"
+           },
+           {
+             "value": "handmade-slider",
+             "label": "handmade"
+           },
+           {
+             "value": "organic-slider",
+             "label": "organic"
+           },
+           {
+             "value": "furniture-slider",
+             "label": "furniture"
+           }
+         ]
+      },
+      {
+        "type": "range",
+        "id": "slider_speed",
+        "min": 1,
+        "max": 30,
+        "step": 1,
+        "label": "Slider speed (second)",
+        "unit": "sec",
+        "default": 6
+      },
+      {
+        "type": "checkbox",
+        "id": "use_dots",
+        "default": false,
+        "label": "Hide pagination control?",
+        "info": "pagination control will be removed"
+      },
+       {
+        "type": "checkbox",
+        "id": "use_arrows",
+        "default": false,
+        "label": "Hide prev/next buttons?",
+        "info": "prev/next control will be removed"
+      },
+       {
+        "type": "checkbox",
+        "id": "use_loop",
+        "default": false,
+        "label": "Slider loop?",
+        "info": "Enables loop mode."
+      },
+      {
+       "type": "checkbox",
+       "id": "use_autoplay",
+       "label": "Slider autoplay",
+       "info": "Enables autoplay mode.",
+       "default": false
+     },
+     {
+        "type": "header",
+        "content": "== Design Options"
+      },
+      {
+        "type": "checkbox",
+        "id": "use_background_overlay",
+        "label": "Use background overlay?",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "section_margin_top",
+        "label": "Margin top",
+        "info": "60px"
+      },
+      {
+        "type": "text",
+        "id": "section_margin_bottom",
+        "label": "Margin bottom",
+        "info": "60px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding_top",
+        "label": "Padding top",
+        "info": "60px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding_right",
+        "label": "Padding right",
+        "info": "60px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding_bottom",
+        "label": "Padding bottom",
+        "info": "60px"
+      },
+      {
+        "type": "text",
+        "id": "section_padding_left",
+        "label": "Padding left",
+        "info": "60px"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "alignment",
+            "label": "Text alignment",
+            "default": "tc",
+            "options": [
+              {
+                "value": "tl",
+                "label": "Left"
+              },
+              {
+                "value": "tc",
+                "label": "Center"
+              },
+              {
+                "value": "tr",
+                "label": "Right"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Image slide"
+          },
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "Subheading",
+            "default": "New Arrivals collection"
+          },
+          {
+            "type": "textarea",
+            "id": "text_content",
+            "label": "Text Content",
+            "default": "Integer sagittis, tellus ac venenatis venenatis, ipsum ligula auctor lectus, suscipit velit<br> quam quis turpis. Fusce scelerisque aliquet commodo."
+          },
+          {
+            "type": "text",
+            "id": "btn_title",
+            "label": "Slide button title",
+            "default":"Start shopping"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Slide link"
+          },
+          {
+            "type": "select",
+            "id": "style_btn",
+            "label": "Button Style",
+            "default": "1",
+            "options": [
+              {
+                "value": "1",
+                "label": "Style 1"
+              },
+              {
+                "value": "2",
+                "label": "Style 2"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Slideshow",
+      "category": "== Slider",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }]
+  }
+{% endschema %}

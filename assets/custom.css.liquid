@@ -1,0 +1,98 @@
+#fo_mobile {
+	display: none !important;
+}	#ssss2{
+ 			display:block !important;
+
+ 	}
+@media screen and (max-width: 528px) {
+	#fo_mobile{
+		display:block !important;
+	}
+	#ssss2{
+			display:none !important;
+
+	}
+}
+
+{%- capture gecko_style -%}
+/*-----------------------------------------------------------------------------/
+/ Custom Theme CSS
+/-----------------------------------------------------------------------------*/
+/*---------------- Global Custom CSS -------------------*/
+{{settings.global_custom_css }}
+
+/*---------------- Custom CSS for desktop -------------------*/
+@media (min-width: 992px) {
+{{settings.desktop_custom_css }}
+}
+
+/*---------------- Custom CSS for tablet -------------------*/
+@media (min-width: 768px) and (max-width: 991px) {
+{{settings.tablet_custom_css }}
+}
+
+/*---------------- Custom CSS for mobile landscape -------------------*/
+@media (min-width: 481px) and (max-width: 767px) {
+{{settings.landscape_custom_css }}
+}
+
+/*---------------- Custom CSS for mobile -------------------*/
+@media (max-width: 480px){
+{{settings.mobile_custom_css }}
+}
+{%- endcapture -%}
+{{ gecko_style | strip_newlines | remove: "  "}}
+
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+/*---------------- Center the Burke Video on the Homepage -------------------*/
+
+#shopify-section-b636ace275b0 .custom__item {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 750px;
+}
+
+/* Responsive Video */
+.el-responsive-video {
+ position: relative;
+ padding-bottom: 56.17021276595745%; /* 56.25% = 16:9 */
+ height: 0;
+}
+
+.el-responsive-video iframe {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+
+/* Cart & Discount Widget */
+
+.checkout-button {
+  width: 100%;
+}
+
+.cart_totals .docapp-cart-with-coupon-summary {
+  max-width: 738px !important;
+}
+
+.cart_totals .docapp-cart-with-coupon-summary .docapp-coupon-input--button .docapp-coupon-input--button-text,
+.widget_shopping_cart .docapp-cart-with-coupon-summary .docapp-coupon-input--button .docapp-coupon-input--button-text {
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}

@@ -1,0 +1,64 @@
+{%- if settings.color_name_check != blank -%}{%- assign _gl_color_name = settings.color_name_check | replace: ' ,', ',' | replace: ', ', ',' | split: ',' -%}{%- assign gl_color_name = _gl_color_name | downcase -%}{%-else-%}{%- assign gl_color_name = '\nathan_dt\' -%}{%-endif-%}
+{%- if settings.size_name_check != blank -%}{%- assign _gl_size_name = settings.size_name_check | replace: ' ,', ',' | replace: ', ', ',' | split: ',' -%}{%- assign gl_size_name = _gl_size_name | downcase -%}{%-else-%}{%- assign gl_size_name = '\nathan_dt\' -%}{%-endif-%}
+{%- assign lang_option = 'Größe'| downcase -%}
+{%- if select_id == 'gl_select_quick'-%}
+   {%- assign select_id = 'gl_select_quick' -%}
+{%- else -%}
+   {%- assign select_id = 'gl_select' -%}
+{%- endif -%}
+<div class="variations variant_simple variant_simple_2{%- if settings.swatch_style_color == '2' %} square{%- endif %}{%- if settings.quick_swatch_style_color == '2' %} square_quick{%- endif %}">
+   {%- for option in product.options_with_values -%}
+      {%- assign option_index = forloop.index0 -%}
+      {%- assign downcased_option = option.name | downcase -%}
+      {%- assign downcased_option_check = downcased_option | prepend: '"' | append: '"' | strip -%}
+      {%- if downcased_option == 'color' or downcased_option == 'couleur' or downcased_option == 'colour' or gl_color_name contains downcased_option_check -%}
+		   <div class="swatch is-color {{select_id}}-is-color-{{product.id}}" data-option-index="{{ option_index }}" id="{{select_id}}_{{ option_index }}">
+		   	{%- capture for_color -%}
+		   	   {%- for value in option.values -%}
+		   		   <li class="gecko-swatch swatch__list--item is-relative gecko-tooltip bg_css_{{ value | handleize }} swatch-size-{{settings.swatch_size}}{%- if settings.swatch_style == '1' %} colored-swatch{%- else %} image-swatch{%- endif %}{%- if first_available_variant and option.selected_value == value %} is-selected{%- elsif forloop.first == true and product.selected_variant == blank and first_available_variant == false %}{%- assign is_selected = value %} is-selected{%- elsif option.selected_value == value and product.selected_variant != blank and first_available_variant == false %}{%- assign is_selected = value %} is-selected{%- endif %}" data-value='{{ value | handleize }}' data-bcvalue='bc_{{ value | handleize }}'>
+		   		   	<span class="swatch__value bg_color_{{ value | handleize }}"></span>
+		   		   	<span class="gecko-tooltip-label">{{value}}</span>
+		   		   </li>
+		   	   {%- endfor -%}
+		   	{%- endcapture -%}
+		   	<h4 class="swatch__title">{{option.name}}: <span class="jas_name_color">{{is_selected }}</span></h4>
+		   	<ul class="swatches-select swatch__list is-flex" data-attribute="pa_color" data-id="{{ option_index }}">
+		   		{{for_color}}
+		   	</ul>
+		   </div>
+		{%- else -%}
+		   <div class="swatch is-label" data-option-index="{{ option_index }}" id="{{select_id}}_{{ option_index }}">
+		   	{%- if downcased_option == 'size' or downcased_option == 'sizes' or downcased_option == 'taille' or downcased_option == lang_option or gl_size_name contains downcased_option_check -%}
+		   	   {%- if select_id != 'gl_select_quick' and settings.size_chart -%}
+		   	       <h4 class="swatch__title{%- if product.metafields.meta.image_size_chart != blank or collection.metafields.meta.image_size_chart != blank or settings.image_size_chart != blank %} extra-link{%- endif -%}">{{option.name}}{%- if product.metafields.meta.image_size_chart != blank or collection.metafields.meta.image_size_chart != blank or settings.image_size_chart != blank %}<a class="cd chp jas-magnific-image f__libre" href="{%- if product.metafields.meta.image_size_chart != blank -%}{{product.metafields.meta.image_size_chart}}{%- elsif collection.metafields.meta.image_size_chart != blank-%}{{collection.metafields.meta.image_size_chart}}{%- else -%}{{ settings.image_size_chart | img_url: '1x1' | replace: '_1x1', ''  }}{%- endif -%}">{{ 'products.product.product_size_guide' | t }}</a>{%- endif -%}</h4>
+		   	   {%- else -%}
+		   	       <h4 class="swatch__title">{{option.name}}</h4>
+		   	   {%- endif -%}
+		   	{%- else -%}
+		   	<h4 class="swatch__title">{{option.name}}</h4>
+		   	{%- endif -%}
+		   	<div class="input-dropdown-inner dib input-dropdown-inner_{{class_input}}" data-id="{{ option_index }}">
+			   	{%- for value in option.values -%}
+			   	  {%- if first_available_variant and option.selected_value == value -%}
+			   	    <a href="#" data-val="{{ value | handleize }}">{{ value }}</a>
+                    {%- break -%}
+                  {%- elsif forloop.first == true and product.selected_variant == blank and first_available_variant == false %}
+                  <a href="#" data-val="{{ value | handleize }}">{{ value }}</a>
+                  {%- break -%}
+                  {%- elsif option.selected_value == value and product.selected_variant != blank and first_available_variant == false %}
+                  <a href="#" data-val="{{ value | handleize }}">{{ value }}</a>
+                  {%- break -%}
+                  {%- endif %}
+               {%- endfor -%}
+			   	<ul class="swatches-select dropdown-list" data-attribute="pa_{{option.name | handleize}}" data-id="{{ option_index }}">
+			   		{%- for value in option.values -%}
+			   		   <li class="gecko-swatch bg_css_{{ value | handleize }}{%- if first_available_variant and option.selected_value == value %} is-selected{%- elsif forloop.first == true and product.selected_variant == blank and first_available_variant == false %} is-selected{%- elsif option.selected_value == value and product.selected_variant != blank and first_available_variant == false %} is-selected{%- endif -%}" data-value='{{ value | handleize }}' data-bcvalue='bc_{{ value | handleize }}'>
+			   		   	<a href="javascript:void(0);" data-val='{{ value | handleize  }}'>{{ value }}</a>
+			   		   </li>
+			   	   {%- endfor -%}
+			   	</ul>
+			   </div>
+		   </div>
+		{%- endif -%}
+   {%- endfor -%}
+</div>

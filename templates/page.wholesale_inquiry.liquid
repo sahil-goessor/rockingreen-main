@@ -1,0 +1,74 @@
+<div class="page-head pr tc page_contact_bg_image{%- if settings.contact_bg_image != blank %} page_jas_bg_image lazyload{%- endif -%}"{%- if settings.contact_bg_image != blank %} data-bgset="{%- include 'bgset', image: settings.contact_bg_image -%}" data-sizes="auto" data-parent-fit="cover" style="background-image: url({{ settings.contact_bg_image | img_url: '50x50' }});"{%- endif -%}>
+   <div class="jas-container pr">
+      <h1 class="tu mb__10 cw">{{ page.title }}</h1>
+
+     {% comment %}
+
+      <ul class="jas-breadcrumb dib oh">
+         <li class="fl home"><a href="/" title="{{ 'general.breadcrumbs.home' | t }}">{{ 'general.breadcrumbs.home' | t }}</a></li>
+         <li class="fl separator"> <i class="fa fa-angle-right"></i> </li>
+         <li class="fl current"> {{page.title }}</li>
+      </ul>
+
+     {% endcomment %}
+
+   </div>
+</div>
+<div class="jas-row jas-page">
+  <div class="jas-col-md-12 jas-col-xs-12 mt__60 mb__60" role="main" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+      <div class="jas-container">
+         <div class="jas-row mt_60 mb__60">
+            <div class="jas-col-xs-12">
+               <div class="jas-row page_contact_content">
+                  <div class="{%- if page.content.size > 0 -%}jas-col-sm-6 {% endif -%}jas-col-xs-12">
+                     <h3>Introduce Yourself!</h3>
+                     <style type="text/css">
+                       #myform label.error { color: #ff0000; }
+                     </style>
+                     <form id="myform" action="/" method="post">
+                       <p>
+                         <label for="firstname">First Name</label>
+                         <input type="text" class="w__100" id="firstname" name="firstname" value="">
+                       </p>
+                       <p>
+                         <label for="lastname">Last Name</label>
+                         <input type="text" class="w__100" id="lastname" name="lastname" value="">
+                       </p>
+                       <p>
+                         <label for="companyname">Company Name *</label>
+                         <input type="text" class="w__100" id="companyname" name="companyname" value="">
+                       </p>
+                       <p>
+                         <label for="email">Email *</label>
+                         <input type="email" class="w__100" id="emailAddress" name="email" autocorrect="off" autocapitalize="off" value="{% if customer %}{{ customer.email }}{% endif %}">
+                       </p>
+                       <p>
+                         <label for="phone">Direct Phone *</label>
+                         <input type="tel" class="w__100" id="phoneNumber" name="phone" pattern="[0-9\-]*" value="{% if customer %}{{ customer.phone }}{% endif %}">
+                       </p>
+                       <p>
+                         <label for="comments">
+                         <textarea rows="10" class="w__100" id="formComments" name="comments"></textarea>
+                       </p>
+                       <p><div class="g-recaptcha" data-sitekey="6LcO6mcaAAAAAHGd9wdZFzrpV4kEZqQel-EtNI68" data-callback="enableBtn"></div></p>
+                       <p>
+                         <input type="submit" class="btn w__100" name="submitter" id="submitBtn" value="Submit" disabled="disabled">
+                       </p>
+                       <input name="custentity_brands_carried" type="hidden" value="5" />
+                       <input name="custentity_channel" type="hidden" value="3" />
+
+                       <input name="formid" type="hidden" value="1" />
+                       <input name="h" type="hidden" value="AACffht_I13t6w_oU_81Hjm7U_VdsFEOdOA" />
+                       <input name="compid" type="hidden" value="4901978" />
+                       <input name="type" type="hidden" value="Customer" />
+                    </form>
+                  </div>
+                  {%- if page.content.size > 0 -%}
+                  <div class="jas-col-sm-6 jas-col-xs-12">{{ page.content }}</div>
+                  {%- endif -%}
+              </div>
+            </div>
+         </div>
+      </div>
+  </div>
+</div>

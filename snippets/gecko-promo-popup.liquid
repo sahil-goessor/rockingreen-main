@@ -1,0 +1,48 @@
+{%- assign template_id = template | split: '.' | first -%}
+{%- assign st = 'display_newsletter_' | append: template_id -%}
+{%- if settings[st] -%}
+<div class="gecko-promo-popup popup-quick-view mfp-hide">
+    <div class="gecko-popup-inner">
+        <div class="ypop-container-inner">
+           <div class="ypop-header{%- if settings.newsletter_bg != blank %} lazyload{%- endif -%}"{%- if settings.newsletter_bg != blank %} data-bgset="{%- include 'bgset', image: settings.newsletter_bg -%}" data-sizes="auto" data-parent-fit="cover" style="background-image: url({{ settings.newsletter_bg | img_url: '50x50' }});"{%- endif -%}>
+              <h2 class="ypop-title">{{'general.promo_popup.title' | t }}</h2>
+           </div>
+           <div class="ypop-content-wrapper">
+              <div class="ypop-content">
+                 {{settings.promo_popup_description}}
+                 <div class="ypop-content-type">
+                    <div class="ypop-form-newsletter-wrapper">
+                       <div class="message-box"></div>
+                       {%- if settings.mcsp_form_action != blank -%}
+                       <form method="post" role="form" action="{%- if settings.use_ajax_mailChimp -%}{{ settings.mcsp_form_action | replace: '/post?u', '/post-json?u' }}{%- else -%}{{ settings.mcsp_form_action }}{%- endif -%}" class="{%- if settings.use_ajax_mailChimp -%}jas_ajax_mcsp{%- endif -%}">
+                         <fieldset>
+                            <ul class="group">
+                               <li>
+                                  <div class="newsletter_form_email">
+                                     <input type="text" name="EMAIL" placeholder="{{ 'general.promo_popup.email_placeholder' | t }}" id="yit_mailchimp_newsletter_form_email_ypop" value="{%- if customer -%}{{ customer.email }}{%- endif -%}" class="email-field text-field autoclear" required="required">
+                                  </div>
+                               </li>
+                               <li class="ypop-submit">
+                                  <button type="submit" class="btn submit-field mailchimp-subscription-ajax-submit">{{ 'general.promo_popup.submit' | t }}</button>
+                               </li>
+                            </ul>
+                         </fieldset>
+                         <div class="mc4wp-response"></div>
+                      </form>
+                      {%- else -%}
+                          This Mailchimp Form Action URL doesn’t currently include any content. Add Mailchimp Form Action URL to this section using the sidebar.
+                      {%- endif -%}
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <!-- ypop-border -->
+           <div class="ypop-footer">{{ 'general.promo_popup.footer' | t }}</div>
+           <div class="ypop-checkzone">
+              <label for="hideforever_ypop">
+              <input type="checkbox" id="hideforever_ypop" name="no-view" class="no-view yith-popup-checkbox"><span>&nbsp;</span>{{'general.promo_popup.checkbox' | t }}</label>
+           </div>
+        </div>
+    </div>
+</div>
+{%- endif -%}

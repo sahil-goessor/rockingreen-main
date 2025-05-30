@@ -1,0 +1,67 @@
+<meta name="referrer" content="no-referrer-when-downgrade"/>
+
+
+<script name="littledata-tracking-tag" data-ot-ignore>
+(function(){
+	/* Data layer for Segment by Littledata app */
+	/* Version v11.0.1 */
+
+	LittledataLayer = {
+  "betaTester": false,
+  "productPageClicks": true,
+  "productListLinksHaveImages": false,
+  "productListLinksHavePrices": false,
+  "productListsOnAnyPage": false,
+  "debug": false,
+  "respectUserTrackingConsent": false,
+  "productClicks": true,
+  "hideBranding": false,
+  "referralExclusion": "/(paypal|visa|MasterCard|clicksafe|arcot\\.com|geschuetzteinkaufen|checkout\\.shopify\\.com|checkout\\.rechargeapps\\.com|portal\\.afterpay\\.com|payfort)/",
+  "segment": {
+    "userId": "shopifyCustomerId",
+    "disabledEvents": [],
+    "addRevenueToOrderCompleted": false,
+    "cookiesToTrack": [],
+    "doNotTrackReplaceState": false,
+    "usePageTypeForListName": false,
+    "writeKey": "pRE5hKP54CZYqkVVybj0igZCy3yLhJ9l",
+    "anonymizeIp": true,
+    "uniqueIdentifierForOrders": "orderNumber",
+    "uniqueIdentifierForOrdersUpdatedAt": "2023-11-14T14:19:36.230Z",
+    "ordersFilteredBySourceName": [],
+    "disabledApps": [],
+    "disabledRecurring": false,
+    "productIdentifier": "PRODUCT_ID",
+    "productIdentifierUpdatedAt": "2023-11-14T14:19:36.230Z"
+  },
+  "ecommerce": {
+    "currencyCode": "{{shop.currency}}",
+    "impressions": []
+  },
+  "pageType": "{{request.page_type}}",
+  "version": "v11.0.1",
+  "transactionWatcherURL": "https://transactions.littledata.io"
+}
+
+	{%if customer %}
+		LittledataLayer.customer = {
+			id: '{{customer.id | json}}',
+			email: {{customer.email | json}},
+			firstName: {{customer.first_name | json}},
+			lastName: {{customer.last_name | json}},
+			phone: {{customer.phone | json}},
+			createdAt: {{customer.created_at | json}},
+			address: {{customer.default_address | json}},
+			customerLifetimeValue: parseFloat({{customer.total_spent | json}} || 0),
+			purchaseCount: parseInt({{customer.orders_count | json}} || 0),
+			tags: {{customer.tags | json}},
+			generatedClientID: {{customer.metafields.littledata.clientID | json}}
+		};
+	{% endif %}
+	})();
+</script>
+
+<script async type="text/javascript" src="https://d26ky332zktp97.cloudfront.net/colibrius-s.js"></script>
+
+
+

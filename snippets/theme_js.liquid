@@ -1,0 +1,801 @@
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script><!--<![endif]-->
+<!--[if lte IE 9]><script src="{{ 'lazysizes.js' | asset_url }}"></script><![endif]-->
+<!--[if (lte IE 9) ]>{{ 'match-media.min.js' | asset_url | script_tag }}<![endif]-->
+{% if template.directory == 'customers' %}
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'shopify_common.js' | shopify_asset_url }}" ></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script><![endif]-->
+{% endif %}
+<script src="{{ 'jquery.min.js' | asset_url }}"></script>
+{%- if template.suffix == 'wishlist' or template.name == 'cart' -%}
+<!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'jquery.blockUI.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+<!--[if lte IE 9]><script src="{{ 'jquery.blockUI.js' | asset_url }}"></script><![endif]-->
+{%- endif %}
+<!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'jas_vendor.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+<!--[if lte IE 9]><script src="{{ 'jas_vendor.js' | asset_url }}"></script><![endif]-->
+{% if template.name == 'product' %}
+<!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'product_min.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+<!--[if lte IE 9]><script src="{{ 'product_min.js' | asset_url }}"></script><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'option_selection.js' | shopify_asset_url }}"></script><!--<![endif]-->
+<!--[if lte IE 9]><script src="{{ 'option_selection.js' | shopify_asset_url }}"></script><![endif]-->
+{% endif %}
+{% unless template.name == 'product' %}
+<!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'option_selection.js' | shopify_asset_url }}" defer="defer"></script><!--<![endif]-->
+<!--[if lte IE 9]><script src="{{ 'option_selection.js' | shopify_asset_url }}"></script><![endif]-->
+{%- endunless -%}
+{%- if admin_shopify -%}
+<!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'jas_theme_section.min.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+<!--[if lte IE 9]><script src="{{ 'jas_theme_section.min.js' | asset_url }}"></script><![endif]-->
+{%- else -%}
+<!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'jas_theme.min.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+<!--[if lte IE 9]><script src="{{ 'jas_theme.min.js' | asset_url }}"></script><![endif]-->
+{%- endif -%}
+{%- include 'currencies' -%}
+{%- if settings.ajax_shop == false and template.name == 'collection' -%}
+<script type="text/javascript">
+$('.shopify-ordering' ).on( 'change', 'select.orderby', function() {
+     var conceptName = $('#sort_by').find(":selected").attr("data-value");
+     window.location.href = conceptName;
+});
+</script>
+{%- endif -%}
+{%- if template.name == 'product' -%}
+  {%- include 'product_js' -%}
+  {%- include 'photoswipe' -%}
+   <script type="text/javascript">
+      {%- if settings.show_real_time_visitor -%}
+         jQuery(function(a){var min = 1,max = {{settings.real_time_max}},t=1,r={{settings.real_time_max}};
+            t=Math.ceil(t),
+            r=Math.floor(r);
+            var o=Math.floor(Math.random()*(r-t+1))+t,
+            n=["1","2","4","3","6","10","-1","-3","-2","-4","-6"],
+            h="",e="",l=["10","20","15"],h="",e="",M="";
+            setInterval(function(){
+               if(h=Math.floor(Math.random()*n.length),e=n[h],o=parseInt(o)+parseInt(e),min>=o){
+                  M=Math.floor(Math.random()*l.length);
+                  var a=l[M];o+=a
+               }
+               if(o<1 || o>max ){
+                  o=Math.floor(Math.random()*(r-t+1))+t;
+               }
+               jQuery("#number_counter>span").html((parseInt(o)));jQuery('.counter_real_time').show()
+            },{{settings.real_interval_time}}000)
+         });
+      {%- endif -%}
+      {%- if settings.use_flash_sold -%}
+         function flashSoldBar() {
+          if ($('.jas_flash_total_day').length) {
+            var minQty = {{ settings.flash_sold_min_qty }};
+            var maxQty = {{ settings.flash_sold_max_qty }};
+            var minTime = {{ settings.flash_sold_min_time }};
+            var maxTime = {{ settings.flash_sold_max_time }};
+            minQty = Math.ceil(minQty);
+            maxQty = Math.floor(maxQty);
+            minTime = Math.ceil(minTime);
+            maxTime = Math.floor(maxTime);
+
+            var qty = Math.floor(Math.random() * (maxQty - minQty + 1)) + minQty;
+            qty = parseInt(qty);
+            if(qty <= minQty){
+              qty = minQty;
+            }
+            if(qty > maxQty){
+              qty = maxQty;
+            }
+            jQuery(".jas_flash_total_day").html(qty);
+
+            var time = Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
+            time = parseInt(time);
+            if(time <= minTime){
+              time = minTime;
+            }
+            if(time > maxTime){
+              time = maxTime;
+            }
+            jQuery(".jas_flash_in_hour").html(time);
+            setInterval(function(){
+            $('.jas_flash_icon').fadeIn(function() {
+                $(this).css("visibility", "visible");
+              }).delay(400).fadeIn(function() {
+                $(this).css("visibility", "hidden");
+              }).delay(600);
+            }, 1000);
+          }
+        };
+        flashSoldBar();
+      {%- endif-%}
+      {%- if settings.enable_delivery_order or settings.enable_delivery_option -%}
+         {% if settings.enable_delivery_option %}
+            var tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + $(".date_start_delivery").data("datestart"));
+            if($(".date_start_delivery").data("datestart") > 1){ tomorrow.setDate(tomorrow.getDate() - 1); }
+            var excludeDays = "{{ settings.delivery_off_days }}";
+            excludeDays = excludeDays.split(" ");
+            $.each(excludeDays, function(key, daySingle){
+              if(daySingle === "SUN"){
+                excludeDays[key] = 0;
+              }
+              if(daySingle === "MON"){
+                excludeDays[key] = 1;
+              }
+              if(daySingle === "TUE"){
+                excludeDays[key] = 2;
+              }
+              if(daySingle === "WED"){
+                excludeDays[key] = 3;
+              }
+              if(daySingle === "THU"){
+                excludeDays[key] = 4;
+              }
+              if(daySingle === "FRI"){
+                excludeDays[key] = 5;
+              }
+              if(daySingle === "SAT"){
+                excludeDays[key] = 6;
+              }
+            });
+            if(excludeDays.length >= 7){
+            excludeDays = [];
+            }
+            do {
+              tomorrow.setDate(tomorrow.getDate() + 1);
+            } while($.inArray(tomorrow.getDay(), excludeDays) > -1);
+            var fmt = new jas_DateFmt();
+            $(".date_start_delivery").html(fmt.format(tomorrow,"%w %d %m %y"));
+
+            var tomorrow2 = new Date();
+            tomorrow2.setDate(tomorrow2.getDate() + $(".date_end_delivery").data("dateend"));
+     if($(".date_end_delivery").data("dateend") > 1){ tomorrow2.setDate(tomorrow2.getDate() - 1); }
+            do {
+              tomorrow2.setDate(tomorrow2.getDate() + 1);
+            } while($.inArray(tomorrow2.getDay(), excludeDays) > -1);
+            var fmt = new jas_DateFmt();
+            $(".date_end_delivery").html(fmt.format(tomorrow2,"%w %d %m %y"));
+          {% endif %}
+         {%- if settings.enable_delivery_order -%}
+         if ($('#jas_product_delivery').length) {
+             var startTime = new Date();
+             var endTime = new Date(startTime.getFullYear()+"/"+(startTime.getMonth()+1)+"/"+startTime.getDate()+' {{ settings.delivery_cutoff }}');
+             var timer_time = Math.round((endTime - startTime) / 60000);
+
+             var tomorrow = new Date();
+             tomorrow.setDate(tomorrow.getDate() + $('#jas_product_delivery').parent("div").find(".date_end_delivery").data("deliveryend"));
+
+             if(timer_time <= 0){
+               endTime.setDate(endTime.getDate() + 1);
+               timer_time = Math.round((endTime - startTime) / 60000);
+               tomorrow.setDate(tomorrow.getDate() + 1);
+             }
+
+             var excludeDays = "{{ settings.delivery_off_days }}";
+             excludeDays = excludeDays.split(" ");
+             $.each(excludeDays, function(key, daySingle){
+               if(daySingle === "SUN"){
+                 excludeDays[key] = 0;
+               }
+               if(daySingle === "MON"){
+                 excludeDays[key] = 1;
+               }
+               if(daySingle === "TUE"){
+                 excludeDays[key] = 2;
+               }
+               if(daySingle === "WED"){
+                 excludeDays[key] = 3;
+               }
+               if(daySingle === "THU"){
+                 excludeDays[key] = 4;
+               }
+               if(daySingle === "FRI"){
+                 excludeDays[key] = 5;
+               }
+               if(daySingle === "SAT"){
+                 excludeDays[key] = 6;
+               }
+             });
+             if(excludeDays.length >= 7){
+               excludeDays = [];
+             }
+             var tomorrow = new Date();
+             tomorrow.setDate(tomorrow.getDate() + $('#jas_product_delivery').parent("div").find(".date_end_delivery").data("deliveryend"));
+
+            if($('#jas_product_delivery').parent("div").find(".date_end_delivery").data("deliveryend") > 1){ tomorrow.setDate(tomorrow.getDate() - 1); }
+           console.log(tomorrow)
+             do {
+               tomorrow.setDate(tomorrow.getDate() + 1);
+             } while($.inArray(tomorrow.getDay(), excludeDays) > -1);
+             var fmt = new jas_DateFmt();
+             $(".date_end_delivery").html(fmt.format(tomorrow,gecko_settings.order_date_format));
+
+             var hours = Math.floor(timer_time / 60);
+             var minutes = Math.floor(timer_time % 60);
+
+             var day_wek = fmt.format(tomorrow,"%y") +' '+hours+':'+minutes;
+             var countDownDate = new Date(day_wek).getTime();
+
+             // Update the count down every 1 second
+             var x = setInterval(function() {
+
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now an the count down date
+                var distance = countDownDate - now;
+
+                // Output the result in an element with id="demo"
+                document.getElementById("jas_product_delivery").innerHTML =hours + gecko_settings.order_hours + minutes + gecko_settings.order_mins;
+
+                // If the count down is over, write some text
+                if (distance < 0) {
+                    clearInterval(x);
+                //document.getElementById("estimateTimer").innerHTML = "EXPIRED";
+                }
+            }, 100);
+         }
+         {% endif %}
+         function jas_DateFmt() {
+           this.dateMarkers = {
+             d:['getDate',function(v) { return ("0"+v).substr(-2,2)}],
+             m:['getMonth',function(v) {
+               var mthNames = ["01","02","03","04","05","06","07","08","09","10","11","12"];
+               return mthNames[v];
+             }],
+             n:['getMonth',function(v) {
+               var mthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+               return mthNames[v];
+             }],
+             w:['getDay',function(v) {
+               var dayNames = gecko_settings.order_dayNames.split(" ");
+               return dayNames[v];
+             }],
+             y:['getFullYear'],
+             H:['getHours',function(v) { return ("0"+v).substr(-2,2)}],
+             M:['getMinutes',function(v) { return ("0"+v).substr(-2,2)}],
+             S:['getSeconds',function(v) { return ("0"+v).substr(-2,2)}],
+             i:['toISOString',null]
+           };
+
+           this.format = function(date, fmt) {
+             var dateMarkers = this.dateMarkers
+             var dateTxt = fmt.replace(/%(.)/g, function(m, p){
+               var rv = date[(dateMarkers[p])[0]]()
+
+               if ( dateMarkers[p][1] != null ) rv = dateMarkers[p][1](rv)
+
+               return rv
+             });
+             var date = dateTxt.split(" ");
+             var datetxt = date[0]+' '+date[1]+'/'+date[2]+'/'+date[3];
+             return datetxt
+             //return dateTxt
+           };
+           this.format_2 = function(str, fmt) {
+             str = str+ '';
+             var mnths = {
+               Jan:"01", Feb:"02", Mar:"03", Apr:"04", May:"05", Jun:"06",
+               Jul:"07", Aug:"08", Sep:"09", Oct:"10", Nov:"11", Dec:"12"
+                 },
+                 date = str.split(" ");
+
+             return [ date[2], mnths[date[1]], date[3] ].join("/");
+           }
+         }
+         {% endif %}
+         function initGeoIP() {
+           if ( $('.jas_user_ship').length == 0 ) return false;
+           $.ajax({
+             type: 'get',
+             url: 'https://api.teathemes.net/currency',
+             success: function(data) {
+               var supported_codes_ship = gecko_settings.supported_codes_ship;
+               var countryCode = data.countryCode.toLowerCase();
+               var countryName = data.country;
+               if(supported_codes_ship === '') {
+                 $('.jas_flagImg').html('<i class="jas_flag animated flash '+countryCode+'"></i>');
+                 $('.country_user_name').text(countryName);
+               }else if(supported_codes_ship.indexOf(countryName) < 0) {
+                 $('.text_ship_fea').text({{settings.no_shipping_text | json }});
+                  $('.jas_flagImg').html('<i class="jas_flag animated flash '+countryCode+'"></i>');
+                 $('.country_user_name').text(countryName);
+               } else {
+                 $('.jas_flagImg').html('<i class="jas_flag animated flash '+countryCode+'"></i>');
+                 $('.country_user_name').text(countryName);
+               }
+             },
+              error: function() {
+                $('.jas_user_ship').hide();
+             }
+           });
+         };
+         initGeoIP();
+   </script>
+{%- endif -%}
+{%- assign template_id = template | split: '.' | first -%}
+{%- assign st = 'display_' | append: template_id -%}
+{%- assign collection_opj = collections[settings.collection_suggest] -%}
+{% if settings.enable_suggest_products and settings[st] and collection_opj.handle != blank -%}
+  {% if collection_opj.all_products_count > 0 %}
+  {%- assign colections_x = collection_opj.products -%}
+  {%- assign colections_title = colections_x | map: 'title'  -%}
+  {%- assign colections_handle = colections_x | map: 'handle'  -%}
+  {%- assign colections_img = colections_x | map: 'featured_image'  -%}
+  {%- assign time_out = settings.suggest_ivl_time -%}
+  <script>
+      jQuery(document).ready(function($) {
+        {%- if settings.show_suggest_mobile == false -%}
+          if( $(window).width() < 768 ) return;
+        {%- endif -%}
+        if ((typeof Shopify) === 'undefined') {
+        Shopify = {};
+      }
+      Shopify.resizeImage = function(image, size) {
+        try {
+          if(size == 'original') { return image; }
+          else {
+            var matches = image.match(/(.*\/[\w\-\_\.]+)\.(\w{2,4})/);
+            return matches[1] + '_' + size + '.' + matches[2];
+          }
+        } catch (e) { return image; }
+      };
+
+      var titleArray = {{ colections_title | json }},
+          handleArray = {{ colections_handle | json }},
+          imgArray = {{ colections_img | json }};
+      var curNewsIndex = 0;
+      function advanceNewsItem() {
+        ++curNewsIndex;
+        if (curNewsIndex >= handleArray.length) {
+          curNewsIndex = 0;
+        }
+        //setTickerNews(handleArray[curNewsIndex]);   // set new news item into the ticker
+        jQuery('.gecko-products-suggest').slideToggle("slow", function() {
+           setTimeout(function() {
+                {%- if settings.use_fake_location and settings.fake_location != blank -%}{%- assign arr_fake_location = settings.fake_location | replace: ' | ', '|' | replace: ' |', '|' | replace: '| ', '|' | split: '|' -%}var myArray = {{ arr_fake_location | json }},rand = Math.floor(Math.random() *{{arr_fake_location.size}});{% endif %}
+                  var fakeTimeOrder = Math.floor((Math.random() * 60) + 1);
+                $('.gecko-products-suggest .product-title').html(titleArray[curNewsIndex]).attr('href','/collections/{{collection_opj.handle}}/products/'+handleArray[curNewsIndex]);
+                $('.gecko-products-suggest .table-cell-top.img').attr('href','/collections/{{collection_opj.handle}}/products/'+handleArray[curNewsIndex]);
+                 if (imgArray[curNewsIndex] != 'undefined') {
+                    $('.gecko-products-suggest .table-cell-top.img').css('background-image', 'url(' + Shopify.resizeImage(imgArray[curNewsIndex],'90x') + ')');
+                 }
+                $('.gecko-products-suggest .minute-number').html(fakeTimeOrder);
+                {%- if settings.use_fake_location and settings.fake_location != blank -%}$('.gecko-products-suggest .from').html(myArray[rand]);{% endif %}
+                jQuery('.gecko-products-suggest').slideToggle("slow");
+           }, {{time_out | divided_by: 2.0 | ceil}}000);
+        });
+      }
+        var intervalID = setInterval(advanceNewsItem, {{time_out}}000);
+      var check_mouse = true;
+      $(".gecko-products-suggest").on({
+         mouseover: function () {
+           if (check_mouse) {
+             clearInterval(intervalID);
+             check_mouse = false;
+           }
+         },
+         mouseleave: function () {
+           intervalID = setInterval(advanceNewsItem, {{time_out}}000);
+            check_mouse = true;
+         }
+     });
+     $(document).on("click", "a.suggest-close", function(){
+        clearInterval(intervalID);
+     });
+   });
+  </script>
+  {%- endif -%}
+{%- endif -%}
+{%- if settings.header_top_text != blank and settings.animation_header_enable -%}
+<script type="text/javascript">
+var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span><span class="typed-cursor">|</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            console.log(elements)
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+         }
+    };
+</script>
+{%- endif -%}
+{%- if template.name == 'cart' -%}
+<script type="text/javascript">
+   jQuery( document ).ready(function( $ ) {
+      // var $cookieCurrency = gl_Currency.cookie.read();
+      // $(document).pjax( '.jas_btn_clear', '.jas_cart_page', {
+      //      timeout: 5000,
+      //      fragment: '.jas_cart_page',
+      //      scrollTo: false
+      // });
+      // $(document).on('submit', 'form.frm_cart_page', function(event) {
+      //    $.pjax.submit(event, '.jas_cart_pagesubmit');
+      //   $.pjax.reload('.jas_cart_page',{
+      //         timeout: 2000,
+      //         fragment: '.jas_cart_page',
+      //         scrollTo: false
+      //    });
+      // });
+      // $(document).on('click', '.product-remove a', function(event) {
+      //    $('.form.frm_cart_page').submit();
+      //    $.pjax.reload('.jas_cart_page',{
+      //         timeout: 2000,
+      //         fragment: '.jas_cart_page',
+      //         scrollTo: false
+      //    });
+      // });
+
+      // $(document).on('pjax:error', function(xhr, textStatus, error, options) {
+      //      console.log('pjax error ' + error);
+      //  });
+
+      //  $(document).on('pjax:start', function(xhr, options) {
+      //      $.blockUI({
+      //         message: null,
+      //         css: {
+      //           backgroundColor: '#fff',
+      //           opacity: 0.6
+      //         }
+      //       });
+      //  });
+
+      //  $(document).on('pjax:complete', function(xhr, textStatus, options) {
+      //       if (gecko_settings.show_multiple_currencies && $cookieCurrency !== null) {
+      //         Currency.convertAll(shopCurrency, $cookieCurrency, '.jas_cart_page span.money');
+      //       }
+      //      setTimeout(function() {$.unblockUI(); }, 600);
+      //      $.get('/cart?view=json', function(data) {
+      //      /*optional stuff to do after success */
+      //          $('.widget_shopping_cart_content').html(data);
+      //      }).always(function() {
+      //          $(".cartCount").html($('.widget_shopping_cart_body').data('count'));
+      //          geckoShopify.nanoScroller();
+      //          if (gecko_settings.show_multiple_currencies && $cookieCurrency !== null) {
+      //            Currency.convertAll(shopCurrency, $cookieCurrency, '.widget_shopping_cart_content span.money');
+      //          }
+      //      });
+
+      //  });
+
+      //  $(document).on('pjax:end', function(xhr, textStatus, options) {
+
+      //  });
+       $( document ).on( 'click', '.plus, .minus', function() {
+          $('.update-cart').prop("disabled", false);
+       });
+       $('[max]').keyup(function( event ) {
+         $('.update-cart').prop("disabled", false);
+         });
+
+        $('table .quantity:first').focus();
+        $('[max]').change(function() {
+
+          var max = parseInt($(this).attr('max'), 10);
+          var value = parseInt($(this).val(), 10) || 0;
+          if (value > max) {
+            alert({{ 'products.product.we_only_stock' | t: max: '[max]' | json }}.replace('[max]', max));
+            $(this).val(max);
+          }
+        });
+   });
+</script>
+  {% if settings.shipping_calculator == 'Enabled' and cart.item_count > 0 %}
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+    <script src="/services/javascripts/countries.js"></script>
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}"></script>
+    <script src="{{ 'jquery.cart.min.js' | asset_url }}"></script>
+    <script>
+      if( $('body').hasClass('template-cart')) {
+          Shopify.Cart.ShippingCalculator.show( {
+            submitButton: {{ settings.shipping_calculator_submit_button_label | default: 'Calculate shipping' | json }},
+            submitButtonDisabled: {{ settings.shipping_calculator_submit_button_label_disabled | default: 'Calculating...' | json }},
+            customerIsLoggedIn:  {% if customer %}true{% else %}false{% endif %},
+            moneyFormat: gecko_settings.moneyFormat
+          } );
+          var url_map = null;
+          $.ajax({
+              url: 'https://api.teathemes.net/currency',
+              dataType: 'json',
+              type: 'GET',
+              success: function(location) {
+                if( ! $('body').hasClass('logged-in')) {
+                  $("#address_country").val(location.country);
+                  $("#address_province_containerjQuery").val(location.regionName);
+                  $("#address_zip").val(location.zip);
+                }
+                url_map = 'https://maps.googleapis.com/maps/api/staticmap?center='+location.lat+','+location.lon+'&zoom=14&scale=2&size=700x400&key=AIzaSyApVvVKTrEUlRghvYDnXMTjXtAyIbmNWr8';
+                console.log(url_map);
+              },
+              error: function(data) {
+                console.log('ajax error');
+              },
+              complete: function() {
+                if( ! $('body').hasClass('logged-in')) {
+               $( "input.get-rates" ).trigger( "click" );
+             }
+               $('.shipping-rates-calculator-map').html('<img class="w__100 mb__30" src="'+url_map+'"/>');
+              }
+            });
+       }
+    </script>
+  {%- endif -%}
+  {% if settings.use_gift_wrapp and linklists.gift-wrapping.links.size > 0 and linklists.gift-wrapping.links.first.type == 'product_link' %}
+
+      {% assign id = linklists.gift-wrapping.links.first.object.variants.first.id %}
+      {% assign gift_wraps_in_cart = 0 %}
+      {% for item in cart.items %}
+        {% if item.id == id %}
+          {% assign gift_wraps_in_cart = item.quantity %}
+        {% endif %}
+      {% endfor %}
+      {% assign items_in_cart = cart.item_count | minus: gift_wraps_in_cart %}
+
+      <script>
+    {% if settings.gift_wrap_option == '2' %}
+      Shopify.Cart = Shopify.Cart || {};
+
+      Shopify.Cart.GiftWrap = {};
+
+      Shopify.Cart.GiftWrap.set = function() {
+        jQuery.ajax({
+          type: 'POST',
+          url: '/cart/update.js',
+          data: { updates: { {{ id }}: {{ items_in_cart }} }, attributes: { 'gift-wrapping': true } },
+          dataType: 'json',
+          success: function() { location.href = '/cart'; }
+        });
+      }
+
+      Shopify.Cart.GiftWrap.remove = function() {
+        jQuery.ajax({
+          type: 'POST',
+          url: '/cart/update.js',
+          data: { updates: { {{ id }}: 0 }, attributes: { 'gift-wrapping': '' } },
+          dataType: 'json',
+          success: function() { location.href = '/cart'; }
+        });
+      }
+
+      // If we have nothing but gift-wrap items in the cart.
+      {% if cart.items.size == 1 and gift_wraps_in_cart > 0 %}
+      jQuery(function() {
+        Shopify.Cart.GiftWrap.remove();
+      });
+      // If we don't have the right amount of gift-wrap items in the cart.
+      {% elsif gift_wraps_in_cart > 0 and gift_wraps_in_cart != items_in_cart %}
+      jQuery(function() {
+        Shopify.Cart.GiftWrap.set();
+      });
+      // If we have a gift-wrap item in the cart but our gift-wrapping cart attribute has not been set.
+      {% elsif gift_wraps_in_cart > 0 and cart.attributes.gift-wrapping == blank  %}
+      jQuery(function() {
+        Shopify.Cart.GiftWrap.set();
+      });
+      // If we have no gift-wrap item in the cart but our gift-wrapping cart attribute has been set.
+      {% elsif gift_wraps_in_cart == 0 and cart.attributes.gift-wrapping != blank  %}
+      jQuery(function() {
+        Shopify.Cart.GiftWrap.set();
+      });
+      {% endif %}
+
+      // When the gift-wrapping checkbox is checked or unchecked.
+      jQuery(function() {
+        jQuery('[name="attributes\[gift-wrapping\]"]').change(function() {
+          if (jQuery(this).is(':checked')) {
+            Shopify.Cart.GiftWrap.set();
+          }
+          else {
+            Shopify.Cart.GiftWrap.remove();
+          }
+        });
+      });
+    {% else %}
+      Shopify.Cart = Shopify.Cart || {};
+
+      Shopify.Cart.GiftWrap = {};
+
+      Shopify.Cart.GiftWrap.set = function() {
+        jQuery.ajax({
+          type: 'POST',
+          url: '/cart/update.js',
+          data: { updates: { {{ id }}: 1 }, attributes: { 'gift-wrapping': true } },
+          dataType: 'json',
+          success: function() { location.href = '/cart'; }
+        });
+      }
+
+      Shopify.Cart.GiftWrap.remove = function() {
+        jQuery.ajax({
+          type: 'POST',
+          url: '/cart/update.js',
+          data: { updates: { {{ id }}: 0 }, attributes: { 'gift-wrapping': '' } },
+          dataType: 'json',
+          success: function() { location.href = '/cart'; }
+        });
+      }
+
+      // If we have nothing but gift-wrap items in the cart.
+      {% if cart.items.size == 1 and gift_wraps_in_cart > 0 %}
+      jQuery(function() {
+        Shopify.Cart.GiftWrap.remove();
+      });
+      // If we have more than one gift-wrap item in the cart.
+      {% elsif gift_wraps_in_cart > 1 %}
+      jQuery(function() {
+        Shopify.Cart.GiftWrap.set();
+      });
+      // If we have a gift-wrap item in the cart but our gift-wrapping cart attribute has not been set.
+      {% elsif gift_wraps_in_cart > 0 and cart.attributes.gift-wrapping == blank  %}
+      jQuery(function() {
+        Shopify.Cart.GiftWrap.set();
+      });
+      // If we have no gift-wrap item in the cart but our gift-wrapping cart attribute has been set.
+      {% elsif gift_wraps_in_cart == 0 and cart.attributes.gift-wrapping != blank  %}
+      jQuery(function() {
+        Shopify.Cart.GiftWrap.set();
+      });
+      {% endif %}
+
+      // When the gift-wrapping checkbox is checked or unchecked.
+      jQuery(function() {
+        jQuery('[name="attributes\[gift-wrapping\]"]').change(function() {
+          if (jQuery(this).is(':checked')) {
+            Shopify.Cart.GiftWrap.set();
+          }
+          else {
+            Shopify.Cart.GiftWrap.remove();
+          }
+        });
+      });
+    {% endif %}
+  </script>
+  {% endif %}
+{%- endif -%}
+{%- if template.name == 'addresses' %}
+<script type="text/javascript">
+(function($) {
+  function customerAddressForm() {
+    var $newAddressForm = $('#AddressNewForm');
+
+    if (!$newAddressForm.length) {
+      return;
+    }
+
+    // Initialize observers on address selectors, defined in shopify_common.js
+    if (Shopify) {
+      // eslint-disable-next-line no-new
+      new Shopify.CountryProvinceSelector('AddressCountryNew', 'AddressProvinceNew', {
+        hideElement: 'AddressProvinceContainerNew'
+      });
+    }
+
+    // Initialize each edit form's country/province selector
+    $('.address-country-option').each(function() {
+      var formId = $(this).data('form-id');
+      var countrySelector = 'AddressCountry_' + formId;
+      var provinceSelector = 'AddressProvince_' + formId;
+      var containerSelector = 'AddressProvinceContainer_' + formId;
+
+      // eslint-disable-next-line no-new
+      new Shopify.CountryProvinceSelector(countrySelector, provinceSelector, {
+        hideElement: containerSelector
+      });
+    });
+
+    // Toggle new/edit address forms
+    $('.address-new-toggle').on('click', function() {
+      $newAddressForm.toggleClass('hide');
+    });
+
+    $('.address-edit-toggle').on('click', function() {
+      var formId = $(this).data('form-id');
+      $('#EditAddress_' + formId).toggleClass('hide');
+    });
+
+    $('.address-delete').on('click', function() {
+      var $el = $(this);
+      var formId = $el.data('form-id');
+      var confirmMessage = $el.data('confirm-message');
+
+      // eslint-disable-next-line no-alert
+      if (confirm(confirmMessage || 'Are you sure you wish to delete this address?')) {
+        Shopify.postLink('/account/addresses/' + formId, {parameters: {_method: 'delete'}});
+      }
+    });
+  }
+  customerAddressForm();
+}(jQuery));
+</script>
+{%- endif -%}
+<script>
+      // Opera 8.0+
+ var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+ // Firefox 1.0+
+ var isFirefox = typeof InstallTrigger !== 'undefined';
+
+ // Safari 3.0+ "[object HTMLElementConstructor]"
+ var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+
+ // Internet Explorer 6-11
+ var isIE = /*@cc_on!@*/false || !!document.documentMode;
+
+ // Edge 20+
+ var isEdge = !isIE && !!window.StyleMedia;
+
+ // Chrome 1+
+ var isChrome = !!window.chrome && !!window.chrome.webstore;
+
+ // Blink engine detection
+ var isBlink = (isChrome || isOpera) && !!window.CSS;
+   //Check if browser is IE
+ if (isIE) {
+   document.getElementsByTagName('body')[0].className+=' browser-IE';
+ }
+ //Check if browser is Chrome
+ else if (isChrome) {
+   document.getElementsByTagName('body')[0].className+=' browser-Chrome';
+ }
+ //Check if browser is Firefox
+ else if (isFirefox) {
+   document.getElementsByTagName('body')[0].className+=' browser-Firefox';
+ }
+ //Check if browser is Safari
+ else if (isSafari) {
+   document.getElementsByTagName('body')[0].className+=' browser-Safari';
+ }
+ //Check if browser is Opera
+ else if (isOpera) {
+   document.getElementsByTagName('body')[0].className+=' browser-Opera';
+ }
+ //Check if browser is Edge
+ else if (isEdge) {
+   document.getElementsByTagName('body')[0].className+=' browser-Edge';
+ }
+ //Check if browser is Blink
+ else if (isBlink) {
+   document.getElementsByTagName('body')[0].className+=' browser-Blink';
+ }
+</script>
+{% if template contains 'article' %}{%- include 'photoswipe_blog' -%}{% endif %}
+{%- if content_for_layout contains 'jas-banner-video' -%}<script async="async" type="text/javascript" src="https://www.youtube.com/iframe_api"></script>{% endif %}
+{%- if content_for_layout contains 'jas-gmap' and settings.api_key != blank -%}<script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key={{settings.api_key}}"></script>{%- endif -%}

@@ -1,0 +1,12 @@
+<span class="price">
+{%- if linklists[product.handle].links.size > 0 -%}
+ {{ product.price | money }}{%- if product.compare_at_price != blank -%}–{{ product.compare_at_price | money }}{%- endif -%}
+{%- else -%}
+  {%- if product.price_varies -%}
+  {{ product.price_min | money }}–{{ product.price_max | money }}
+  {%- elsif on_sale -%}<ins>{{ current_variant.price | money }}</ins> <del>{{ current_variant.compare_at_price  | money }}</del>
+  {%- else -%}
+  {{ current_variant.price | money }}
+  {%- endif -%}
+ {%- endif -%}
+</span>

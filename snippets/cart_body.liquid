@@ -1,0 +1,68 @@
+<div class="widget_shopping_cart_body gecko-scroll" data-count="{{cart.item_count}}" data-subtotal="{{cart.total_price}}">
+   <div class="gecko-scroll-content">
+      <ul class="cart_list product_list_widget tl">
+         {%- if cart.item_count > 0 -%}
+            {%- for item in cart.items -%}
+               <li class="mini_cart_item item-{{ item.id }}{%- if item.product.options.size > 1 %} mini_variant_gl{%- endif -%}">
+                  <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="tr remove" title="{{ 'cart.general.remove' | t }}" data-product_id="{{item.id}}" data-product_sku="{{item.sku}}">×</a>
+                  {%- if item.image -%}
+                     <a class="cart_item_image" href="{{ item.url | within: item.product.collections.last }}">
+                        <img width="160" height="215" src="{{ item.image | img_url: '160x' }}" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="{{image_0.alt | escape }}">
+                     </a>
+                  {%- endif -%}
+                  <div class="cart_item_info">
+                     <a href="{{ item.url | within: item.product.collections.last }}" class="item_title">{{item.product.title}}</a>
+                     {%- if item.product.has_only_default_variant == false -%}
+                     <dl class="variation">
+                     {%- for option in item.product.options -%}
+                        <dt class="variation-Color">{{ option }}:</dt>
+                        <dd class="variation-Color"><p>{{ item.variant.options[forloop.index0] }}</p></dd>
+                     {%- endfor -%}
+                     </dl>
+                     {%- endif -%}
+                     <span class="quantity">{{ item.quantity }} × <span class="shopify-Price-amount amount">{{ item.price | money }}</span></span>
+                     {%- comment -%}<a href="javascript void(0);" class="cart_add_item">Add item</a>{%- endcomment -%}
+                  </div>
+               </li>
+            {%- endfor -%}
+         {%- else -%}
+         <li class="cart__empty_message">{{ 'cart.general.empty' | t }}</li>
+         {%- endif -%}
+      </ul>
+   </div>
+</div>
+<!-- end product list -->
+{%- if cart.item_count > 0 -%}
+<div class="widget_shopping_cart_footer tl">
+   {%- if settings.cart_notes_enable_widget -%}
+   <!---<div class="gl_ajax_note">
+      <label for="SpecialInstructions" class="mb__10">{{ 'cart.general.note' | t }}</label>
+      <textarea name="note" class="input-full CartSpecialInstructions w__100" id="SpecialInstructions">{{ cart.note }}</textarea>
+   </div>-->
+   {%- endif -%}
+   <p class="total"><strong>{{ 'cart.general.subtotal' | t }}</strong><span class="shopify-Price-amount amount">{{ cart.total_price | money }}</span></p>
+   {%- if settings.use_threshold -%}{%- assign settings_free_shipping_above = settings.free_shipping_above -%}{%- include 'shipping-threshold' -%}{%- endif -%}
+   <div class="buttons form_jas_agree{%- if settings.use_agree_checkbox_pop_up %} jas_checkout pe_none{%- endif -%}">
+     <!--- <a href="/cart" class="button wc-forward">{{ 'cart.general.view_cart' | t }}</a>-->
+      {%- if settings.use_agree_checkbox_pop_up -%}
+      {%- assign page_url = pages[settings.link_conditions_pop_up].url -%}
+      <span class="agree_checkbox clearfix mt__10 tc dib">
+        <label style="display:inline; float:none" for="widget_agree_body">
+        <input type="checkbox" class="jas_agree" id="widget_agree_body">
+        <span>&nbsp;</span>
+        {%- if settings.link_conditions_pop_up != blank -%}{{ 'cart.general.link_conditions_html' | t:link: page_url }}{%- else -%}{{ 'cart.general.link_conditions_emty' | t }}{%- endif -%}</label>
+      </span>
+      {%- endif -%}
+      <a href="/checkout" class="button checkout wc-forward check" name="checkout">{{ 'cart.general.checkout' | t }}</a>
+      {% if settings.use_additional_checkout_buttons and additional_checkout_buttons %}
+      <form action="/cart" method="post" novalidate >
+        <div class="additional-checkout-buttons{%- if settings.use_agree_checkbox_pop_up %} jas_checkout{%- endif -%}">{{ content_for_additional_checkout_buttons }}</div>
+      </form>
+       {% endif %}
+   </div>
+   {%- if settings.show_trust_seal_widget and settings.cart_img_trust_seal_widget != blank -%}
+      {%- assign image = settings.cart_img_trust_seal_widget -%}
+      <div class="product_img_trust_seal tc clearfix"><img alt="{{image.alt}}" src="{{ image | img_url: '320x' }}"></div>
+   {%- endif -%}
+</div>
+{%- endif -%}

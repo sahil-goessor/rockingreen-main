@@ -1,0 +1,22 @@
+{%- if currency_header -%}
+    <ul>
+    	{%- assign title_dow = settings.language_title | downcase -%}
+       {%- for link in linklists[settings.language_link_list].links -%}
+        {%- assign link_dow = link.title | downcase -%}
+        {%- assign link_dow_2 = link.title | split: '[' | first | downcase -%}
+	    <li><a class="currency__item {{top_color }} chp db{%- if link.active or title_dow == link_dow or title_dow == link_dow_2 %} selected{%- endif -%}" href="{{ link.url }}">{{ link.title | split: '[' | first }}</a></li>
+	    {%- endfor -%}
+    </ul>
+{%- else -%}
+	<div class="jas-currency dib pr cg mr__10">
+	    <span class="dib"><span>{{ settings.language_title }}</span><i class="fa fa-angle-down ml__5"></i></span>
+	    <ul class="pa ts__03">
+	    	{%- assign title_dow = settings.language_title | downcase -%}
+	       {%- for link in linklists[settings.language_link_list].links -%}
+	        {%- assign link_dow = link.title | downcase -%}
+	        {%- assign link_dow_2 = link.title | split: '[' | first | downcase -%}
+		    <li><a class="currency__item {{top_color }} chp db{%- if link.active or title_dow == link_dow or title_dow == link_dow_2 %} selected{%- endif -%}" href="{{ link.url }}">{{ link.title | split: '[' | first }}</a></li>
+		    {%- endfor -%}
+	    </ul>
+	 </div>
+ {%- endif -%}

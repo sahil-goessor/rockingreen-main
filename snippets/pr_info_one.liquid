@@ -1,0 +1,53 @@
+<h1 class="product_title entry-title">{{ product.title }}</h1>
+{% render 'okendo-reviews-product-rating-summary', product: product %}
+<div class="flex">
+   <p class="price"{%- unless product.price_varies %} id="productPrice"{%- endunless -%}>
+    {%- if linklists[product.handle].links.size == 0 -%}
+      {%- if product.price_varies -%}
+      {{ product.price_min | money }}–{{ product.price_max | money }}
+      {%- elsif on_sale -%}<ins id="product-price">{{ current_variant.price | money }}</ins><del id="old-product-price">{{ product.selected_or_first_available_variant.compare_at_price | money }}</del>
+      {%- else -%}
+      <span id="product-price">{{ current_variant.price | money }}</span>
+      {%- endif -%}
+    {%- else -%}
+      {%- if on_sale -%}
+      {{ product.price | money }}–{{ product.compare_at_price | money }}
+      {%- else -%}
+      {{ product.price | money }}
+      {%- endif -%}
+    {%- endif -%}
+  </p>
+</div>
+{%- if settings.use_flash_sold and product.available -%}
+     <div class="jas_flash_sold_quick hide">
+        {%- if settings.flash_sold_img != blank -%}
+        <span class="jas_flash_icon_quick"><img src="{{ settings.flash_sold_img | img_url: '15x' }}" alt="{{settings.flash_sold_img.alt | default:'fire sale' }}"></span>
+        {%- endif %}
+        <span id="jas_flash_total_day_quick"></span> {{ 'products.jas_extra.flash_sold' | t }} <span id="jas_flash_in_hour_quick"></span> {{ 'products.jas_extra.flash_hours' | t }}
+    </div>
+    <div class="jas_flash_sold">
+        {%- if settings.flash_sold_img != blank -%}
+        <span class="jas_flash_icon"><img src="{{ settings.flash_sold_img | img_url: '15x' }}" alt="{{settings.flash_sold_img.alt | default:'fire sale' }}"></span>
+        {%- endif %}
+        <span class="jas_flash_total_day"></span> {{ 'products.jas_extra.flash_sold' | t }} <span class="jas_flash_in_hour"></span> {{ 'products.jas_extra.flash_hours' | t }}
+    </div>
+{%- endif -%}
+{%- if settings.use_description_excerpt -%}
+	{%- assign _prodcut_excerpt_length = settings.prodcut_excerpt_length | plus:0 -%}
+	{%- assign prodcut_excerpt_length = _prodcut_excerpt_length | default: 31 -%}
+	<div class="Shopify-product-details__short-description">
+		<p class="p_des_ex">
+	      {%- if product.metafields.meta.description_excerpt -%}
+	       {{  product.metafields.meta.description_excerpt | strip_html }}
+        {%- elsif product.metafields.global.description -%}
+           {{ product.metafields.global.description | strip_html }}
+	     {% elsif product.description contains  '[' %}
+	       {% assign pr_des = product.description | split: '[' %}
+	       {% assign pr_des = pr_des[1] | split: ']' | first | append:']' | prepend:'[' %}
+	       {{ product.description | remove: pr_des | strip_html | truncatewords: prodcut_excerpt_length }}
+	     {%-else-%}
+	       {{ product.description | strip_html | truncatewords: prodcut_excerpt_length }}
+	     {%-endif-%}
+	   </p>
+	</div>
+{%- endif -%}

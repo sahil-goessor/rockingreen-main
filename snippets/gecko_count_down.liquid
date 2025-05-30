@@ -1,0 +1,43 @@
+{%- assign data_time = user_countdown -%}
+{%- assign bl_data_time = false -%}
+{%- if user_countdown contains ',' -%}
+  {%- comment -%} 2018/01/19,2018/02/15,2018/03/20
+   int : 31/12/1991 -> 19911231
+  2018/02/05 17:34:56 {%- endcomment -%}
+  {%- assign arr_user_countdown = user_countdown | split:"," -%}
+  {%- assign current_times = 'now' | date: "%Y%m%d" | times: 1 -%}
+  {%- for t in arr_user_countdown -%}
+        {%- assign t_r = t | remove: "/" | times: 1 -%}
+        {%- if t_r >= current_times -%}
+            {%- assign data_time = t -%}
+            {%- assign bl_data_time = false -%}
+            {%- break -%}
+        {%- else -%}
+            {%- assign bl_data_time = true -%}
+        {%- endif -%}
+  {%- endfor -%}
+{%- else -%}
+  {%- assign current_times = 'now' | date: "%Y%m%d" | times: 1 -%}
+  {%- assign arr_user_countdown = user_countdown | split:" " | first -%}
+  {%- assign t_r = arr_user_countdown | remove: "/" | times: 1 -%}
+  {%- if t_r >= current_times -%}
+      {%- assign bl_data_time = false -%}
+  {%- else -%}
+      {%- assign bl_data_time = true -%}
+  {%- endif -%}
+{%- endif -%}
+{%- if user_countdown != blank and bl_data_time == false and jas_countdow_page != blank and settings.countdown_timer -%}
+    <div class="jas_progress_bar">
+      {%- if jas_countdow_page != 'jas_page_sticky' -%}<div class="gecko_progress_bar {{class}}"></div>{%- endif -%}
+      <div class="jas_countdow_page jas_clock_ticker clearfix" data-time="{{ data_time }}"></div>
+      {%- comment -%}<p class="jas_countdown_end">{{ 'products.product.end_date' | t }} {{ data_time }}</p>{%- endcomment -%}
+    </div>
+{%- elsif settings.gecko_stock_countdown and jas_countdow_page != blank -%}
+   {%- comment -%} 2018/02/05 17:34:56, 2018/02/05 23:34:56,2018/02/05 17:34:56  '%H:%M:%S'{%- endcomment -%}
+   <div class="jas_progress_bar">
+      {%- if jas_countdow_page != 'jas_page_sticky' -%}<div class="gecko_progress_bar {{class}}"></div>{%- endif -%}
+      <div class="jas_countdow_page jas_loop_bar jas_clock_ticker clearfix" data-days="{{settings.total_items_days}}" data-hours="{{settings.total_items_hours}}" data-minutes="{{settings.total_items_minutes}}" data-seconds="{{settings.total_items_seconds}}"></div>
+    </div>
+{%- elsif bl_data_time == false and jas_countdow_page == blank -%}
+    <div class="countdown-time pa"><div class="jas-countdown flex tc {{ countdown_timer_style }}" data-time="{{ data_time }}"></div></div>
+{%- endif -%}

@@ -1,0 +1,125 @@
+<script type="application/ld+json">
+	{%- if template.name == 'collection' -%}
+	    {
+		  "@graph": [
+		    {
+		      "@context": "https://schema.org/",
+		      "@type": "BreadcrumbList",
+		      "itemListElement": [
+		        {
+		          "@type": "ListItem",
+		          "position": "1",
+		          "item": {
+		            "name": "{{ 'general.breadcrumbs.home' | t }}",
+		            "@id": "{{ shop.url }}"
+		          }
+		        },
+		        {
+		          "@type": "ListItem",
+		          "position": "2",
+		          "item": {
+		            "name": "{{ collection.title}}"
+		          }
+		        }
+		      ]
+		    }{%- if collection.products.size > 0 -%},
+		    {
+		      "@context": "https://schema.org/",
+		      "@graph": [
+		        {%- for product in collection.products limit:limit -%}
+		        {
+		          "@type": "Product",
+		          "@id": "{{ product.id }}",
+		          "url": "{{ product.url | within: collection }}",
+		          "name": "{{ product.title }}"
+		        }{%- if forloop.last == false -%},{%- endif -%}
+		        {%- endfor -%}
+		      ]
+		    }{%- endif -%}
+		  ]
+		}
+	{%- else -%}
+	    {%- assign current_variant = product.selected_or_first_available_variant -%}
+	    {
+		  "@context": "https://schema.org/",
+		  "@graph": [
+		    {
+		      "@context": "https://schema.org/",
+		      "@type": "BreadcrumbList",
+		      "itemListElement": [
+		        {
+		          "@type": "ListItem",
+		          "position": "1",
+		          "item": {
+		            "name": "{{ 'general.breadcrumbs.home' | t }}",
+		            "@id": "{{ shop.url }}"
+		          }
+		        },
+		        {% if collection %}
+			        {
+			          "@type": "ListItem",
+			          "position": "2",
+			          "item": {
+			            "name": "{{ collection.title }}",
+			            "@id": "{{ collection.url }}"
+			          }
+			        },
+			        {
+			          "@type": "ListItem",
+			          "position": "3",
+			          "item": {
+			            "name": "{{ product.title }}"
+			          }
+			        }
+		        {% else %}
+		           {
+			          "@type": "ListItem",
+			          "position": "2",
+			          "item": {
+			            "name": "{{ product.title }}"
+			          }
+			        }
+		        {% endif %}
+		      ]
+		    },
+		    {
+		      "@context": "https://schema.org/",
+		      "@type": "Product",
+		      "@id": "{{ shop.url | append: '/products/' | append: product.handle }}",
+		      "url": "{{ shop.url | append: '/products/' | append: product.handle }}",
+		      "name": "{{ product.title }}",
+			   "image": "{{ product.featured_image.src | img_url: 'master' }}",
+			   "description": "{%- if product.metafields.meta.description_excerpt -%}{{  product.metafields.meta.description_excerpt | strip_html }}{%-else-%}{{ product.description | strip_html | truncatewords:100 }}{%-endif-%}",
+		      "sku": "{{current_variant.sku}}",
+		      "offers": [
+		        {
+		          "@type": "Offer",
+		          "price": "{{ current_variant.price | money_without_currency }}",
+		          "priceCurrency": "{{ shop.currency }}",
+		          "availability": "http://schema.org/{%- if product.available -%}InStock{%- else -%}OutOfStock{%- endif -%}",
+		          "url": "{{ shop.url | append: '/products/' | append: product.handle }}",
+		          "seller": {
+		            "@type": "Organization",
+		            "name": "{{ shop.name }}",
+		            "url": "{{shop.url}}"
+		          }
+		        }
+		      ]
+		      {% if product.metafields.okendo.summaryData.reviewCount > 0 %}
+                ,"aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "{{ product.metafields.okendo.summaryData.reviewAverageValue }}",
+                  "ratingCount": "{{ product.metafields.okendo.summaryData.reviewCount }}"
+                }
+              {% elsif product.metafields.okendo.ReviewCount > 0 %}
+                ,"aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "{{ product.metafields.okendo.ReviewAverageValue }}",
+                  "ratingCount": "{{ product.metafields.okendo.ReviewCount }}"
+                }
+              {% endif %}
+            }
+		  ]
+		}
+	{%- endif -%}
+</script>

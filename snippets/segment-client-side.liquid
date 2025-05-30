@@ -1,0 +1,487 @@
+<script type="text/javascript">
+function SHA1(msg){function rotate_left(n,s){var t4=(n<<s)|(n>>>(32-s));return t4;};function lsb_hex(val){var str='';var i;var vh;var vl;for(i=0;i<=6;i+=2){vh=(val>>>(i*4+4))&0x0f;vl=(val>>>(i*4))&0x0f;str+=vh.toString(16)+vl.toString(16);}
+return str;};function cvt_hex(val){var str='';var i;var v;for(i=7;i>=0;i--){v=(val>>>(i*4))&0x0f;str+=v.toString(16);}
+return str;};function Utf8Encode(string){string=string.replace(/\r\n/g,'\n');var utftext='';for(var n=0;n<string.length;n++){var c=string.charCodeAt(n);if(c<128){utftext+=String.fromCharCode(c);}
+else if((c>127)&&(c<2048)){utftext+=String.fromCharCode((c>>6)|192);utftext+=String.fromCharCode((c&63)|128);}
+else{utftext+=String.fromCharCode((c>>12)|224);utftext+=String.fromCharCode(((c>>6)&63)|128);utftext+=String.fromCharCode((c&63)|128);}}
+return utftext;};var blockstart;var i,j;var W=new Array(80);var H0=0x67452301;var H1=0xEFCDAB89;var H2=0x98BADCFE;var H3=0x10325476;var H4=0xC3D2E1F0;var A,B,C,D,E;var temp;msg=Utf8Encode(msg);var msg_len=msg.length;var word_array=new Array();for(i=0;i<msg_len-3;i+=4){j=msg.charCodeAt(i)<<24|msg.charCodeAt(i+1)<<16|msg.charCodeAt(i+2)<<8|msg.charCodeAt(i+3);word_array.push(j);}
+switch(msg_len % 4){case 0:i=0x080000000;break;case 1:i=msg.charCodeAt(msg_len-1)<<24|0x0800000;break;case 2:i=msg.charCodeAt(msg_len-2)<<24|msg.charCodeAt(msg_len-1)<<16|0x08000;break;case 3:i=msg.charCodeAt(msg_len-3)<<24|msg.charCodeAt(msg_len-2)<<16|msg.charCodeAt(msg_len-1)<<8|0x80;break;}
+word_array.push(i);while((word_array.length % 16)!=14)word_array.push(0);word_array.push(msg_len>>>29);word_array.push((msg_len<<3)&0x0ffffffff);for(blockstart=0;blockstart<word_array.length;blockstart+=16){for(i=0;i<16;i++)W[i]=word_array[blockstart+i];for(i=16;i<=79;i++)W[i]=rotate_left(W[i-3]^W[i-8]^W[i-14]^W[i-16],1);A=H0;B=H1;C=H2;D=H3;E=H4;for(i=0;i<=19;i++){temp=(rotate_left(A,5)+((B&C)|(~B&D))+E+W[i]+0x5A827999)&0x0ffffffff;E=D;D=C;C=rotate_left(B,30);B=A;A=temp;}
+for(i=20;i<=39;i++){temp=(rotate_left(A,5)+(B^C^D)+E+W[i]+0x6ED9EBA1)&0x0ffffffff;E=D;D=C;C=rotate_left(B,30);B=A;A=temp;}
+for(i=40;i<=59;i++){temp=(rotate_left(A,5)+((B&C)|(B&D)|(C&D))+E+W[i]+0x8F1BBCDC)&0x0ffffffff;E=D;D=C;C=rotate_left(B,30);B=A;A=temp;}
+for(i=60;i<=79;i++){temp=(rotate_left(A,5)+(B^C^D)+E+W[i]+0xCA62C1D6)&0x0ffffffff;E=D;D=C;C=rotate_left(B,30);B=A;A=temp;}
+H0=(H0+A)&0x0ffffffff;H1=(H1+B)&0x0ffffffff;H2=(H2+C)&0x0ffffffff;H3=(H3+D)&0x0ffffffff;H4=(H4+E)&0x0ffffffff;}
+var temp=cvt_hex(H0)+cvt_hex(H1)+cvt_hex(H2)+cvt_hex(H3)+cvt_hex(H4);return temp.toLowerCase();}
+
+ !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+  analytics.load("fkOe9Kzrg4hT85XDVIiCZeymP10sFH3T");
+
+
+  var search = location.search.substring(1);
+  var queryObj = null
+  if (search != '') {
+    queryObj = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) })
+    for (var key in queryObj) {
+      if (!key.includes('utm')) {
+	      delete queryObj[key];
+      }
+    }
+  }
+
+  var cartUrl = window.location.pathname;
+  if (cartUrl == '{{routes.cart_url}}') {
+      var data = null;
+      function fetchCartProductDetails(productHandle) {
+            $.ajax({
+              url: `/products/${productHandle}.js`,
+              async: false,
+              dataType: 'json',
+              success: function (res) {
+                data = res;
+              }
+            });
+      }
+        var cart = JSON.parse(localStorage.ldCart)
+        var cartProducts = cart.items.map(function(item) {
+            fetchCartProductDetails(item.handle)
+
+            console.log(data)
+            return {
+                product_id: item.id,
+                sku: item.sku,
+                name: item.title,
+                price: parseFloat(item.price/100),
+                url: item.url,
+                image_url: item.image,
+                variant_id: item.variant_id,
+              	barcode: data.variants[0].barcode,
+                brand: data.vendor,
+                category: data.tags[0]
+             }
+
+            }
+        )
+        queryObj != null ? analytics.page({products:cartProducts,querys: queryObj }) : analytics.page({products:cartProducts })
+  } else {
+  {% if product %}
+    queryObj != null ? analytics.page({productName:'{{product.title}}',utms: queryObj }) : analytics.page({productName:'{{product.title}}' })
+  {% else  if collection %}
+    queryObj != null ? analytics.page({collectionName:'{{collection.title}}',querys: queryObj }) : analytics.page({collectionName:'{{collection.title}}' })
+  {% else %}
+    queryObj != null ? analytics.page({querys: queryObj});; : analytics.page();
+  {% endif %}
+}
+ }}();
+
+	(function(){
+        window.dataLayer = window.dataLayer || [];
+      console.log('there is a snake in my boot')
+
+        var segmentDataLayer = {}
+        var pageView = function() {
+            {%if customer %}
+            // IDENTIFY CALL
+                analytics.identify(SHA1('{{customer.email}}'), {
+					email: '{{customer.email}}',
+					name: '{{customer.first_name}} {{customer.last_name}}'
+				});
+			{% endif %}
+        };
+
+        if (document.hidden === true) {
+            var triggeredPageView = false;
+            document.addEventListener('visibilitychange', function() {
+                if (!document.hidden && !triggeredPageView) {
+                    pageView();
+                    triggeredPageView = true;
+                }
+            });
+        } else {
+            pageView();
+        }
+
+        var hasLocalStorage = (function() {
+            try {
+                localStorage.setItem('test_storage', 'test');
+                localStorage.removeItem('test_storage');
+                return true;
+            } catch (ex) {
+                return false;
+            }
+        })();
+
+        segmentDataLayer.ecommerce = {
+            'currencyCode' : '{{shop.currency}}',
+            'impressions' : []
+        };
+
+    	{%if product%}
+
+    		var product = {{ product | json }};
+    		if (product && !product.error) {
+    			segmentDataLayer.ecommerce.detail = {products: []}
+    			segmentDataLayer.ecommerce.detail.products.push({
+                    barcode: product.variants[0].barcode,
+    				product_id: product.id,
+    				name: product.title,
+    				price: parseFloat(product.price/100),
+    				brand: product.vendor,
+                    image_url: product.featured_image,
+                    category: product.tags[0],
+                    url: '{{product.url}}',
+                    sku: product.variants[0].sku,
+                    variant_id: product.variants[0].id
+    			});
+    		}
+
+    	{% elsif search %}
+    		var searchResults = {{search.results | json}} || {};
+    	{% else %}
+    		var collectionNames = [];
+    		{% if collection.handle == "all" %}
+    			var collections = {{collections | json}};
+    		{% else %}
+    			var collections = [{{collection | json}}];
+    		{% endif %}
+
+    		if (collections && !collections.error) {
+    			collections.forEach(function(c){
+    				if (c) collectionNames.push(c.handle);
+    			});
+    		}
+
+    		var collectionProducts = {{ collection.products | json }};
+    		if (collectionProducts && !collectionProducts.error) {
+    			collectionNames.forEach(function(c){
+    				collectionProducts.forEach(function(p){
+    					segmentDataLayer.ecommerce.impressions.push({
+    						product_id: p.id,
+    						name: p.title,
+    						price: parseFloat(p.price/100),
+    						brand: p.vendor,
+    						category: p.tags[0],
+                            sku: p.variants[0].sku,
+                            collection_url: {% if collection %}'{{collection.url}}'{% else %}Null{% endif %},
+                            image_url: p.featured_image
+    					})
+    				});
+    			});
+    		}
+    	{% endif%}
+
+        segmentDataLayer.ecommerce.impressions = [...new Set(segmentDataLayer.ecommerce.impressions)]
+
+    	var loadScript = function(url, callback){
+    		var script = document.createElement("script")
+    		script.type = "text/javascript";
+
+    		if (script.readyState){  /* IE */
+    			script.onreadystatechange = function(){
+    				if (script.readyState == "loaded" ||
+    						script.readyState == "complete"){
+    					script.onreadystatechange = null;
+    					callback();
+    				}
+    			};
+    		} else {  /* Others */
+    			script.onload = function(){
+    				callback();
+    			};
+    		}
+
+    		script.src = url;
+    		document.getElementsByTagName("head")[0].appendChild(script);
+    	}
+
+        var idTracker = function($){
+        	$(document).ready(function(){
+        		if(segmentDataLayer && segmentDataLayer.ecommerce){
+        			listViewScript();
+        			productPageScript();
+        		}
+        	})
+
+        	function listViewScript(){
+        		if (!segmentDataLayer.ecommerce.impressions || !segmentDataLayer.ecommerce.impressions.length) return;
+        		window.setTimeout(function(){
+        				analytics.track('Collection Viewed', {
+                            collection_id: collections[0].id,
+        					products: segmentDataLayer.ecommerce.impressions
+        				})
+
+        		},500) /* wait for pageview to fire first */
+
+        		/* product list clicks */
+        		$('a')
+        			.filter(function(){ return this.href.indexOf('/products') !== -1}) /* only add event to products */
+        			.click(function(ev){
+        				ev.preventDefault();
+        				var self = this;
+        				var clickedProductDetails = segmentDataLayer.ecommerce.impressions.filter(function(product){
+        					var linkSplit = self.href.split('/products/')
+        					var productLink = linkSplit && linkSplit[1]
+        					return productLink == product.handle
+        				})[0];
+        				if (clickedProductDetails) {
+        					/* only wait 1 second before redirecting */
+        					self.timeout = window.setTimeout(function(){
+        						document.location = self.href;
+        					},1000)
+        						analytics.track('Product Clicked', clickedProductDetails)
+
+        				}
+        				else document.location = self.href;
+        			})
+        	}
+
+        	function productPageScript(){
+        		var product = segmentDataLayer.ecommerce.detail
+        			&& segmentDataLayer.ecommerce.detail.products
+        			&& segmentDataLayer.ecommerce.detail.products[0]
+
+        		if (product) {
+        				analytics.track('Product Viewed', product)
+        		}
+
+        		var tracker = new CartTracker();
+        		tracker.onChange(function(changes) {
+        			changes.added.forEach( function(addedProduct) {
+        				if (product) {
+        					product.variant_id = addedProduct.variant_id;
+        				}
+
+        				var productPrice = parseFloat(addedProduct.price/100);
+        				var parsedProduct = product || {
+        					product_id: addedProduct.product_id,
+        					id: addedProduct.product_id,
+        					name: addedProduct.product_title,
+        					price: productPrice,
+        					brand: addedProduct.vendor,
+        					category: addedProduct.product_type,
+        					list_name: location.pathname,
+        					handle : addedProduct.handle,
+        					variant_id: addedProduct.variant_id
+        				}
+        					analytics.track('Product Added', parsedProduct)
+
+        			})
+
+        			changes.removed.forEach( function (removedProduct) {
+        				if (product) {
+        					product.variant = removedProduct.variant_id;
+        				}
+
+
+        				var productPrice = parseFloat(removedProduct.price/100);
+        				var parsedProduct = product || {
+        					product_id: removedProduct.product_id,
+        					id: removedProduct.product_id,
+        					name: removedProduct.product_title,
+        					price: productPrice,
+        					brand: removedProduct.vendor,
+        					category: removedProduct.product_type,
+        					list_position : 1,
+        					list_name: location.pathname,
+        					handle : removedProduct.handle,
+        					variant_id: removedProduct.variant_id
+        				}
+
+        					analytics.track('Product Removed', parsedProduct)
+
+        			})
+        		})
+        	}
+
+        	function CartTracker() {
+        		var _cart = hasLocalStorage && localStorage.ldCart && JSON.parse(localStorage.ldCart)
+        		var _interval;
+        		var _onChangeCbs = [];
+        		var self = this;
+
+        		this.start = function() {
+        			interval = setInterval(function() {
+        				fetchCart(function(newCart) {
+        					if (JSON.stringify(_cart.items) !== JSON.stringify(newCart.items)) {
+        						_onChangeCbs.forEach(function(_onChangeCb) {
+        							_onChangeCb(getChanges(_cart, newCart))
+        						})
+        						_cart = newCart;
+                                console.log(newCart);
+        						if (hasLocalStorage) localStorage.ldCart = JSON.stringify(newCart);
+        					}
+
+        				})
+        			}, 2000)
+        		}
+
+        		function fetchCart(_cb) {
+        			$.getJSON('/cart.json', function(__cart) {
+        				_cb(__cart);
+        			})
+
+        		}
+
+
+
+        		function getChanges(pastCart, currentCart) {
+        			var pastCartProds = pastCart.items.map(cloneObject)
+        			var currentCardProds = currentCart.items.map(cloneObject)
+
+        			var changes = pastCartProds.length ? getArrChanges(pastCartProds, currentCardProds) : getArrChanges(currentCardProds, pastCartProds);
+        			function getArrChanges(cart1, cart2) {
+        				var returnVal = cart1
+        					.map(function(pastProd) {
+        						var currentCartProd = cart2.filter(function(prod) {
+        							if (prod.id === pastProd.id) {
+        								prod.analysed = true;
+        								return true
+        							}
+
+        							return false;
+        						})[0]
+        						var returnProd = cloneObject(pastProd);
+        						if (!currentCartProd) {
+        							returnProd.quantity = -returnProd.quantity;
+        							return returnProd;
+        						}
+
+        						returnProd.quantity = currentCartProd.quantity - pastProd.quantity;
+
+        						return returnProd;
+        					})
+        					.concat(cart2.filter(function(currentProd) { /* in case cart2 has new prods that weren't in cart */
+        						return !currentProd.analysed
+        					}))
+
+        				return returnVal
+        			}
+
+        			function unwindProds(arr) {
+        				var returnArr = [];
+
+        				arr.forEach(function(prod) {
+        					var i;
+        					var clonedProduct;
+        					var quantity = Math.abs(prod.quantity);
+        					clonedProduct = cloneObject(prod);
+        					clonedProduct.quantity = 1;
+
+        					for (i = 0; i < quantity; i++) {
+        						returnArr.push(clonedProduct);
+        					}
+        				})
+
+        				return returnArr;
+        			}
+
+        			function cloneObject (item) {
+        				return JSON.parse(JSON.stringify(item))
+        			}
+
+        			return {
+        				added: unwindProds(changes
+        					.filter(function (prod) {
+        						return pastCartProds.length ? prod.quantity > 0 : prod.quantity < 0;
+        					})),
+        				removed: unwindProds(changes
+        					.filter(function (prod) {
+        						return pastCartProds.length ? prod.quantity < 0 : prod.quantity > 0;
+        					})),
+        			}
+        		}
+
+        		this.onChange = function (newCb) { _onChangeCbs.push(newCb) }
+        		this.stop = function () { clearInterval(interval) }
+
+        		if (!_cart) {
+        			fetchCart(function(newCart) {
+        				_cart = newCart;
+        				if (hasLocalStorage) localStorage.ldCart = JSON.stringify(newCart);
+        				self.start();
+        			})
+        		} else {
+        			self.start();
+        		}
+        	}
+        }
+
+if(typeof $ === 'undefined'){
+	loadScript('//ajax.googleapis.com/ajax/libs/$/1.9.1/$.min.js', function(){
+		$191 = $.noConflict(true);
+		idTracker($191);
+		});
+	} else {
+		idTracker($);
+	}
+	      $('form').ajaxComplete(function() {
+            console.log('hello')
+            var formData = $(this).serializeArray();
+            var formObj = objectifyForm(formData)
+            let newEmail = SHA1(formObj['customer[email]'])
+            switch (formObj.form_type) {
+              case "customer_login":
+                analytics.track('Customer Login', {
+                  email: formObj['customer[email]'],
+                  date: new Date().toISOString()
+                })
+                analytics.identify({
+                  email: formObj['customer[email]']
+                })
+                break;
+              case "create_customer":
+                analytics.track('Customer Registered', {
+                  email: formObj['customer[email]'],
+                  first_name: formObj["customer[first_name]"] != '' ? formObj["customer[first_name]"] : null,
+                  last_name: formObj["customer[last_name]"] != '' ? formObj["customer[last_name]"] : null
+                })
+
+                analytics.identify({
+                  email: formObj['customer[email]'],
+                  signup_date: new Date().toISOString()
+                })
+                break;
+                default:
+                	console.log('not a form we currently track')
+            }
+          })
+
+          $(document).on('click', ".klaviyo-form button", function() {
+           	var klaviyo_email = $('.klaviyo-form input').val()
+            var modal_email = $('.klaviyo-form-version-cid_3 input').val()
+
+
+            if (validateEmail(klaviyo_email)) {
+              analytics.track('Newsletter Subscription', {
+                  email: klaviyo_email
+              })
+
+              analytics.identify(SHA1(klaviyo_email), {
+                  email: klaviyo_email,
+                  signup_date: new Date().toISOString()
+              })
+            } else if (validateEmail(modal_email)) {
+              analytics.track('Optin Form Submission', {
+                  email: modal_email
+              })
+
+              analytics.identify(SHA1(klaviyo_email), {
+                  email: modal_email,
+                  signup_date: new Date().toISOString()
+              })
+            }
+          });
+
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+	function objectifyForm(formArray) {
+      var returnArray = {};
+      for (var i = 0; i < formArray.length; i++){
+        returnArray[formArray[i]['name']] = formArray[i]['value'];
+      }
+      return returnArray
+    }
+})()
+</script>

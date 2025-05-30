@@ -1,0 +1,9 @@
+{%- if settings.header_color_scheme == 'dark' -%}
+{%- assign svg_name = 'jas-hamburger-black.svg' -%}
+{%- else -%}
+{%- assign svg_name = 'hamburger-white.svg' -%}
+{%- endif -%}
+<a href="javascript:void(0);" class="jas-push-menu-btn pr">
+   <img src="{{ svg_name | asset_url | split:'?' | first }}" width="30" height="16" alt="Menu">
+   <img src="{{ 'jas-hamburger-black.svg' | asset_url | split:'?' | first }}" width="30" height="16" alt="Menu">
+</a>
