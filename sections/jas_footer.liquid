@@ -1,9 +1,3 @@
-<style>
-  .california-privacy-link img {
-    transform: translateY(-2px);
-  }
-</style>
-
 {%- if section.blocks.size > 0 -%}
       {%- assign footer_accordions = settings.footer_accordions -%}
       {%- for block in section.blocks -%}
@@ -50,19 +44,9 @@
          {%- when 'menu' -%}
             <aside id="nav_menu-{{ block.id }}" class="widget widget_nav_menu{%- if footer_accordions and block.settings.title != blank %} footer-quick-links__collapsed{%- endif -%}">
                {%- if block.settings.title != blank -%}<h3 class="widget-title fwsb fs__16 mg__0 mb__30"><i class="footer-quick-links__toggle-icon"></i>{{ block.settings.title }}</h3>{%- endif -%}
-                <ul class="menu">
+               <ul class="menu">
                   {%- for link in linklists[block.settings.menu].links -%}
-                    {% assign link_title_down = link.title | downcase %}
-                    {%- if link_title_down contains 'privacy choices' -%}
-                      <li><a href="{{ link.url }}" class="california-privacy-link" noreferrer noopener hidden>
-                        <img width="30" height="14" src="https://polaris.truevaultcdn.com/static/assets/icons/optout-icon-blue.svg" 
-                          alt="California Consumer Privacy Act (CCPA) Opt-Out Icon" 
-                          style="vertical-align:middle" height="14px"/> {{ link.title }}</a></li>
-                    {%- elsif link_title_down contains 'california privacy notice' -%}
-                      <li><a href="{{ link.url }}" class="california-privacy-link" noreferrer noopener hidden>{{ link.title }}</a></li>
-                    {%- else -%}
-                      <li{% if link.active %} class="current-menu-item"{% endif %}><a href="{{ link.url }}">{{ link.title | split: '[' | first }}</a></li>
-                    {%- endif -%}
+                  <li{% if link.active %} class="current-menu-item"{% endif %}><a href="{{ link.url }}">{{ link.title | split: '[' | first }}</a></li>
                   {%- else -%}
                   {% capture theme_settings_footer_linklist_path %}<strong>Footer</strong> > <strong>Quick links link list</strong>{% endcapture %}
                   {{ 'general.layout.footer.instructions_for_linklist_html' | t: theme_settings_link: theme_settings_link, theme_settings_footer_linklist_path: theme_settings_footer_linklist_path }}

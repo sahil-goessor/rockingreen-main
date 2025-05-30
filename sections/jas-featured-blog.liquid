@@ -29,7 +29,7 @@
                     <article class="post-{{ article.id }}{%- if article.image %} has-post-thumbnail{%- endif -%}">
                         {%- if settings_pr_img_size and article.image -%}
                            <div class="article__grid-image-wrapper jas-product-image-equal pr mb__15 user_custom">
-                              <a class="db pr lazyload jas-pr-image-link" href="{{ article.url }}" data-bgset="{%- include 'bgset', image: article.image -%}" data-sizes="auto" data-parent-fit="cover" style="background-image: url('{{ article.image | img_url: '50x50' }});">
+                              <a aria-label="{{ article.image.alt | escape }}" class="db pr lazyload jas-pr-image-link" href="{{ article.url }}" data-bgset="{%- include 'bgset', image: article.image -%}" data-sizes="auto" data-parent-fit="cover" style="background-image: url('{{ article.image | img_url: '50x50' }});">
                                 <img class="op_0 article__grid-image w__100 lazyload" src="{{ article.image | img_url: '50x50' }}" data-src="{{ img_url }}" data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]" data-aspectratio="{{ article.image.aspect_ratio }}" data-sizes="auto" alt="{{ article.image.alt | escape }}">
                               </a>
                                <div class="jas-wrap-lazy"></div>

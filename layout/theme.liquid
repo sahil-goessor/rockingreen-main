@@ -2,10 +2,6 @@
 <html lang="{{ shop.locale }}" class="no-js"{%- if settings.use_rtl %} dir="rtl"{%- endif-%}>
 <head>
 {% render 'visually_io_sdk' %}
-  
-<!-- Start of TrueVault Polaris Code Block -->
-<script src="https://polaris.truevaultcdn.com/static/pc/3M3ZFSTTV/polaris.js"></script>
-<!-- End of TrueVault Polaris Code Block -->
 
   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -24,6 +20,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="canonical" href="{{ canonical_url}}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- End CJ Code -->
+
+ 
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-932146334"></script>
 <script>
@@ -61,7 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="{{ settings.color_button }}">
   <meta name="format-detection" content="telephone=no">
   <link rel="canonical" href="{{ canonical_url }}">
@@ -88,13 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       &ndash; {{ shop.name }}
     {%- endunless -%}
   {%- endcapture -%}
-  <title>
-    {% if page_title == 'Account' %}
-    Account Login/Register | Rockin Green
-      {% else %}
-        {{ seo_title | strip }}
-    {% endif %}
-  </title>
+  <title>{{ seo_title | strip }}</title>
   {%- if page_description -%}
     <meta name="description" content="{{ page_description | escape }}">
   {%- endif -%}
@@ -585,7 +577,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       {% comment %}include header{% endcomment %}
       {%- include 'header' -%}
       <!-- #jas-header -->
-      <div id="jas-content" class="main-page-wrapper">
+      <div id="jas-content" class="main-page-wrapper" role="main">
       {%- if template == 'collection' and settings.use_top_categories -%}{%- include 'shop_top_sidebar' -%}{%- endif -%}
           {{ content_for_layout }}
  {% include 'stockify' %}
@@ -697,6 +689,19 @@ jQuery('#myform').validate({
 <!-- Attentive snippet -->
 <script src="https://cdn.attn.tv/rockingreen/dtag.js"></script>
 <!-- End Attentive snippet -->
+
+  {{ 'a11y.js' | asset_url | script_tag }}
+  {{ 'a11y1.js' | asset_url | script_tag }}
+  {{ 'a11y.css' | asset_url | stylesheet_tag }}
+
+   <script defer src="https://officevalle.com/a11yvision/dist/main.js-1.3.1.min.js"></script>
+    <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      const colorScheme = new ColorScheme("{{ 'sample-json.json' | asset_url }}");
+      colorScheme.initializeColorScheme();
+    });
+  </script>
+
 
 
 </body>

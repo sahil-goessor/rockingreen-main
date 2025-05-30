@@ -11,7 +11,7 @@
 </div>
 <div class="jas-container">
    <div class="jas-row jas-page">
-      <div class="jas-col-md-12 jas-col-xs-12 mt__60 mb__60" role="main" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+      <div class="jas-col-md-12 jas-col-xs-12 mt__60 mb__60" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
          <div class="shopify">
             <nav class="shopify-MyAccount-navigation">
                <ul>
@@ -39,12 +39,13 @@
     <a href="/tools/recurring/login">Manage Subscriptions</a>
 </p>
 <!-- End ReCharge code -->
- (not <strong>{%- if customer.name != blank -%}{{customer.name}}{%-else-%}{{customer.email}}{%-endif-%}</strong>? <a href="/account/logout">{{ 'customer.account.sign_out' | t }}</a>)</p>
+ (not <strong>{%- if customer.name != blank -%}{{customer.name}}{%-else-%}{{customer.email}}{%-endif-%}</strong>? <a href="/account/logout" style="text-decoration: underline;">{{ 'customer.account.sign_out' | t }}</a>)</p>
                <p><strong>{{ 'customer.orders.title' | t }}</strong></p>
                {%- if customer.orders.size != 0 -%}
                   {%- paginate customer.orders by 20 -%}
                   <div class="responsive-table">
                      <table class="jas-shopify-table shopify-orders-table shopify-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
+                       <caption class="sr-only"> {{ 'customer.orders.title' | t }}</caption>
                         <thead>
                           <tr>
                             <th>{{ 'customer.orders.order_number' | t }}</th>
@@ -84,6 +85,7 @@
                <p><strong>{{ 'customer.account.details' | t }}</strong></p>
                <div class="jas-table-responsive">
                   <table class="jas-shopify-table responsive-table gl_infor_account">
+                    <caption class="sr-only">{{ 'customer.account.details' | t }}</caption>
                     <tbody>
                       <tr>
                         <td class="text-left"><strong>{{ 'customer.account.name' | t }}</strong></td>

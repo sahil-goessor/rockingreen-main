@@ -21,7 +21,7 @@
       ktToolsCss.type = "text/css";
       ktToolsCss.rel = "stylesheet";
       ktToolsCss.id = "ktTools-css";
-      ktToolsCss.href = "//rockingreen.com/cdn/shop/t/18/assets/ktTools.scss.css?v=119774868604078597621657279494";
+      ktToolsCss.href = "//rockingreen.com/cdn/shop/t/28/assets/ktTools.scss.css?v=119774868604078597621733300903";
       document.getElementsByTagName("head")[0].appendChild(ktToolsCss)
     })();
     var $action_list = $(document).find('.te-panel__footer .ui-action-list').first();

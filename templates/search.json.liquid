@@ -24,11 +24,11 @@
                    <a class="ajax-result-item-name" href="{{ product.url | within: product.collections.first }}">{{ product.title | highlight: search.terms }}</a>
                     <div class="suggestion-price price">
                        {%- if product.price_varies -%}
-                       <span class="shopify-Price-amount amount">{{ product.price_min | money }}</span> <span class="shopify-Price-amount amount">–</span> <span class="shopify-Price-amount amount">{{ product.price_max | money }}</span>
+                       <span class="shopify-Price-amount amount"> {{ product.price_min | money }}</span> <span class="shopify-Price-amount amount">–</span> <span class="shopify-Price-amount amount">{{ product.price_max | money }}</span>
                        {%- elsif on_sale -%}
-                         <ins><span class="shopify-Price-amount amount">{{ current_variant.price | money }}</span></ins><del><span class="shopify-Price-amount amount">{{ current_variant.compare_at_price  | money }}</span></del>
+                         <ins role="none"><span class="shopify-Price-amount amount"> <span class="sr-only">Discounted Price</span> {{ current_variant.price | money }}</span></ins><del role="none"><span class="shopify-Price-amount amount"><span class="sr-only">Actual Price</span>{{ current_variant.compare_at_price  | money }}</span></del>
                        {%- else -%}
-                       <span class="shopify-Price-amount amount">{{ current_variant.price | money }}</span>
+                       <span class="shopify-Price-amount amount"> {{ current_variant.price | money }}</span>
                        {%- endif -%}
                     </div>
                </div>
@@ -53,4 +53,4 @@
   <li>{{ 'general.search.placeholder' | t }}</li>
 {%- endif -%}
 {%- endcapture -%}
-{{min_html | strip_newlines | remove: "  "}}
+{{ min_html | strip_newlines | remove: '  ' }}

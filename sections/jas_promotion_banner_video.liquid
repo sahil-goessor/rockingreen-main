@@ -5,29 +5,29 @@
          <div class="jas-col-xs-12">
                {%- case section.settings.style_text -%}
                   {%- when '1' -%}
-                     {%- if section.settings.title != blank -%}<h4 class="tc tu fs__14 cw fwb mg__0">{{ section.settings.title }}</h4>{%- endif -%}
+                     {%- if section.settings.title != blank -%}<h4 class="tc tu fs__14 cw fwb mg__0 a11y_none">{{ section.settings.title }}</h4>{%- endif -%}
                      {%- if section.settings.title_last != blank -%}<h3 class="tc tu cw fs__50 fwb">{{ section.settings.title_last }}</h3>{%- endif -%}
                      {%- if section.settings.link != blank and section.settings.button != blank -%}<p class="tc mg__0"><a class="cw tu button-o-w" href="{{section.settings.link}}">{{section.settings.button}}</a></p>{%- endif -%}
                   {%- when '2' -%}
-                     {%- if section.settings.title != blank -%}<h3 class="fs__18 lh__1 f__libre tc cw">{{ section.settings.title }}</h3>{%- endif -%}
+                     {%- if section.settings.title != blank -%}<h3 class="fs__18 lh__1 f__libre tc cw a11y_none">{{ section.settings.title }}</h3>{%- endif -%}
                      {%- if section.settings.title_last != blank -%}<h2 class="tu fs__60 mt__20 mb__20 fwb lh__1 cw tc">{{ section.settings.title_last }}</h2>{%- endif -%}
                      {%- if section.settings.link != blank and section.settings.button != blank -%}<p class="tc mg__0"><a class="button-o-w tc cw" href="{{section.settings.link}}" target="_blank">{{section.settings.button}}</a></p>{%- endif -%}
                   {%- when '3' -%}
-                     {%- if section.settings.title != blank -%}<h2 class="tu fs__60 fwb cw tc mb__20 mt__0 lh__1">{{ section.settings.title }}</h2>{%- endif -%}
+                     {%- if section.settings.title != blank -%}<h2 class="tu fs__60 fwb cw tc mb__20 mt__0 lh__1 a11y_none">{{ section.settings.title }}</h2>{%- endif -%}
                      {%- if section.settings.title_last != blank -%}<h3 class="fs__18 f__libre tc cw mb__30 lh__1">{{ section.settings.title_last }}</h3>{%- endif -%}
                      {%- if section.settings.link != blank and section.settings.button != blank -%}<p class="tc mg__0"><a class="button button-o-w tc cw" href="{{section.settings.link}}" target="_blank">{{section.settings.button}}</a></p>{%- endif -%}
                   {%- when '4' -%}
                   <div class="tc">
-                     {%- if section.settings.title != blank -%}<h2 class="fs__50 tu cgreen fwb mg__0 ls__1">{{ section.settings.title }}</h2>{%- endif -%}
+                     {%- if section.settings.title != blank -%}<h2 class="fs__50 tu cgreen fwb mg__0 ls__1 a11y_none">{{ section.settings.title }}</h2>{%- endif -%}
                      {%- if section.settings.title_last != blank -%}<h4 class="fs__14 f__libre cd mg__0 ls__1 mb__20">{{ section.settings.title_last }}</h4>{%- endif -%}
                      {%- if section.settings.link != blank and section.settings.button != blank -%}<p class="mg__0"><a class="button button-o-w tc cw" href="{{section.settings.link}}" target="_blank">{{section.settings.button}}</a></p>{%- endif -%}
                   </div>
                   {%- when '5' -%}
-                     {%- if section.settings.title != blank -%}<h3 class="fs__20 f__libre tc cw lh__1 mg__0">{{ section.settings.title }}</h3>{%- endif -%}
+                     {%- if section.settings.title != blank -%}<h3 class="fs__20 f__libre tc cw lh__1 mg__0 a11y_none">{{ section.settings.title }}</h3>{%- endif -%}
                      {%- if section.settings.title_last != blank -%}<h2 class="tu fs__50 ls__1 mt__20 mb__20 fwb tc cw lh__1">{{ section.settings.title_last }}</h2>{%- endif -%}
                      {%- if section.settings.link != blank and section.settings.button != blank -%}<p class="mg__0 tc"><a class="button-o-w tc" href="{{section.settings.link}}" target="_blank">{{section.settings.button}}</a></p>{%- endif -%}
                   {%- when '6' -%}
-                    {%- if section.settings.title != blank -%}<h3 class="fs__18 lh__1 f__libre tc cw">{{ section.settings.title }}</h3>{%- endif -%}
+                    {%- if section.settings.title != blank -%}<h3 class="fs__18 lh__1 f__libre tc cw a11y_none">{{ section.settings.title }}</h3>{%- endif -%}
                     {%- if section.settings.title_last != blank -%}<h2 class="tu fs__60 mt__20 mb__20 fwb lh__1 cw tc">{{ section.settings.title_last }}</h2>{%- endif -%}
                     {%- if section.settings.link != blank and section.settings.button != blank -%}<p style="text-align: center;"><a class="button-o-w tc cw" href="{{section.settings.link}}" target="_blank" rel="noopener">{{section.settings.button}}</a></p>{%- endif -%}
                {%- endcase -%}

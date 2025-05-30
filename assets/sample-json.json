@@ -1,0 +1,23 @@
+{
+  "WHITE-GRAY": [],
+  "GRAY-WHITE": [],
+  "ENHANCED": [],
+  "ALL": [
+    {
+      "selector": "#sort_by"
+    },
+    {
+      "selector": ".searchform input:focus, .searchform button"
+    },
+    {
+      "selector": ".form-login input[type='submit'], form p.form-row"
+    },
+    {
+      "selector": "nav a .jas-menu-label.jas-menu-label-new"
+    }
+  ],
+  "DESIGN": {
+    "IconOnly": false,
+    "PlacementContainer": ""
+  }
+}

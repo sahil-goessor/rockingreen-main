@@ -10,7 +10,7 @@
 		<div class="item">
 			{%- if settings.use_eq_height_blog_related and f_article.image -%}
                <div class="f_article__grid-image-wrapper jas-product-image-equal pr mb__20 user_custom">
-                  <a class="db pr lazyload jas-pr-image-link" href="{{ f_article.url }}" data-bgset="{%- include 'bgset', image: f_article.image -%}" data-sizes="auto" data-parent-fit="cover" style="background-image: url('{{ f_article.image | img_url: '50x50' }});">
+                  <a aria-label="{{ f_article.image.alt | escape }} {{ f_article.published_at | date: '%B %e' }}" class="db pr lazyload jas-pr-image-link" href="{{ f_article.url }}" data-bgset="{%- include 'bgset', image: f_article.image -%}" data-sizes="auto" data-parent-fit="cover" style="background-image: url('{{ f_article.image | img_url: '50x50' }});">
                     <img class="op_0 f_article__grid-image w__100 lazyload" src="{{ f_article.image | img_url: '50x50' }}" data-src="{{ img_url }}" data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]" data-aspectratio="{{ f_article.image.aspect_ratio }}" data-sizes="auto" alt="{{ f_article.image.alt | escape }}">
                   </a>
                    <div class="jas-wrap-lazy"></div>
@@ -18,13 +18,13 @@
             {%- elsif f_article.image -%}
                {%- assign img_url = f_article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
                <div class="f_article__grid-image-wrapper mb__20">
-                  <a class="db pr" href="{{ f_article.url }}">
+                  <a aria-label="{{ f_article.image.alt | escape }} {{ f_article.published_at | date: '%B %e' }}" class="db pr" href="{{ f_article.url }}">
                     <img class="f_article__grid-image w__100 lazyload" src="{{ f_article.image | img_url: '50x50' }}" data-src="{{ img_url }}" data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]" data-aspectratio="{{ f_article.image.aspect_ratio }}" data-sizes="auto" alt="{{ f_article.image.alt | escape }}">
                     <div class="jas-wrap-lazy"></div>
                   </a>
                </div>
             {%- endif -%}
-		   <h5 class="mg__0 fs__14"><a class="cd chp" href="{{ f_article.url }}" tabindex="0">{{ f_article.title }}</a></h5>
+		   <h5 class="mg__0 fs__14" role="heading" aria-level="3"><a class="cd chp" href="{{ f_article.url }}" tabindex="0">{{ f_article.title }}</a></h5>
 		   <span class="f__libre">{{ f_article.published_at | date: '%B %e' }}</span>
 		</div>
         {%- endif -%}

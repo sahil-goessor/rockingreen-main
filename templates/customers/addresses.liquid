@@ -11,7 +11,7 @@
 </div>
 <div class="jas-container">
    <div class="jas-row jas-page">
-      <div class="jas-col-md-12 jas-col-xs-12 mt__60 mb__60" role="main" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+      <div class="jas-col-md-12 jas-col-xs-12 mt__60 mb__60" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
          <div class="shopify">
             <nav class="shopify-MyAccount-navigation">
                <ul>
@@ -100,7 +100,7 @@
                   <div class="u-column1 jas-col-xs-12 shopify-Address">
                      {%- if address == customer.default_address -%}
                      <header class="shopify-Address-title title">
-                        <h3 class="mb__20">{{ 'customer.addresses.default' | t }}</h3>
+                        <h3 class="mb__20" role="heading" aria-level="2">{{ 'customer.addresses.default' | t }}</h3>
                      </header>
                      {%- endif -%}
                      {{ address | format_address }}

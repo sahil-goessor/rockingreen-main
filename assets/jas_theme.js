@@ -405,12 +405,14 @@ var geckoShopify;
          if( gecko_settings.style_search != 'dropdown' ) return;
           var body = $('body'),
               searchWrapper = $('.wrapper-search-dropdown');
-          body.on('touchend click', '.gecko-search-dropdown>i', function(e) {
+          body.on('click', '.gecko-search-dropdown>i', function(e) {
               e.preventDefault();
               if( isOpened() ) {
                   closeWidget();
               } else {
-                  openWidget();
+                  setTimeout( function() {
+                      openWidget();
+                  }, 10);
               }
           })
 
@@ -434,17 +436,22 @@ var geckoShopify;
               }
           };
 
-// replace your openWidget() with something like this:
-var openWidget = function() {
-  // bind esc, add classes
-  body.bind('keyup', closeByEsc);
-  $('body').addClass('gecko-search-opened');
-  searchWrapper.addClass('search-overlap');
+          var openWidget = function() {
+               // Close by esc
+               body.bind('keyup', closeByEsc);
 
-  // **synchronous** focus call:
-  var input = searchWrapper.find('input[type="text"]');
-  input.focus();
-};
+              $('body').addClass('gecko-search-opened');
+              setTimeout(function() {
+                  searchWrapper.find('input[type="text"]').focus();
+                  // $(window).one('scroll', function() {
+                  //     if( isOpened() ) {
+                  //         closeWidget();
+                  //     }
+                  // });
+              }, 300);
+              searchWrapper.addClass('search-overlap');
+
+          };
 
           var isOpened = function() {
               return $('body').hasClass('gecko-search-opened');
