@@ -1,1 +1,2108 @@
-{"current":{"general_layout":"full_width","body_bg":"#ffffff","body_bg_repeat":"no-repeat","body_bg_size":"contain","body_bg_attachment":"default","body_bg_position":"left_top","body_bg_image":"","home_page_keywords":"","home_page_author":"","api_key":"AIzaSyDTY4k0Rg31v60qnl1SL0M9WFetuk21mXw","mcsp_form_action":"\/\/myshopify.us14.list-manage.com\/subscribe\/post?u=56b202e477d0fc9995c18aac3&amp;id=a358ae9daf","enable_update":true,"use_rtl":false,"use_additional_checkout_buttons":true,"show_backtop":false,"catalog_mode":false,"operation_days":"Mon:1700-2100,Tue:1700-2100,Wed:1700-2200,Thu:1700-2200,Fri:1700-2300,Sat:1200-2300,Sun:1200-2300","use_wishlist":false,"use_quickview":false,"show_pr_img_2":true,"show_product_rating":false,"app_review":"1","use_quickshop":false,"swatch_design_quickshop":"swatch_rectangle","quick_swatch_style_color":"1","show_product_color":false,"product_layout_setting":"1","swatch_home_size":"small","swatch_style_settings":"rounded","label_settings":"rectangular","use_sale_label":true,"label_sale_style":"1","use_sold_out_label":true,"use_new_label":false,"new_day":"30","use_hot_label":true,"style_lazy":"fade_in","body_logo_svg":"","body_logo_image":"shopify:\/\/shop_images\/new-logo_copy.png","body_logo_image_retina":"","logo_max_width":"200","logo_max_height":"200","body_logo_image_sticky":"","logo_max_width_sticky":"200","logo_max_height_sticky":"200","header_top_enable":true,"show_share_btn_header":false,"share_type_header":"1","header_top_color":"light","header_top_bg":"#3e3e3e","header_top_bg_repeat":"no-repeat","header_top_bg_size":"cover","header_top_bg_attachment":"default","header_top_bg_position":"default","header_top_bg_image":"","header_top_text":"New Privacy Policy Here","animation_header_enable":false,"top_interval_time":4,"full_header_enable":true,"sticky_header_enable":true,"header_design":"3","overlap_header_enable":false,"header_color_scheme":"dark","header_bg":"#ffffff","bg_header_sticky":"#ffffff","header_bg_repeat":"repeat","header_bg_size":"cover","header_bg_attachment":"scroll","header_bg_position":"left_top","header_bg_image":"","header_icon_style":"pe_icon","menu_color":"#4d5959","menu_color_sticky":"#4d5959","menu_mobile":"main-menu-1","use_mobile_categories":false,"gecko_search_widget":"dropdown","ajax_search":true,"only_search_products":true,"display_wishlist_icon":true,"sticky_footer_enable":false,"footer_accordions":true,"footer_color_title":"#ffffff","footer_color":"#ffffff","footer_bg":"#000000","footer_bg_repeat":"no-repeat","footer_bg_size":"cover","footer_bg_attachment":"scroll","footer_bg_position":"center_center","footer_bg_image":"","copyrights_layout":"centered","copyright_text":"<i class=\"fa fa-copyright\"><\/i>  Rockin' Green All Rights Reserved | Proudly made in the USA","bottom_menu":"","payment_icons":"1","footer_payment_image":"","login_register_enable":false,"account_header_enable":true,"use_privacy_policy":true,"privacy_policy_link":"","login_bg":"#3e3e3e","login_bg_repeat":"no-repeat","login_bg_size":"cover","login_bg_attachment":"default","login_bg_position":"center_center","login_bg_image":"","color_body_text":"#54565a","color_primary":"#4fb84f","color_secondary":"#54565a","color_sale_bg":"#4fb84f","color_new_bg":"#56cfe1","color_hot_bg":"#ff5558","color_sold_out_bg":"#999999","font_body_text":"Lato","style_body_text":"400","size_body_text":14,"font_titles_text":"lato","style_titles_text":"400","size_text_h1":48,"size_text_h2":36,"size_text_h3":28,"size_text_h4":20,"size_text_h5":16,"size_text_h6":12,"font_sub_title_text":"lato","use_top_categories":false,"top_categories_source":"top_categories_show_all","top_categories_link_list":"","use_top_breadcrumb":false,"collection_bg":"#000000","collection_bg_repeat":"no-repeat","collection_bg_size":"cover","collection_bg_attachment":"default","collection_bg_position":"center_center","collection_bg_image":"","use_specify_image":true,"collection_style":"fitRows","shop_sidebar":"full_width","shop_size_sidebar":"2","products_per_page":"12","use_pagination":"more-btn-infinite","grid_column":"4","style":"jas_pr_tc","show_vendor":false,"sale_countdown":false,"collection_countdown_style":"dark","ajax_shop":false,"ajax_scroll_top":false,"shop_filters":false,"pop_style":"pop_default","shop_show_per_page":false,"show_column_switch":false,"use_eq_height":true,"image_size":"jas_cover","filter_price_list":"$7-$50, $50-$150, $150-$500","product_sidebar":"1","size_sidebar":"2","design_products":"1","description_products":"2","main_click":"none","show_zoom_img":false,"button_art_to_cart_style":"jas_btn_2d","delivery_return":"","size_chart":false,"image_size_chart":"","product_img_trust_seal":true,"img_trust_seal":"shopify:\/\/shop_images\/RG-ICONS-AGAIN-AGAIN_251967d7-aa9a-498f-85e4-b0f0f30884ab.png","show_real_time_visitor":true,"real_time_max":60,"real_interval_time":6,"text_real":"There are","text_visitor":"visitors right now","use_flash_sold":true,"flash_sold_img":"","flash_sold_text_color":"#dd1e31","flash_sold_text_font_size":"18px","flash_sold_font_style":"600","flash_sold_min_qty":15,"flash_sold_max_qty":35,"flash_sold_min_time":4,"flash_sold_max_time":24,"use_promo_shpping":false,"product_motivator_text":"Free Shipping For Over <span class=\"money\">$100.00<\/span> to","promotion_display_user_country":false,"promotion_display_user_Flag":false,"supported_codes_ship":"","enable_country_flag":false,"shipping_text":"","no_shipping_text":"This item does not ship to","enable_delivery_option":false,"enable_delivery_order":false,"delivery_text":"Delivery","delivery_text_1":"Estimated between","delivery_start":"2","delivery_end":"10","delivery_cutoff":"16:00:00","delivery_off_days":"SAT SUN","delivery_info_text":"Will usually ship within 1 bussiness day.","show_share_btn":false,"share_type":"1","color_name_check":"","size_name_check":"","show_product_page_rating":true,"show_grouped_variant_image":false,"use_clicking_variant_image":false,"product_quantity_message":false,"use_description_excerpt":false,"prodcut_excerpt_length":"1000","show_sku":false,"show_pr_vendor":false,"show_category_product":false,"show_tag_product":false,"first_available_variant":true,"remove_sold_out":false,"btn_atc_full":true,"enable_payment_button":true,"use_eq_thumb_height":false,"image_size_thumb":"jas_cover","use_eq_nav_height":false,"image_size_nav":"jas_cover","swatch_design":"swatch_rectangle","swatch_style_color":"1","swatch_style":"1","swatch_size":"small","show_countdown":false,"show_related_products":false,"title_pr_related":"Related product","sub_title_pr_related":"Top seller in the week","style_title_pr_related":"1","related_products_use":"handle","many_related_products":20,"related_products_hover":"jas_default","related_sale_countdown":false,"related_countdown_style":"dark","show_vendor_related":true,"use_related_eq_height":true,"related_image_size":"jas_cover","related_slider_speed":6,"related_use_autoplay":false,"related_use_arrows":true,"related_use_dots":false,"related_use_loop":false,"related_sidetoshow":4,"related_sidetoshow_first":3,"related_sidetoshow_center":2,"related_sidetoshow_last":2,"show_recently_products":false,"title_pr_recently":"Recently viewed products","sub_title_pr_recently":"","style_title_pr_recently":"1","many_recently_products":10,"recently_products_hover":"jas_default","recently_sale_countdown":false,"recently_countdown_style":"dark","show_vendor_recently":true,"use_recently_eq_height":true,"recently_image_size":"jas_cover","recently_slider_speed":6,"recently_use_autoplay":true,"recently_use_arrows":true,"recently_use_dots":false,"recently_use_loop":false,"recently_sidetoshow":4,"recently_sidetoshow_first":3,"recently_sidetoshow_center":2,"recently_sidetoshow_last":2,"cart_position":"side","cart_design":"2","gecko_options_add_to_cart_action":"slide_bar","cart_notes_enable_widget":false,"show_trust_seal_widget":true,"cart_img_trust_seal_widget":"","use_threshold":false,"free_shipping_above":"100","show_related_pop_up":false,"upsell_collection_cart":"","use_agree_checkbox_pop_up":false,"link_conditions_pop_up":"","use_gift_wrapp":false,"gift_wrap_option":"1","cart_bg":"#3e3e3e","cart_bg_repeat":"no-repeat","cart_bg_size":"cover","cart_bg_attachment":"default","cart_bg_position":"center_center","cart_bg_image":"","cart_notes_enable":false,"cart_clear_enable":true,"show_cart_trust_seal_page":true,"cart_img_trust_seal_page":"","use_threshold_page":false,"use_agree_checkbox":false,"link_conditions":"","search_bg":"#000000","search_bg_repeat":"no-repeat","search_bg_size":"cover","search_bg_attachment":"default","search_bg_position":"center_center","search_bg_image":"","products_per_page_search":"12","use_pagination_search":"more-btn-infinite","grid_column_search":"3","style_search":"jas_default","show_vendor_search":true,"sale_countdown_search":true,"search_countdown_style":"dark","use_eq_height_search":false,"image_size_search":"jas_cover","show_sticky_add":true,"show_sticky_add_mobile":true,"sticky_position":"bottom","sticky_align":"center-xs","show_sticky_countdown":false,"show_sticky_img":true,"show_sticky_quantiny":false,"scrolltop":1000,"gecko_stock_countdown":false,"total_items_days":0,"total_items_hours":8,"total_items_minutes":25,"total_items_seconds":60,"total_items":60,"stock_from":10,"stock_to":40,"stock_message":"Hurry! Only {{stock_number}} left in stock.","days":"Days","hours":"Hours","minutes":"Minutes","seconds":"Seconds","stock_bg_process":"#b59677","stock_bg":"#e1dfd6","enable_suggest_products":false,"show_suggest_mobile":false,"collection_suggest":"","display_index":false,"display_product":false,"display_collection":false,"display_article":false,"display_blog":false,"display_cart":true,"display_page":false,"suggest_ivl_time":7,"use_suggest":false,"use_fake_location":false,"fake_location":"Melbourne, Australia | Washington | Nevada","show_close_suggest":true,"show_blog_slider":false,"blog_slider":"","how_many_articles_to_show":"10","slider_speed_blog":6,"use_autoplay_blog":true,"use_arrows_blog":true,"sidetoshow_blog":3,"use_eq_height_blog":true,"image_size_blog":"jas_cover","articles_per_grid_page":"10","layout_blog":"grid","post_per_row_blog_main":2,"use_eq_height_blog_main":false,"image_size_blog_main":"jas_cover","show_blog_sidebar":false,"blog_sidebar_layout":"right","blog_bg":"#3e3e3e","blog_bg_repeat":"no-repeat","blog_bg_size":"cover","blog_bg_attachment":"default","blog_bg_position":"center_center","blog_bg_image":"","show_share_btn_articles":true,"share_type_articles":"1","show_related_articles":true,"title_related_articles":"Related Articles","how_many_related_articles":"9","slider_speed_blog_related":6,"use_autoplay_blog_related":false,"use_arrows_blog_related":true,"sidetoshow_blog_related":3,"use_eq_height_blog_related":true,"image_size_blog_related":"jas_cover","blog_portfolio":"","title_portfolio":"Portfolio","description_portfolio":"Let check all of our design for logos, brandings, web design, illustrator...","portfolio_bg":"#3e3e3e","portfolio_bg_repeat":"no-repeat","portfolio_bg_size":"cover","portfolio_bg_attachment":"default","portfolio_bg_position":"center_center","portfolio_bg_image":"","projects_columns":"4","projects_spacing":"30","projects_per_page":"12","use_eq_height_portfolio":false,"image_size_portfolio":"jas_cover","portfolio_filters":true,"portfolio_tags_filter":"","show_share_btn_portfolio":true,"share_type_portfolio":"2","show_related_portfolio":true,"title_related_portfolio":"Related Portfolio","how_many_related_portfolio":"9","slider_speed_portfolio_related":6,"use_autoplay_portfolio_related":false,"use_arrows_portfolio_related":true,"sidetoshow_portfolio_related":4,"use_eq_height_portfolio_related":false,"image_size_portfolio_related":"jas_cover","contact_bg":"#3e3e3e","contact_bg_repeat":"no-repeat","contact_bg_size":"cover","contact_bg_attachment":"default","contact_bg_position":"center_center","contact_bg_image":"","use_map":false,"lat":"39.950557","lon":"-75.140658","icon_map":"","height":"526","style_json":"[{\"featureType\":\"road\",\"elementType\":\"labels\",\"stylers\":[{\"visibility\":\"off\"}]},{\"featureType\":\"poi\",\"elementType\":\"labels\",\"stylers\":[{\"visibility\":\"off\"}]},{\"featureType\":\"transit\",\"elementType\":\"labels.text\",\"stylers\":[{\"visibility\":\"off\"}]}]","about_bg":"#3e3e3e","about_bg_repeat":"no-repeat","about_bg_size":"cover","about_bg_attachment":"default","about_bg_position":"center_center","about_bg_image":"","description_about_us":"Follow your passion, and sucess will follow you","sort_faq":"text>testimonials>member","faq_bg":"#3e3e3e","faq_bg_repeat":"no-repeat","faq_bg_size":"cover","faq_bg_attachment":"default","faq_bg_position":"center_center","faq_bg_image":"","other_page_bg":"#3e3e3e","other_page_bg_repeat":"no-repeat","other_page_bg_size":"cover","other_page_bg_attachment":"default","other_page_bg_position":"center_center","other_page_bg_image":"","show_language_currencies":true,"language_title":"English","language_link_list":"","enable_popup":false,"promo_popup_hide_mobile":false,"display_newsletter_index":false,"display_newsletter_product":false,"display_newsletter_collection":false,"display_newsletter_article":false,"display_newsletter_blog":false,"display_newsletter_cart":false,"display_newsletter_page":false,"use_ajax_mailChimp":false,"newsletter_bg":"","promo_popup_description":"<h3>Sign up our newsletter and save 25% off for the next purchase!<\/h3> Subscribe to our newsletters and don’t miss new arrivals, the latest fashion updates and our promotions.","show_popup_after":"time","time_popup_delay":"2000","scroll_popup_delay":"800","number_pages":0,"popup_version":1,"enable_cookies_popup":false,"text_cookies_popup":"We use cookies to improve your experience on our website. By browsing this website, you agree to our use of cookies.","link_btn_infor":"shopify:\/\/blogs\/news","cookies_version":1,"display_popup_cookies_index":true,"display_popup_cookies_product":true,"display_popup_cookies_collection":false,"display_popup_cookies_article":false,"display_popup_cookies_blog":false,"display_popup_cookies_cart":false,"display_popup_cookies_page":false,"enable_ave_verification":false,"age_limit":18,"enter_date_of_birth":true,"age_bg":"","age_heading":"Adults only (18+)","text_age_popup":"This website contains adult material and is only suitable for those 18 years or older. Click Enter only if you are at least 18 years of age.","age_enter":"Enter","age_exit":"Exit","link_age_exit":"https:\/\/demo-gecko-plus.myshopify.com\/","age_version":1,"share_image":"","share_facebook":false,"share_twitter":false,"share_google":false,"share_pinterest":false,"share_tumblr":false,"share_email":false,"social_twitter_link":"https:\/\/twitter.com\/rockingreensoap","social_facebook_link":"https:\/\/www.facebook.com\/rockingreensoap\/","social_pinterest_link":"https:\/\/www.pinterest.com\/rockingreen\/","social_instagram_link":"https:\/\/www.instagram.com\/rockin.green.soap\/","social_tumblr_link":"","social_snapchat_link":"","social_youtube_link":"","social_vimeo_link":"","show_multiple_currencies":false,"show_multiple_visitor":true,"currency_format":"money_format","supported_currencies":"EUR - EUR | USD - USD | GBP - GBP","default_currency":"USD","show_custom_css":true,"global_custom_css":".imgg{display:none;}\n.button.checkout.wc-forward.check{\nwidth:100%!important\n}#shopify-section-1542220652634{width:750px;}\n.counter_real_time{display:none!important;}\n.fordesc{\ndisplay:block;\n}#shopify-section-1542220652634.rte{\n    text-align: center;\n    width: 750px!important;\n    margin: 0 auto;\n}\n\n.template-cart .cart_note.cross-sells{display: none!important;}\nbutton.checkout-button.alt{\n\tbackground-color: #4fb84f!important;\n}\n\n@media screen and (max-width: 480px) {\n.imgg{display:block;\nwidth:48%!important;\ndisplay:inline;\n}\n\n\n.fordesc{\ndisplay:none;\n}\n\n}\n\n\n\n\n.button.checkout.wc-forward check{width:100%!important}\n\n\n\ninput[type=\"submit\"]:not(.button-o), button, input.button-o:hover, .slick-prev, .slick-next {\n    background-color: transparent;\n}\n.counter_real_time{display:none;}\n\n.template-collection .jas-container.pr{max-width:100%!important;}\n\n.template-collection .jas-container.pr p{line-height:20px!important;}\n\n\n\n.slick-slider .slick-prev:hover,\n.slick-slider .slick-next:hover {\n\topacity: 0;\n}\n.slick-next:before {\n    content: ''!important;\n}\n#shopify-section-1546894897912 .jas_banner_img img{width:200px;}\n#shopify-section-1513736761998 .cd.chp{ \n    font-weight: 900;\n    font-size: 18px;\n}\n.jas_title_1 {\n    line-height: 40px;\n}\na.button-o-w {\n   background:#FFF!important;\n   color:green;\nborder:1px solid green;\n}#shopify-section-1628078038b5dcec46{\n  margin-top:60px!important;\n}\n#shopify-section-1628078038b5dcec46 .placeholder-noblocks.tc{display:none!important;\n}\n#shopify-section-1628078038b5dcec46 .jas_title_1.pr.mb__40{\n  font-size: 36px!important;\n    font-family: \"lato\"!important;\n    font-weight: 400;\n    font-style: normal;\n    font-style: normal!important;\n}\na.button-o-w:hover {\n   background:green!important;\n   color:white;\nborder:1px solid white;\n}\n#shopify-section-1546873178339 .fs__18.lh__1.f__libre.tc.cw{\n    font-size: 23px!important;\n    font-family: \"lato\"!important;\n    font-weight: 900!important;\n    font-style: normal!important;\n    padding-top: 10px!important;\n    padding-bottom: 10px;\nfont-weight:bold;\n}\n\t.for_mobile{display: none;}\n@media screen and (max-width: 860px) {\n\t.for_mobile{display: block;}\n\n}\np a {\n    color: #4fb84f;\n    text-decoration: underline;\n}\n\n.template-blog span.cat.pr {\ndisplay: none;\n}\n.jas-row.categories-style-default.categories-space-30{text-align:center;}\n\n.form-row input[type='submit'] {\nbackground-color:#4fb84f!important;\n}","desktop_custom_css":"","tablet_custom_css":"","landscape_custom_css":"","mobile_custom_css":"","custom_js":"","favicon":"shopify:\/\/shop_images\/1in_RGN_RGB.png","favicon_apple":"","show_favicon_counter":false,"favicon_animation":"pop","favicon_bgColor":"#b59677","favicon_textColor":"#ffffff","shipping_calculator":"Disabled","shipping_calculator_heading":"Get shipping estimates","shipping_calculator_default_country":"United States","shipping_calculator_submit_button_label":"Calculate shipping","shipping_calculator_submit_button_label_disabled":"Calculating...","checkout_header_image":"","checkout_logo_image":"","checkout_logo_position":"left","checkout_logo_size":"medium","checkout_body_background_image":"","checkout_body_background_color":"#ffffff","checkout_input_background_color_mode":"white","checkout_sidebar_background_image":"","checkout_sidebar_background_color":"#fafafa","checkout_heading_font":"Helvetica Neue","checkout_body_font":"Helvetica Neue","checkout_accent_color":"#1990c6","checkout_button_color":"#1990c6","checkout_error_color":"#ff6d6d","quick_layout_setting":"1","shipping_tab_header":"Shipping","product_flash_sold_enable":"true","product_hide_motivator_text":"false","use_ajax_add_to_cart":true,"use_compare":true,"use_jas_rtl":true,"free_shipping_above_page":"100","interval_time":"7000","sticky_quantity_message":"true","sticky_loop_show_countdown":"false","countdown_timer":"2018\/02\/05 17:34:56","color_text":"#3d4246","color_sale_text":"#7796a8","color_borders":"#e8e9eb","color_button":"#7796a8","color_button_text":"#fff","color_small_button":"#fff","color_small_button_text":"#3d4246","color_text_field":"#fff","color_text_field_text":"#000","color_image_overlay_text":"#fff","color_image_overlay":"#3d4246","image_overlay_opacity":"25","color_body_bg":"#fff","type_header_family":"Google_Lato_400_sans","type_header_base_size":"26px","type_base_family":"Google_Work+Sans_400_sans","type_base_size":"16px","type_bold_product_titles":"false","overlap_bg_header_enable":"false","banner_portfolio":"","use_specify_image_search":"true","shop_show_per_page_search":"true","right_column_width":"250","header_height":"95","header_sticky_height":"75","mobile_header_height":"60","basel_search_widget":"dropdown","footer_over_color":"#000","footer_design":"12","footer_social_design":"icons-design-default","footer_social_size":"icons-size-default","footer_color_scheme":"light","copyrights_text":"","copyrights_next_text":"","html_before_footer":"","header_text_ss":"Welcome to our store. Call free: 055 1233 32 55","show_col_mobile":"false","recently_silder_speed":"5000","recently_silder_per_view":"4","recently_hide_pagination":"false","recently_hide_button":"false","recently_slider_loop":"false","recently_autoplay":"false","related_silder_speed":"5000","related_silder_per_view":"4","related_hide_pagination":"false","related_hide_button":"false","related_slider_loop":"false","related_autoplay":"false","size_img_products":"2","use_view_360":"false","grid_columns_mb":"6","products_columns":"4","use_promo_banner_collection":"true","view_default":"grid","products_hover":"alt","loop_sale_countdown":"false","grid_list":"false","shop_image_size":"","shop_masonry_grid":"false","shop_different_grid":"false","show_des_collection":"false","show_img_second":"true","newsletter_form_action":"\/\/myshopify.us14.list-manage.com\/subscribe\/post?u=56b202e477d0fc9995c18aac3&id=f1c125553c","sections":{"1512373313144":{"type":"slideshow","blocks":{"391889b7-1f23-4b81-b67a-9c503787d94a":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/RG_Web_Banner_2024.jpg","alignment":"tc","title":"","subheading":"","text_content":"","btn_title":"Start shopping","link":"","style_btn":"1"}},"image_Rx7xGD":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/RG_Earth_Day_2024_1.png","alignment":"tc","title":"","subheading":"","text_content":"","btn_title":"","link":"","style_btn":"1"}},"image_YNzaGy":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/RG_Spring_Cleaning_2024.png","alignment":"tc","title":"","subheading":"","text_content":"","btn_title":"Start shopping","link":"","style_btn":"1"}},"02c6c010-9efc-4218-a69b-70791f5a616b":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/RG_Promotional_Banner_September_2023_3.jpg","alignment":"tc","title":"","subheading":"","text_content":"","btn_title":"Start shopping","link":"","style_btn":"1"}},"6837674e-373c-4ceb-828d-cc1c33746eaa":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/RG_Cyber_Monday_2023_Banner_af45039b-98f4-43f4-9d80-46fb91cd12bf.webp","alignment":"tc","title":"","subheading":"","text_content":"","btn_title":"Start shopping","link":"","style_btn":"1"}},"1584624217313":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/Web_Banner_Dekstop.png","alignment":"tc","title":"","subheading":"","text_content":"","btn_title":"","link":"https:\/\/rockingreen.com\/collections\/all?page=1?&sort_by=best-selling","style_btn":"1"}},"87404b3e-bb8d-4a3c-a8b6-3ac7dadaa82d":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/RG_End_Of_Summer_Web_Banner_2.png","alignment":"tr","title":"","subheading":"","text_content":"","btn_title":"","link":"shopify:\/\/collections","style_btn":"1"}},"9ea8431a-d103-41f8-a7ff-7582a8816d01":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/RG_Web_Banner_2023_1_1.jpg","alignment":"tc","title":"","subheading":"","text_content":"","btn_title":"","link":"shopify:\/\/products\/activewear-stain-remover-16-oz","style_btn":"2"}},"5c7ce348-60d2-4a66-bc46-9de342082f3b":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/RG_Promotional_Banner_July_2023_1.jpg","alignment":"tc","title":"","subheading":"","text_content":"","btn_title":"Start shopping","link":"","style_btn":"1"}}},"block_order":["391889b7-1f23-4b81-b67a-9c503787d94a","image_Rx7xGD","image_YNzaGy","02c6c010-9efc-4218-a69b-70791f5a616b","6837674e-373c-4ceb-828d-cc1c33746eaa","1584624217313","87404b3e-bb8d-4a3c-a8b6-3ac7dadaa82d","9ea8431a-d103-41f8-a7ff-7582a8816d01","5c7ce348-60d2-4a66-bc46-9de342082f3b"],"settings":{"style_slider":"organic-slider","slider_speed":7,"use_dots":false,"use_arrows":false,"use_loop":true,"use_autoplay":true,"use_background_overlay":false,"section_margin_top":"","section_margin_bottom":"","section_padding_top":"","section_padding_right":"","section_padding_bottom":"","section_padding_left":""}},"1513736761998":{"type":"jas-featured-blog","settings":{"title":"LATEST FROM THE BLOG","sub_title":"","style_title":"2","blog":"rockin-blog","post_limit":3,"post_design":"grid","post_per_row":3,"blog_show_author":false,"blog_show_author_img":false,"blog_show_date":false,"blog_show_read_more":false,"blog_show_comments":false,"show_view_all":false,"slider_speed":2,"use_autoplay":false,"use_arrows":false,"use_dots":false,"use_loop":false,"sidetoshow":3,"sidetoshow_first":3,"sidetoshow_center":2,"sidetoshow_last":1,"use_eq_height":true,"image_size":"jas_cover","use_container":false,"section_bg_color":"#f7f7f7","section_margin_top":"","section_margin_bottom":"","section_margin_left":"","section_margin_right":"","section_padding_top":"40px","section_padding_right":"","section_padding_bottom":"30px","section_padding_left":""}},"jas_filter":{"type":"jas_filter","settings":{}},"list-collections-template":{"type":"list-collections-template","blocks":{"1520390351188":{"type":"featured_collection","settings":{"collection":"active-wear-detergent","image":"shopify:\/\/shop_images\/collections_list-01-min.png","width":"4","mobile_width":"12"}},"1516008930495":{"type":"featured_collection","settings":{"collection":"cloth-diaper-detergent","image":"shopify:\/\/shop_images\/collections_list-02-min.png","width":"4","mobile_width":"12"}},"1520390455360":{"type":"featured_collection","settings":{"collection":"gift-sets-combos","image":"shopify:\/\/shop_images\/collections-list-min.jpg","width":"4","mobile_width":"12"}}},"block_order":["1520390351188","1516008930495","1520390455360"],"settings":{"display_type":"selected","sort":"alphabetical","categories_count":"products","categories_view":"View products","categories_layout":"default","categories_design":"jas_cat_default","space_categories":"20","width":"3","mobile_width":"6","slider_speed":6,"use_autoplay":true,"use_arrows":true,"use_dots":false,"use_loop":false,"speed":300,"sidetoshow":4,"sidetoshow_first":3,"sidetoshow_center":2,"sidetoshow_last":2,"use_eq_height":true,"image_size":"jas_cover"}},"section_sidebar_shop":{"type":"section_sidebar_shop","blocks":{"1516065881505":{"type":"category","settings":{"title":"Product Categories","top_categories_source":"top_categories_link_list","top_categories_link_list":""}},"1516071032013":{"type":"brand","settings":{"hidden_block":false,"title":"By Brand","arra_enter":"","use_auto_filter_tag":true,"key":"Vendor"}},"1516071051767":{"type":"color","settings":{"hidden_block":false,"title":"By Color","arra_enter":"Red,White,Brown,Blue, Black, Green, Grey, Sliver,Pink","use_auto_filter_tag":false,"key":"Color"}},"1516074571053":{"type":"size","settings":{"hidden_block":false,"title":"By Size","style":"1","arra_enter":"L,M,S,XL,XS","use_auto_filter_tag":false,"key":"Size","key_2":""}},"1516074583281":{"type":"tag","settings":{"hidden_block":false,"title":"By Tag","arra_enter":"blue,red,White","use_auto_filter_tag":false,"key":"Tag","key_2":""}},"1516074632476":{"type":"price","settings":{"hidden_block":false,"title":"By Other","arra_enter":"","use_auto_filter_tag":true,"key":"Price"}},"1516087575388":{"type":"instagram","settings":{"title":"Instagram","columns":3,"username":"jsfashionstock","limit":12,"open_link":"_self"}},"1516089143779":{"type":"collection","settings":{"title":"Sale Products","featured_product_list_collection":"","featured_product_limit_all":"3"}},"1516089162466":{"type":"recently","settings":{"title":"Recently Viewed Products"}},"1516089171419":{"type":"text","settings":{"title":"Talk about your brand","text":"<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"}},"1516089271570":{"type":"html","settings":{"title":"Custom HTML","code":"dgfgdfgdfgdf"}},"1516089285727":{"type":"shipping","settings":{"title":"SHIPPING & DELIVERY","style":"2","shipping_1":"pe-7s-car,FREE SHIPPING,Free shipping on all US order or order above $200","shipping_2":"pe-7s-help2,SUPPORT 24\/7,Contact us 24 hours a day, 7 days a week","shipping_3":"pe-7s-refresh,30 DAYS RETURN,Simply return it within 30 days for an exchange.","shipping_4":"pe-7s-door-lock,100% PAYMENT SECURE,We ensure secure payment with PEV","shipping_5":"","shipping_6":""}}},"block_order":["1516065881505","1516071032013","1516071051767","1516074571053","1516074583281","1516074632476","1516087575388","1516089143779","1516089162466","1516089171419","1516089271570","1516089285727"],"settings":{}},"section_sidebar_product":{"type":"section_sidebar_product","blocks":{"1516958594085":{"type":"collection","settings":{"title":"Sale Products","featured_product_list_collection":"","featured_product_limit_all":"3"}},"1516958612449":{"type":"shipping","settings":{"title":"SHIPPING & DELIVERY","style":"2","shipping_1":"clock-o,Save up to 20%,limited time","shipping_2":"clock-o,Save up to 20%,limited time","shipping_3":"","shipping_4":"","shipping_5":"","shipping_6":""}},"1516958647909":{"type":"instagram","settings":{"title":"Instagram","columns":3,"username":"jsfashionstock","limit":12,"open_link":"_self"}},"1516958653866":{"type":"html","settings":{"title":"Custom HTML","code":""}},"1516958656552":{"type":"text","settings":{"title":"Talk about your brand","text":"<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"}}},"block_order":["1516958594085","1516958612449","1516958647909","1516958653866","1516958656552"],"settings":{}},"product-page-description":{"type":"product-page-description","blocks":{"1516961188309":{"type":"description","settings":{"title":"Product Description"}},"1517191439457":{"type":"meta","settings":{"title":"tab 1"}},"1516961587791":{"type":"additional","settings":{"title":"Additional Information"}},"1516961575714":{"type":"review","settings":{"title":"Reviews","use_count_reviews":false}},"1517192464296":{"type":"meta","settings":{"title":"tab 2"}},"1517192494098":{"type":"meta","settings":{"title":"tab 3"}}},"block_order":["1516961188309","1517191439457","1516961587791","1516961575714","1517192464296","1517192494098"],"settings":{}},"product-page-description-2":{"type":"product-page-description-2","settings":{}},"mega_menu":{"type":"mega_menu","blocks":{"1520320587313":{"type":"dropdown","settings":{"title":"Shop","icon":"","button_link":"https:\/\/rockingreen.com\/collections\/all","label":"NEW","menu":"everyday-detergent","position":"left","color":"rgba(0,0,0,0)"}},"1542727220331":{"type":"dropdown","settings":{"title":"Bundles","icon":"","button_link":"https:\/\/rockingreen.com\/collections\/bundles","label":"","menu":"bundles-menu","position":"left","color":"#ffffff"}},"1520320779759":{"type":"dropdown","settings":{"title":"About","icon":"","button_link":"shopify:\/\/pages\/about-our-company","label":"","menu":"about-1","position":"left","color":"#ffffff"}}},"block_order":["1520320587313","1542727220331","1520320779759"],"settings":{"label_1":"","color_1":"#2f9e3c","label_2":"","color_2":"","label_3":"","color_3":"","label_4":"","color_4":"","label_5":"","color_5":""}},"mega_menu_2":{"type":"mega_menu_2","blocks":{"1519381276019":{"type":"menu_item_no_children","settings":{"title":"Home","icon":"","button_link":"","label":"","color":"#ffffff"}}},"block_order":["1519381276019"],"settings":{"label_1":"","color_1":"","label_2":"","color_2":"","label_3":"","color_3":"","label_4":"","color_4":"","label_5":"","color_5":""}},"jas_footer":{"type":"jas_footer","blocks":{"1518170288810":{"type":"text","settings":{"logo_max_width":"200","logo_max_height":"95","title_logo":"Get in Touch","textarea":"<p><i class=\"fa fa-briefcase\"> <\/i>4444 South Blvd <br><span style=\"padding-left: 22px\">Charlotte, NC 28209 <\/span><\/p>\n\t<p><i class=\"fa fa-envelope-o\"><\/i> <a href=\"mailto:Customercare@rockingreen.com\">Customercare@rockingreen.com<\/a><\/p>\n\t<p><i class=\"fa fa-phone\">\n<a href=\"tel:+18557647627\">+1 (855) 764-7627 (Toll Free)<\/a> <\/i><\/p>\n<p><i class=\"fa fa-phone\">\n<a href=\"tel:+17405737372\">+1 (740) 573-7372<\/a> <\/i><\/p>","social_enabled":true,"share_type":"2","width":"25%","width_tablet":"25%","width_mobile":"100%"}},"1518170045061":{"type":"menu","settings":{"title":"Shop","menu":"laundry-detergent","width":"25%","width_tablet":"25%","width_mobile":"100%"}},"1520332199393":{"type":"menu","settings":{"title":"Information","menu":"others","width":"25%","width_tablet":"25%","width_mobile":"100%"}},"1542812847431":{"type":"html","settings":{"title":"","custom_html":"<div class=\"klaviyo-form-H26aw8\"><\/div>","width":"25%","width_tablet":"25%","width_mobile":"100%"}}},"block_order":["1518170288810","1518170045061","1520332199393","1542812847431"],"custom_css":[],"settings":{}},"mobile_categories":{"type":"mobile_categories","settings":{}},"section_sidebar_blog":{"type":"section_sidebar_blog","blocks":{"1519463335656":{"type":"search","settings":{"title":"Search"}},"1519463396401":{"type":"categories","settings":{"title":"Categories","menu":""}},"1519462979961":{"type":"instagram","settings":{"title":"Instagram","columns":3,"username":"jsfashionstock","limit":9,"open_link":"_self"}},"1519462988313":{"type":"tags","settings":{"title":"Blog Tags"}},"1519463004416":{"type":"recently","settings":{"title":"Recently Viewed Products"}},"1519463350809":{"type":"collection","settings":{"title":"Sale Products","featured_product_list_collection":"","featured_product_limit_all":"3"}},"1519463361892":{"type":"recent","settings":{"title":"Recent Post","featured_posts_limit_all":"5"}}},"block_order":["1519463335656","1519463396401","1519462979961","1519462988313","1519463004416","1519463350809","1519463361892"],"settings":{}},"text_columns":{"type":"text_columns","blocks":{"1519699640073":{"type":"text_block","settings":{"title":"OUR MISSION","text":"<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <em>totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae<\/em> vitae dicta sunt explicabo nemo enim ipsam.<\/p>"}},"1519699643881":{"type":"text_block","settings":{"title":"OUR STORIES","text":"<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>"}},"1519699646999":{"type":"text_block","settings":{"title":"OUR APPROACH","text":"<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,&nbsp;<em>sed quia non numquam eius modi tempora incidunt ut labore<\/em>&nbsp;et dolore magnam aliquam quaerat voluptatem.<\/p>"}},"1519699649959":{"type":"text_block","settings":{"title":"OUR PHILOSOPHY","text":"<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Quis nostrum exercitationem ullam.<\/p>"}}},"block_order":["1519699640073","1519699643881","1519699646999","1519699649959"],"settings":{"margin":"","padding":"","hidden_section":false}},"testimonials":{"type":"testimonials","blocks":{"1519699658015":{"type":"quote","settings":{"quote":"<p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Quis nostrum exercitationem ullam.<\/p>"}}},"block_order":["1519699658015"],"settings":{"margin":"","padding":""}},"jas_member":{"type":"jas_member","blocks":{"1519699665282":{"type":"memberss","settings":{"image":"","title":"Lisa John","position":"Fashion Design","facebook":"#","twitter":"#","dribbble":"#","behance":"#"}},"1519699669771":{"type":"memberss","settings":{"image":"","title":"Jane Doe","position":"Director","facebook":"#","twitter":"#","dribbble":"#","behance":"#"}},"1520391095745":{"type":"memberss","settings":{"image":"","title":"Cartherin Forres","position":"Marketing Director","facebook":"#","twitter":"#","dribbble":"#","behance":"#"}}},"block_order":["1519699665282","1519699669771","1520391095745"],"settings":{"margin":"","padding":"","hidden_section":false}},"faqs":{"type":"faqs","blocks":{"1519702288013":{"type":"faq","settings":{"title":"Does Gecko theme support section","text":"Of course, Gecko support section with drag & Drop"}},"1519702294892":{"type":"faq","settings":{"title":"Does this theme have variant dropdown options?","text":"Yes, our theme support variant dropdown options."}},"1520408449953":{"type":"faq","settings":{"title":"Does Gecko support one click install ?","text":"yes, Gecko support one click import demo config, that mean you just need click to choose the layout. After that, you need config banner, products you want to show !"}},"1520408552550":{"type":"faq","settings":{"title":"How can the footer be changed?","text":"With Footer, after you import the demo layout, it already have Footer layout here. We supported a few block type and you can create unlimited Footer layout."}},"1520408638415":{"type":"faq","settings":{"title":"Can I look at your documentation? do you have this online somewhere?","text":"Yes, you can check it from https:\/\/the4.co"}},"1520408687779":{"type":"faq","settings":{"title":"Will it be possible to increase the number of rows of products for the fashion homepage","text":"My answer is YES"}},"1520408732546":{"type":"faq","settings":{"title":"Is there any way Is to adjust the logo on mobile?","text":"yes, you can add the custom CSS and paste to Custom CSS with Mobile screen"}},"1520408754849":{"type":"faq","settings":{"title":"If i want to have 2 languge in my website (English and Arabic ) is your theme support that with simple one click for the client ?","text":"You can use Langify app to have it"}},"1520408834194":{"type":"faq","settings":{"title":"I just purchased this theme and when I upload it to shopify I get this error,  zip does not contain a valid theme: missing template “layout\/theme.liquid”, missing template “templates\/index.liquid”, missing template “templates\/collection.liquid”, missing template “templates\/product.liquid”, missing template “templates\/page.liquid”, missing template “templates\/cart.liquid”, and missing template “templates\/blog.liquid”","text":"You need extract download package first before upload theme file."}},"1520408907195":{"type":"faq","settings":{"title":"Is it possible to have a different banner (and text) above each collection?","text":"Yes, you can"}},"1520408979877":{"type":"faq","settings":{"title":"How is your support system, you guys provide support if find any issue in theme?","text":"Yes, we can support you direct by email or you can post your question to our forum here: https:\/\/the4.co\/forums\/"}},"1520409040196":{"type":"faq","settings":{"title":"Is it possible to show a live search form in mobile header?","text":"Yes, it's possible :)"}},"1520409076279":{"type":"faq","settings":{"title":"My “registration” and “my account” page isn’t working. How do I activate it ?","text":"you need go to Setting > Checkout and check to require customer create account, it will work Thank you"}}},"block_order":["1519702288013","1519702294892","1520408449953","1520408552550","1520408638415","1520408687779","1520408732546","1520408754849","1520408834194","1520408907195","1520408979877","1520409040196","1520409076279"],"settings":{}},"1513070020447":{"type":"jas_product_categories","blocks":{"1513070020447-0":{"type":"featured_collection","settings":{"collection":"active-wear-detergent","image":"shopify:\/\/shop_images\/rg-jpeg-graphic-4.jpg","width":"3","mobile_width":"6"}},"1513070020447-1":{"type":"featured_collection","settings":{"collection":"everyday-detergent","image":"shopify:\/\/shop_images\/rg-jpeg-graphic2.jpg","width":"3","mobile_width":"6"}},"1513070020447-3":{"type":"featured_collection","settings":{"collection":"cloth-diaper-detergent","image":"shopify:\/\/shop_images\/rg-jpeg-graphic-3.jpg","width":"3","mobile_width":"6"}},"featured_collection_CfdHXN":{"type":"featured_collection","settings":{"collection":"hard-water-detergent","image":"shopify:\/\/shop_images\/Organic_1080x1080_2_v2.jpg","width":"3","mobile_width":"6"}}},"block_order":["1513070020447-0","1513070020447-1","1513070020447-3","featured_collection_CfdHXN"],"settings":{"title":"","sub_title":"","style_title":"2","categories_count":"","categories_view":"","categories_layout":"default","categories_design":"jas_cat_center","space_categories":"30","slider_speed":1,"use_autoplay":false,"use_arrows":false,"use_dots":true,"use_loop":true,"speed":1000,"sidetoshow":4,"sidetoshow_first":4,"sidetoshow_center":2,"sidetoshow_last":2,"use_container":false,"section_bg_color":"#ffffff","section_margin_top":"","section_margin_bottom":"","section_margin_left":"","section_margin_right":"","section_padding_top":"10","section_padding_right":"","section_padding_bottom":"","section_padding_left":""}},"shortcode_pr":{"type":"shortcode_pr","settings":{"title":"SHOP THE LOOK","collection":"","style":"jas_pr_tc","grid_column":"4","grid_columns_mb":"6","paginate_index":"3","show_vendor":false,"sale_countdown":false,"countdown_style":"dark","use_eq_height":true,"image_size":"jas_cover"}},"shortcode_pr_owl":{"type":"shortcode_pr_owl","settings":{"title":"SHOP THE LOOK","collection":"","paginate_index":"8","style":"jas_default","show_vendor":false,"sale_countdown":false,"countdown_style":"dark","use_eq_height":true,"image_size":"jas_cover","slider_speed":6,"use_autoplay":true,"use_arrows":true,"use_dots":false,"use_loop":true,"sidetoshow":3,"sidetoshow_first":3,"sidetoshow_center":2,"sidetoshow_last":2}},"shortcode_collection":{"type":"shortcode_collection","blocks":{"1520494082091":{"type":"collection","settings":{"image":""}},"1520494129007":{"type":"collection","settings":{"image":""}},"1520499552783":{"type":"collection","settings":{"image":""}},"1520499759597":{"type":"collection","settings":{"image":""}},"1520499770479":{"type":"collection","settings":{"image":""}},"1520499779595":{"type":"collection","settings":{"image":""}},"1520499792004":{"type":"collection","settings":{"image":""}}},"block_order":["1520494082091","1520494129007","1520499552783","1520499759597","1520499770479","1520499779595","1520499792004"],"settings":{"title":"MY COLLECTIONS","padding":"10"}},"gl_custom_color":{"type":"gl_custom_color","settings":{}},"1542220652634":{"type":"jas-advanced-content","blocks":{"1542220652634-0":{"type":"html","settings":{"code":"<div class=\"for_center\">\n<h2>About Rockin' Green<\/h2>Our product line was developed by a mom who was fed up with the mis-labeling of supposed “green” cleaners and frankly, not happy with the performance of other so-called eco-friendly products. Our mission is to create green cleaning products that are hard working to meet the demands of every family, gentle on sensitive skin, AND Earth-friendly.  We work everyday to make sure we release only the best formulas to you, our customer.  Since 2009, Rockin’ Green has been bringing you safe, environmentally conscious, and economical cleaning products for your home and family AND Earth-friendly.<\/div>","width":"12","alignment":"tc"}}},"block_order":["1542220652634-0"],"settings":{"section_margin_top":"","section_margin_bottom":"","section_margin_left":"10px","section_margin_right":"10px","section_padding_top":"","section_padding_right":"","section_padding_bottom":"40px","section_padding_left":""}},"1542221503112":{"type":"jas_promotion_banner","blocks":{"1542221503112-0":{"type":"promo_banner","settings":{"image":"shopify:\/\/shop_images\/screen_shot_2018-11-20_at_11.52.35_am.png","url":"https:\/\/rockingreen.com\/pages\/active-wear","hover_effect":"jas_zoom_img_banner","vertical_align":"middle","horizontal_align":"center","title":"","font_1":"","line_1":"","color_1":"#42b853","mb_1":"","text_2":"","font_2":"","line_2":"","color_2":"","mb_2":"","text_3":"","font_3":"","line_3":"","color_3":"#42b853","make_button":false,"width":"4","mobile_width":"12"}},"1542221503112-1":{"type":"promo_banner","settings":{"image":"shopify:\/\/shop_images\/screen_shot_2018-11-20_at_11.52.48_am.png","url":"https:\/\/rockingreen.com\/pages\/diaper","hover_effect":"jas_zoom_img_banner","vertical_align":"middle","horizontal_align":"center","title":"","font_1":"","line_1":"","color_1":"","mb_1":"","text_2":"","font_2":"","line_2":"","color_2":"","mb_2":"","text_3":"","font_3":"","line_3":"","color_3":"","make_button":false,"width":"4","mobile_width":"12"}},"1542221503112-2":{"type":"promo_banner","settings":{"image":"shopify:\/\/shop_images\/1_17.jpg","url":"https:\/\/rockingreen.com\/pages\/everyday","hover_effect":"jas_zoom_img_banner","vertical_align":"middle","horizontal_align":"center","title":"","font_1":"","line_1":"","color_1":"","mb_1":"","text_2":"","font_2":"","line_2":"","color_2":"","mb_2":"","text_3":"","font_3":"","line_3":"","color_3":"","make_button":false,"width":"4","mobile_width":"12"}}},"block_order":["1542221503112-0","1542221503112-1","1542221503112-2"],"settings":{"title":"Learn more","sub_title":"About our different collections","style_title":"2","categories_layout":"masonry","space_categories":"30","slider_speed":6,"use_autoplay":false,"use_arrows":false,"use_dots":false,"use_loop":false,"speed":300,"sidetoshow":3,"sidetoshow_first":3,"sidetoshow_center":3,"sidetoshow_last":3,"use_container":true,"section_bg_color":"#ffffff","section_margin_top":"","section_margin_bottom":"20px","section_margin_left":"","section_margin_right":"","section_padding_top":"40px","section_padding_right":"","section_padding_bottom":"","section_padding_left":""}},"1542293253898":{"type":"jas-advanced-content","blocks":{"1542293253898-0":{"type":"html","settings":{"code":"<img src=\"https:\/\/cdn2.shopify.com\/s\/files\/1\/1186\/4870\/files\/new_trustmarks-25-min.jpg?1701\" class=\"fordesc\" alt=\"Our products are: Plant-Based, Eco-Friendly, SLS-Free, Biodegradable, and No Phthalates.\">","width":"12","alignment":"tc"}},"22966028-6ef9-44cd-8c3c-9af4d8518d13":{"type":"html","settings":{"code":"<div class=\"imgg\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1186\/4870\/files\/Screenshot_1_b567e568-77c5-434a-bd28-ee54314e502a_256x256_crop_center.png?v=1628748258\" class=\"xx\" style=\"width:48%\"><\/div>\n<div class=\"imgg\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1186\/4870\/files\/Screenshot_2_b749b984-9ea6-460e-b555-55834fe632aa_256x256_crop_center.png?v=1628748316\" class=\"xx\" style=\"width:48%\"><\/div>\n\n\n\n\n\n<div class=\"imgg\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1186\/4870\/files\/Screenshot_3_98b85642-6f7a-406c-b204-918cd276848a_256x256_crop_center.png?v=1628748656\" style=\"width:48%\" class=\"xx\"><\/div>\n<div class=\"imgg\">\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1186\/4870\/files\/Screenshot_4_e2760c42-11ab-496a-9891-d3b61671f9ce_256x256_crop_center.png?v=1628748710\" class=\"xx\" style=\"width:48%\">\n<\/div>\n<div class=\"imgg\">\n<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1186\/4870\/files\/Screenshot_5_90d65968-b6e1-4722-9d36-9e4e7579870d_256x256_crop_center.png?v=1628748834\" class=\"xx\" style=\"width:48%\">\n<\/div>","width":"12","alignment":"tc"}}},"block_order":["1542293253898-0","22966028-6ef9-44cd-8c3c-9af4d8518d13"],"settings":{"section_margin_top":"40px","section_margin_bottom":"20px","section_margin_left":"","section_margin_right":"","section_padding_top":"","section_padding_right":"","section_padding_bottom":"","section_padding_left":""}},"1546873178339":{"type":"jas_promotion_banner_prallax","settings":{"section_bg_color":"#19191b","full_height":false,"style_text":"6","title":"Shop $45 or more and get","title_last":"FREE SHIPPING","button":"Shop now","link":"https:\/\/rockingreen.com\/collections\/all","section_margin_top":"","section_margin_bottom":"","section_margin_left":"","section_margin_right":"","section_padding_top":"","section_padding_right":"","section_padding_bottom":"","section_padding_left":"","use_parallax":true,"use_background_overlay":false}},"8b6bb1f7f6c1":{"type":"jas_promotion_banner_video","disabled":true,"settings":{"video_url":"https:\/\/www.youtube.com\/watch?v=09CN74CM2Q8","section_bg_color":"rgba(0,0,0,0)","full_height":true,"style_text":"1","title":"","title_last":"","button":"","link":"","use_container":false,"section_margin_top":"30px","section_margin_bottom":"30px","section_margin_left":"","section_margin_right":"","section_padding_top":"","section_padding_right":"400px","section_padding_bottom":"","section_padding_left":"400px","use_background_overlay":false}},"b636ace275b0":{"type":"jas-advanced-content","blocks":{"15583825032ff3bdcf-0":{"type":"html","settings":{"code":"<div class=\"el-responsive-video\" style=\"margin-left: auto; margin-right: auto;\"><iframe width=\"560\" height=\"315\" src=\"https:\/\/www.youtube.com\/embed\/09CN74CM2Q8\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"><\/iframe><\/div>","width":"12","alignment":"tc"}}},"block_order":["15583825032ff3bdcf-0"],"settings":{"section_margin_top":"","section_margin_bottom":"","section_margin_left":"","section_margin_right":"","section_padding_top":"","section_padding_right":"","section_padding_bottom":"","section_padding_left":""}},"1644438883da8d8dc2":{"type":"jas_featured_collection","settings":{"title":"Best Sellers","sub_title":"","style_title":"1","collection":"best-sellers","style":"jas_pr_tc","grid_column":"3","grid_columns_mb":"6","paginate_index":"4","use_pagination":"none","show_vendor":false,"sale_countdown":false,"countdown_style":"dark","use_eq_height":false,"image_size":"jas_cover","use_container":true,"section_margin_top":"30px","section_margin_bottom":"","section_margin_left":"","section_margin_right":"","section_padding_top":"","section_padding_right":"","section_padding_bottom":"","section_padding_left":""}},"1628078038b5dcec46":{"type":"jas_promotion_banner","settings":{"title":"Shop by Category","sub_title":"","style_title":"1","categories_layout":"default","space_categories":"30","slider_speed":6,"use_autoplay":true,"use_arrows":true,"use_dots":false,"use_loop":false,"speed":300,"sidetoshow":4,"sidetoshow_first":3,"sidetoshow_center":2,"sidetoshow_last":2,"use_container":true,"section_bg_color":"#ffffff","section_margin_top":"60","section_margin_bottom":"","section_margin_left":"","section_margin_right":"","section_padding_top":"","section_padding_right":"","section_padding_bottom":"","section_padding_left":""}},"67670c31-7a11-450c-a0d0-97c92137c5c6":{"type":"jas_promotion_banner_prallax","disabled":true,"settings":{"section_bg_color":"#19191b","full_height":false,"style_text":"6","title":"BIG DISCOUNTS + FREE SHIPPING on orders $45+","title_last":"BLACK FRIDAY ROCKIN’ DEALS","button":"Shop now","link":"https:\/\/rockingreen.com\/products","section_margin_top":"","section_margin_bottom":"","section_margin_left":"","section_margin_right":"","section_padding_top":"","section_padding_right":"","section_padding_bottom":"","section_padding_left":"","use_parallax":true,"use_background_overlay":false}}},"content_for_index":["1512373313144","1546873178339","67670c31-7a11-450c-a0d0-97c92137c5c6","1644438883da8d8dc2","1628078038b5dcec46","1513070020447","1542220652634","8b6bb1f7f6c1","b636ace275b0","1542293253898","1542221503112","1513736761998"],"blocks":{"855628211100114053":{"type":"shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507","disabled":false,"settings":{}},"8605505498557855500":{"type":"shopify:\/\/apps\/bogos-free-gift-buy-x-get-y\/blocks\/app-embed\/0432bba6-720a-4e95-be5a-b868386f7aa6","disabled":false,"settings":{}},"733389323033596483":{"type":"shopify:\/\/apps\/okendo\/blocks\/theme-settings\/bb689e69-ea70-4661-8fb7-ad24a2e23c29","disabled":false,"settings":{"show_preview_data":true}}}}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "general_layout": "full_width",
+    "body_bg": "#ffffff",
+    "body_bg_repeat": "no-repeat",
+    "body_bg_size": "contain",
+    "body_bg_attachment": "default",
+    "body_bg_position": "left_top",
+    "body_bg_image": "",
+    "home_page_keywords": "",
+    "home_page_author": "",
+    "api_key": "AIzaSyDTY4k0Rg31v60qnl1SL0M9WFetuk21mXw",
+    "mcsp_form_action": "//myshopify.us14.list-manage.com/subscribe/post?u=56b202e477d0fc9995c18aac3&amp;id=a358ae9daf",
+    "enable_update": true,
+    "use_rtl": false,
+    "use_additional_checkout_buttons": true,
+    "show_backtop": false,
+    "catalog_mode": false,
+    "operation_days": "Mon:1700-2100,Tue:1700-2100,Wed:1700-2200,Thu:1700-2200,Fri:1700-2300,Sat:1200-2300,Sun:1200-2300",
+    "use_wishlist": false,
+    "use_quickview": false,
+    "show_pr_img_2": true,
+    "show_product_rating": false,
+    "app_review": "1",
+    "use_quickshop": false,
+    "swatch_design_quickshop": "swatch_rectangle",
+    "quick_swatch_style_color": "1",
+    "show_product_color": false,
+    "product_layout_setting": "1",
+    "swatch_home_size": "small",
+    "swatch_style_settings": "rounded",
+    "label_settings": "rectangular",
+    "use_sale_label": true,
+    "label_sale_style": "1",
+    "use_sold_out_label": true,
+    "use_new_label": false,
+    "new_day": "30",
+    "use_hot_label": true,
+    "style_lazy": "fade_in",
+    "body_logo_svg": "",
+    "body_logo_image": "shopify://shop_images/new-logo_copy.png",
+    "body_logo_image_retina": "",
+    "logo_max_width": "200",
+    "logo_max_height": "200",
+    "body_logo_image_sticky": "",
+    "logo_max_width_sticky": "200",
+    "logo_max_height_sticky": "200",
+    "header_top_enable": true,
+    "show_share_btn_header": false,
+    "share_type_header": "1",
+    "header_top_color": "light",
+    "header_top_bg": "#3e3e3e",
+    "header_top_bg_repeat": "no-repeat",
+    "header_top_bg_size": "cover",
+    "header_top_bg_attachment": "default",
+    "header_top_bg_position": "default",
+    "header_top_bg_image": "",
+    "header_top_text": "New Privacy Policy Here",
+    "animation_header_enable": false,
+    "top_interval_time": 4,
+    "full_header_enable": true,
+    "sticky_header_enable": true,
+    "header_design": "3",
+    "overlap_header_enable": false,
+    "header_color_scheme": "dark",
+    "header_bg": "#ffffff",
+    "bg_header_sticky": "#ffffff",
+    "header_bg_repeat": "repeat",
+    "header_bg_size": "cover",
+    "header_bg_attachment": "scroll",
+    "header_bg_position": "left_top",
+    "header_bg_image": "",
+    "header_icon_style": "pe_icon",
+    "menu_color": "#4d5959",
+    "menu_color_sticky": "#4d5959",
+    "menu_mobile": "main-menu-1",
+    "use_mobile_categories": false,
+    "gecko_search_widget": "dropdown",
+    "ajax_search": true,
+    "only_search_products": true,
+    "display_wishlist_icon": true,
+    "sticky_footer_enable": false,
+    "footer_accordions": true,
+    "footer_color_title": "#ffffff",
+    "footer_color": "#ffffff",
+    "footer_bg": "#000000",
+    "footer_bg_repeat": "no-repeat",
+    "footer_bg_size": "cover",
+    "footer_bg_attachment": "scroll",
+    "footer_bg_position": "center_center",
+    "footer_bg_image": "",
+    "copyrights_layout": "centered",
+    "copyright_text": "<i class=\"fa fa-copyright\"></i>  Rockin' Green All Rights Reserved | Proudly made in the USA",
+    "bottom_menu": "",
+    "payment_icons": "1",
+    "footer_payment_image": "",
+    "login_register_enable": false,
+    "account_header_enable": true,
+    "use_privacy_policy": true,
+    "privacy_policy_link": "",
+    "login_bg": "#3e3e3e",
+    "login_bg_repeat": "no-repeat",
+    "login_bg_size": "cover",
+    "login_bg_attachment": "default",
+    "login_bg_position": "center_center",
+    "login_bg_image": "",
+    "color_body_text": "#54565a",
+    "color_primary": "#4fb84f",
+    "color_secondary": "#54565a",
+    "color_sale_bg": "#4fb84f",
+    "color_new_bg": "#56cfe1",
+    "color_hot_bg": "#ff5558",
+    "color_sold_out_bg": "#999999",
+    "font_body_text": "Lato",
+    "style_body_text": "400",
+    "size_body_text": 14,
+    "font_titles_text": "lato",
+    "style_titles_text": "400",
+    "size_text_h1": 48,
+    "size_text_h2": 36,
+    "size_text_h3": 28,
+    "size_text_h4": 20,
+    "size_text_h5": 16,
+    "size_text_h6": 12,
+    "font_sub_title_text": "lato",
+    "use_top_categories": false,
+    "top_categories_source": "top_categories_show_all",
+    "top_categories_link_list": "",
+    "use_top_breadcrumb": false,
+    "collection_bg": "#000000",
+    "collection_bg_repeat": "no-repeat",
+    "collection_bg_size": "cover",
+    "collection_bg_attachment": "default",
+    "collection_bg_position": "center_center",
+    "collection_bg_image": "",
+    "use_specify_image": true,
+    "collection_style": "fitRows",
+    "shop_sidebar": "full_width",
+    "shop_size_sidebar": "2",
+    "products_per_page": "12",
+    "use_pagination": "more-btn-infinite",
+    "grid_column": "4",
+    "style": "jas_pr_tc",
+    "show_vendor": false,
+    "sale_countdown": false,
+    "collection_countdown_style": "dark",
+    "ajax_shop": false,
+    "ajax_scroll_top": false,
+    "shop_filters": false,
+    "pop_style": "pop_default",
+    "shop_show_per_page": false,
+    "show_column_switch": false,
+    "use_eq_height": true,
+    "image_size": "jas_cover",
+    "filter_price_list": "$7-$50, $50-$150, $150-$500",
+    "product_sidebar": "1",
+    "size_sidebar": "2",
+    "design_products": "1",
+    "description_products": "2",
+    "main_click": "none",
+    "show_zoom_img": false,
+    "button_art_to_cart_style": "jas_btn_2d",
+    "delivery_return": "",
+    "size_chart": false,
+    "image_size_chart": "",
+    "product_img_trust_seal": true,
+    "img_trust_seal": "shopify://shop_images/RG-ICONS-AGAIN-AGAIN_251967d7-aa9a-498f-85e4-b0f0f30884ab.png",
+    "show_real_time_visitor": true,
+    "real_time_max": 60,
+    "real_interval_time": 6,
+    "text_real": "There are",
+    "text_visitor": "visitors right now",
+    "use_flash_sold": true,
+    "flash_sold_img": "",
+    "flash_sold_text_color": "#dd1e31",
+    "flash_sold_text_font_size": "18px",
+    "flash_sold_font_style": "600",
+    "flash_sold_min_qty": 15,
+    "flash_sold_max_qty": 35,
+    "flash_sold_min_time": 4,
+    "flash_sold_max_time": 24,
+    "use_promo_shpping": false,
+    "product_motivator_text": "Free Shipping For Over <span class=\"money\">$100.00</span> to",
+    "promotion_display_user_country": false,
+    "promotion_display_user_Flag": false,
+    "supported_codes_ship": "",
+    "enable_country_flag": false,
+    "shipping_text": "",
+    "no_shipping_text": "This item does not ship to",
+    "enable_delivery_option": false,
+    "enable_delivery_order": false,
+    "delivery_text": "Delivery",
+    "delivery_text_1": "Estimated between",
+    "delivery_start": "2",
+    "delivery_end": "10",
+    "delivery_cutoff": "16:00:00",
+    "delivery_off_days": "SAT SUN",
+    "delivery_info_text": "Will usually ship within 1 bussiness day.",
+    "show_share_btn": false,
+    "share_type": "1",
+    "color_name_check": "",
+    "size_name_check": "",
+    "show_product_page_rating": true,
+    "show_grouped_variant_image": false,
+    "use_clicking_variant_image": false,
+    "product_quantity_message": false,
+    "use_description_excerpt": false,
+    "prodcut_excerpt_length": "1000",
+    "show_sku": false,
+    "show_pr_vendor": false,
+    "show_category_product": false,
+    "show_tag_product": false,
+    "first_available_variant": true,
+    "remove_sold_out": false,
+    "btn_atc_full": true,
+    "enable_payment_button": true,
+    "use_eq_thumb_height": false,
+    "image_size_thumb": "jas_cover",
+    "use_eq_nav_height": false,
+    "image_size_nav": "jas_cover",
+    "swatch_design": "swatch_rectangle",
+    "swatch_style_color": "1",
+    "swatch_style": "1",
+    "swatch_size": "small",
+    "show_countdown": false,
+    "show_related_products": false,
+    "title_pr_related": "Related product",
+    "sub_title_pr_related": "Top seller in the week",
+    "style_title_pr_related": "1",
+    "related_products_use": "handle",
+    "many_related_products": 20,
+    "related_products_hover": "jas_default",
+    "related_sale_countdown": false,
+    "related_countdown_style": "dark",
+    "show_vendor_related": true,
+    "use_related_eq_height": true,
+    "related_image_size": "jas_cover",
+    "related_slider_speed": 6,
+    "related_use_autoplay": false,
+    "related_use_arrows": true,
+    "related_use_dots": false,
+    "related_use_loop": false,
+    "related_sidetoshow": 4,
+    "related_sidetoshow_first": 3,
+    "related_sidetoshow_center": 2,
+    "related_sidetoshow_last": 2,
+    "show_recently_products": false,
+    "title_pr_recently": "Recently viewed products",
+    "sub_title_pr_recently": "",
+    "style_title_pr_recently": "1",
+    "many_recently_products": 10,
+    "recently_products_hover": "jas_default",
+    "recently_sale_countdown": false,
+    "recently_countdown_style": "dark",
+    "show_vendor_recently": true,
+    "use_recently_eq_height": true,
+    "recently_image_size": "jas_cover",
+    "recently_slider_speed": 6,
+    "recently_use_autoplay": true,
+    "recently_use_arrows": true,
+    "recently_use_dots": false,
+    "recently_use_loop": false,
+    "recently_sidetoshow": 4,
+    "recently_sidetoshow_first": 3,
+    "recently_sidetoshow_center": 2,
+    "recently_sidetoshow_last": 2,
+    "cart_position": "side",
+    "cart_design": "2",
+    "gecko_options_add_to_cart_action": "slide_bar",
+    "cart_notes_enable_widget": false,
+    "show_trust_seal_widget": true,
+    "cart_img_trust_seal_widget": "",
+    "use_threshold": false,
+    "free_shipping_above": "100",
+    "show_related_pop_up": false,
+    "upsell_collection_cart": "",
+    "use_agree_checkbox_pop_up": false,
+    "link_conditions_pop_up": "",
+    "use_gift_wrapp": false,
+    "gift_wrap_option": "1",
+    "cart_bg": "#3e3e3e",
+    "cart_bg_repeat": "no-repeat",
+    "cart_bg_size": "cover",
+    "cart_bg_attachment": "default",
+    "cart_bg_position": "center_center",
+    "cart_bg_image": "",
+    "cart_notes_enable": false,
+    "cart_clear_enable": true,
+    "show_cart_trust_seal_page": true,
+    "cart_img_trust_seal_page": "",
+    "use_threshold_page": false,
+    "use_agree_checkbox": false,
+    "link_conditions": "",
+    "search_bg": "#000000",
+    "search_bg_repeat": "no-repeat",
+    "search_bg_size": "cover",
+    "search_bg_attachment": "default",
+    "search_bg_position": "center_center",
+    "search_bg_image": "",
+    "products_per_page_search": "12",
+    "use_pagination_search": "more-btn-infinite",
+    "grid_column_search": "3",
+    "style_search": "jas_default",
+    "show_vendor_search": true,
+    "sale_countdown_search": true,
+    "search_countdown_style": "dark",
+    "use_eq_height_search": false,
+    "image_size_search": "jas_cover",
+    "show_sticky_add": true,
+    "show_sticky_add_mobile": true,
+    "sticky_position": "bottom",
+    "sticky_align": "center-xs",
+    "show_sticky_countdown": false,
+    "show_sticky_img": true,
+    "show_sticky_quantiny": false,
+    "scrolltop": 1000,
+    "gecko_stock_countdown": false,
+    "total_items_days": 0,
+    "total_items_hours": 8,
+    "total_items_minutes": 25,
+    "total_items_seconds": 60,
+    "total_items": 60,
+    "stock_from": 10,
+    "stock_to": 40,
+    "stock_message": "Hurry! Only {{stock_number}} left in stock.",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "stock_bg_process": "#b59677",
+    "stock_bg": "#e1dfd6",
+    "enable_suggest_products": false,
+    "show_suggest_mobile": false,
+    "collection_suggest": "",
+    "display_index": false,
+    "display_product": false,
+    "display_collection": false,
+    "display_article": false,
+    "display_blog": false,
+    "display_cart": true,
+    "display_page": false,
+    "suggest_ivl_time": 7,
+    "use_suggest": false,
+    "use_fake_location": false,
+    "fake_location": "Melbourne, Australia | Washington | Nevada",
+    "show_close_suggest": true,
+    "show_blog_slider": false,
+    "blog_slider": "",
+    "how_many_articles_to_show": "10",
+    "slider_speed_blog": 6,
+    "use_autoplay_blog": true,
+    "use_arrows_blog": true,
+    "sidetoshow_blog": 3,
+    "use_eq_height_blog": true,
+    "image_size_blog": "jas_cover",
+    "articles_per_grid_page": "10",
+    "layout_blog": "grid",
+    "post_per_row_blog_main": 2,
+    "use_eq_height_blog_main": false,
+    "image_size_blog_main": "jas_cover",
+    "show_blog_sidebar": false,
+    "blog_sidebar_layout": "right",
+    "blog_bg": "#3e3e3e",
+    "blog_bg_repeat": "no-repeat",
+    "blog_bg_size": "cover",
+    "blog_bg_attachment": "default",
+    "blog_bg_position": "center_center",
+    "blog_bg_image": "",
+    "show_share_btn_articles": true,
+    "share_type_articles": "1",
+    "show_related_articles": true,
+    "title_related_articles": "Related Articles",
+    "how_many_related_articles": "9",
+    "slider_speed_blog_related": 6,
+    "use_autoplay_blog_related": false,
+    "use_arrows_blog_related": true,
+    "sidetoshow_blog_related": 3,
+    "use_eq_height_blog_related": true,
+    "image_size_blog_related": "jas_cover",
+    "blog_portfolio": "",
+    "title_portfolio": "Portfolio",
+    "description_portfolio": "Let check all of our design for logos, brandings, web design, illustrator...",
+    "portfolio_bg": "#3e3e3e",
+    "portfolio_bg_repeat": "no-repeat",
+    "portfolio_bg_size": "cover",
+    "portfolio_bg_attachment": "default",
+    "portfolio_bg_position": "center_center",
+    "portfolio_bg_image": "",
+    "projects_columns": "4",
+    "projects_spacing": "30",
+    "projects_per_page": "12",
+    "use_eq_height_portfolio": false,
+    "image_size_portfolio": "jas_cover",
+    "portfolio_filters": true,
+    "portfolio_tags_filter": "",
+    "show_share_btn_portfolio": true,
+    "share_type_portfolio": "2",
+    "show_related_portfolio": true,
+    "title_related_portfolio": "Related Portfolio",
+    "how_many_related_portfolio": "9",
+    "slider_speed_portfolio_related": 6,
+    "use_autoplay_portfolio_related": false,
+    "use_arrows_portfolio_related": true,
+    "sidetoshow_portfolio_related": 4,
+    "use_eq_height_portfolio_related": false,
+    "image_size_portfolio_related": "jas_cover",
+    "contact_bg": "#3e3e3e",
+    "contact_bg_repeat": "no-repeat",
+    "contact_bg_size": "cover",
+    "contact_bg_attachment": "default",
+    "contact_bg_position": "center_center",
+    "contact_bg_image": "",
+    "use_map": false,
+    "lat": "39.950557",
+    "lon": "-75.140658",
+    "icon_map": "",
+    "height": "526",
+    "style_json": "[{\"featureType\":\"road\",\"elementType\":\"labels\",\"stylers\":[{\"visibility\":\"off\"}]},{\"featureType\":\"poi\",\"elementType\":\"labels\",\"stylers\":[{\"visibility\":\"off\"}]},{\"featureType\":\"transit\",\"elementType\":\"labels.text\",\"stylers\":[{\"visibility\":\"off\"}]}]",
+    "about_bg": "#3e3e3e",
+    "about_bg_repeat": "no-repeat",
+    "about_bg_size": "cover",
+    "about_bg_attachment": "default",
+    "about_bg_position": "center_center",
+    "about_bg_image": "",
+    "description_about_us": "Follow your passion, and sucess will follow you",
+    "sort_faq": "text>testimonials>member",
+    "faq_bg": "#3e3e3e",
+    "faq_bg_repeat": "no-repeat",
+    "faq_bg_size": "cover",
+    "faq_bg_attachment": "default",
+    "faq_bg_position": "center_center",
+    "faq_bg_image": "",
+    "other_page_bg": "#3e3e3e",
+    "other_page_bg_repeat": "no-repeat",
+    "other_page_bg_size": "cover",
+    "other_page_bg_attachment": "default",
+    "other_page_bg_position": "center_center",
+    "other_page_bg_image": "",
+    "show_language_currencies": true,
+    "language_title": "English",
+    "language_link_list": "",
+    "enable_popup": false,
+    "promo_popup_hide_mobile": false,
+    "display_newsletter_index": false,
+    "display_newsletter_product": false,
+    "display_newsletter_collection": false,
+    "display_newsletter_article": false,
+    "display_newsletter_blog": false,
+    "display_newsletter_cart": false,
+    "display_newsletter_page": false,
+    "use_ajax_mailChimp": false,
+    "newsletter_bg": "",
+    "promo_popup_description": "<h3>Sign up our newsletter and save 25% off for the next purchase!</h3> Subscribe to our newsletters and don’t miss new arrivals, the latest fashion updates and our promotions.",
+    "show_popup_after": "time",
+    "time_popup_delay": "2000",
+    "scroll_popup_delay": "800",
+    "number_pages": 0,
+    "popup_version": 1,
+    "enable_cookies_popup": false,
+    "text_cookies_popup": "We use cookies to improve your experience on our website. By browsing this website, you agree to our use of cookies.",
+    "link_btn_infor": "shopify://blogs/news",
+    "cookies_version": 1,
+    "display_popup_cookies_index": true,
+    "display_popup_cookies_product": true,
+    "display_popup_cookies_collection": false,
+    "display_popup_cookies_article": false,
+    "display_popup_cookies_blog": false,
+    "display_popup_cookies_cart": false,
+    "display_popup_cookies_page": false,
+    "enable_ave_verification": false,
+    "age_limit": 18,
+    "enter_date_of_birth": true,
+    "age_bg": "",
+    "age_heading": "Adults only (18+)",
+    "text_age_popup": "This website contains adult material and is only suitable for those 18 years or older. Click Enter only if you are at least 18 years of age.",
+    "age_enter": "Enter",
+    "age_exit": "Exit",
+    "link_age_exit": "https://demo-gecko-plus.myshopify.com/",
+    "age_version": 1,
+    "share_image": "",
+    "share_facebook": false,
+    "share_twitter": false,
+    "share_google": false,
+    "share_pinterest": false,
+    "share_tumblr": false,
+    "share_email": false,
+    "social_twitter_link": "https://twitter.com/rockingreensoap",
+    "social_facebook_link": "https://www.facebook.com/rockingreensoap/",
+    "social_pinterest_link": "https://www.pinterest.com/rockingreen/",
+    "social_instagram_link": "https://www.instagram.com/rockin.green.soap/",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "show_multiple_currencies": false,
+    "show_multiple_visitor": true,
+    "currency_format": "money_format",
+    "supported_currencies": "EUR - EUR | USD - USD | GBP - GBP",
+    "default_currency": "USD",
+    "show_custom_css": true,
+    "global_custom_css": ".imgg{display:none;}\n.button.checkout.wc-forward.check{\nwidth:100%!important\n}#shopify-section-1542220652634{width:750px;}\n.counter_real_time{display:none!important;}\n.fordesc{\ndisplay:block;\n}#shopify-section-1542220652634.rte{\n    text-align: center;\n    width: 750px!important;\n    margin: 0 auto;\n}\n\n.template-cart .cart_note.cross-sells{display: none!important;}\nbutton.checkout-button.alt{\n\tbackground-color: #4fb84f!important;\n}\n\n@media screen and (max-width: 480px) {\n.imgg{display:block;\nwidth:48%!important;\ndisplay:inline;\n}\n\n\n.fordesc{\ndisplay:none;\n}\n\n}\n\n\n\n\n.button.checkout.wc-forward check{width:100%!important}\n\n\n\ninput[type=\"submit\"]:not(.button-o), button, input.button-o:hover, .slick-prev, .slick-next {\n    background-color: transparent;\n}\n.counter_real_time{display:none;}\n\n.template-collection .jas-container.pr{max-width:100%!important;}\n\n.template-collection .jas-container.pr p{line-height:20px!important;}\n\n\n\n.slick-slider .slick-prev:hover,\n.slick-slider .slick-next:hover {\n\topacity: 0;\n}\n.slick-next:before {\n    content: ''!important;\n}\n#shopify-section-1546894897912 .jas_banner_img img{width:200px;}\n#shopify-section-1513736761998 .cd.chp{ \n    font-weight: 900;\n    font-size: 18px;\n}\n.jas_title_1 {\n    line-height: 40px;\n}\na.button-o-w {\n   background:#FFF!important;\n   color:green;\nborder:1px solid green;\n}#shopify-section-1628078038b5dcec46{\n  margin-top:60px!important;\n}\n#shopify-section-1628078038b5dcec46 .placeholder-noblocks.tc{display:none!important;\n}\n#shopify-section-1628078038b5dcec46 .jas_title_1.pr.mb__40{\n  font-size: 36px!important;\n    font-family: \"lato\"!important;\n    font-weight: 400;\n    font-style: normal;\n    font-style: normal!important;\n}\na.button-o-w:hover {\n   background:green!important;\n   color:white;\nborder:1px solid white;\n}\n#shopify-section-1546873178339 .fs__18.lh__1.f__libre.tc.cw{\n    font-size: 23px!important;\n    font-family: \"lato\"!important;\n    font-weight: 900!important;\n    font-style: normal!important;\n    padding-top: 10px!important;\n    padding-bottom: 10px;\nfont-weight:bold;\n}\n\t.for_mobile{display: none;}\n@media screen and (max-width: 860px) {\n\t.for_mobile{display: block;}\n\n}\np a {\n    color: #4fb84f;\n    text-decoration: underline;\n}\n\n.template-blog span.cat.pr {\ndisplay: none;\n}\n.jas-row.categories-style-default.categories-space-30{text-align:center;}\n\n.form-row input[type='submit'] {\nbackground-color:#4fb84f!important;\n}",
+    "desktop_custom_css": "",
+    "tablet_custom_css": "",
+    "landscape_custom_css": "",
+    "mobile_custom_css": "",
+    "custom_js": "",
+    "favicon": "shopify://shop_images/1in_RGN_RGB.png",
+    "favicon_apple": "",
+    "show_favicon_counter": false,
+    "favicon_animation": "pop",
+    "favicon_bgColor": "#b59677",
+    "favicon_textColor": "#ffffff",
+    "shipping_calculator": "Disabled",
+    "shipping_calculator_heading": "Get shipping estimates",
+    "shipping_calculator_default_country": "United States",
+    "shipping_calculator_submit_button_label": "Calculate shipping",
+    "shipping_calculator_submit_button_label_disabled": "Calculating...",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#1990c6",
+    "checkout_button_color": "#1990c6",
+    "checkout_error_color": "#ff6d6d",
+    "quick_layout_setting": "1",
+    "shipping_tab_header": "Shipping",
+    "product_flash_sold_enable": "true",
+    "product_hide_motivator_text": "false",
+    "use_ajax_add_to_cart": true,
+    "use_compare": true,
+    "use_jas_rtl": true,
+    "free_shipping_above_page": "100",
+    "interval_time": "7000",
+    "sticky_quantity_message": "true",
+    "sticky_loop_show_countdown": "false",
+    "countdown_timer": "2018/02/05 17:34:56",
+    "color_text": "#3d4246",
+    "color_sale_text": "#7796a8",
+    "color_borders": "#e8e9eb",
+    "color_button": "#7796a8",
+    "color_button_text": "#fff",
+    "color_small_button": "#fff",
+    "color_small_button_text": "#3d4246",
+    "color_text_field": "#fff",
+    "color_text_field_text": "#000",
+    "color_image_overlay_text": "#fff",
+    "color_image_overlay": "#3d4246",
+    "image_overlay_opacity": "25",
+    "color_body_bg": "#fff",
+    "type_header_family": "Google_Lato_400_sans",
+    "type_header_base_size": "26px",
+    "type_base_family": "Google_Work+Sans_400_sans",
+    "type_base_size": "16px",
+    "type_bold_product_titles": "false",
+    "overlap_bg_header_enable": "false",
+    "banner_portfolio": "",
+    "use_specify_image_search": "true",
+    "shop_show_per_page_search": "true",
+    "right_column_width": "250",
+    "header_height": "95",
+    "header_sticky_height": "75",
+    "mobile_header_height": "60",
+    "basel_search_widget": "dropdown",
+    "footer_over_color": "#000",
+    "footer_design": "12",
+    "footer_social_design": "icons-design-default",
+    "footer_social_size": "icons-size-default",
+    "footer_color_scheme": "light",
+    "copyrights_text": "",
+    "copyrights_next_text": "",
+    "html_before_footer": "",
+    "header_text_ss": "Welcome to our store. Call free: 055 1233 32 55",
+    "show_col_mobile": "false",
+    "recently_silder_speed": "5000",
+    "recently_silder_per_view": "4",
+    "recently_hide_pagination": "false",
+    "recently_hide_button": "false",
+    "recently_slider_loop": "false",
+    "recently_autoplay": "false",
+    "related_silder_speed": "5000",
+    "related_silder_per_view": "4",
+    "related_hide_pagination": "false",
+    "related_hide_button": "false",
+    "related_slider_loop": "false",
+    "related_autoplay": "false",
+    "size_img_products": "2",
+    "use_view_360": "false",
+    "grid_columns_mb": "6",
+    "products_columns": "4",
+    "use_promo_banner_collection": "true",
+    "view_default": "grid",
+    "products_hover": "alt",
+    "loop_sale_countdown": "false",
+    "grid_list": "false",
+    "shop_image_size": "",
+    "shop_masonry_grid": "false",
+    "shop_different_grid": "false",
+    "show_des_collection": "false",
+    "show_img_second": "true",
+    "newsletter_form_action": "//myshopify.us14.list-manage.com/subscribe/post?u=56b202e477d0fc9995c18aac3&id=f1c125553c",
+    "sections": {
+      "1512373313144": {
+        "type": "slideshow",
+        "blocks": {
+          "391889b7-1f23-4b81-b67a-9c503787d94a": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/A5_13.jpg",
+              "alignment": "tc",
+              "title": "",
+              "subheading": "",
+              "text_content": "",
+              "btn_title": "Start shopping",
+              "link": "",
+              "style_btn": "1"
+            }
+          },
+          "image_Rx7xGD": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/RG_Earth_Day_2024_1.png",
+              "alignment": "tc",
+              "title": "",
+              "subheading": "",
+              "text_content": "",
+              "btn_title": "",
+              "link": "",
+              "style_btn": "1"
+            }
+          },
+          "image_YNzaGy": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/RG_Spring_Cleaning_2024.png",
+              "alignment": "tc",
+              "title": "",
+              "subheading": "",
+              "text_content": "",
+              "btn_title": "Start shopping",
+              "link": "",
+              "style_btn": "1"
+            }
+          },
+          "02c6c010-9efc-4218-a69b-70791f5a616b": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/RG_Promotional_Banner_September_2023_3.jpg",
+              "alignment": "tc",
+              "title": "",
+              "subheading": "",
+              "text_content": "",
+              "btn_title": "Start shopping",
+              "link": "",
+              "style_btn": "1"
+            }
+          },
+          "6837674e-373c-4ceb-828d-cc1c33746eaa": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/RG_Cyber_Monday_2023_Banner_af45039b-98f4-43f4-9d80-46fb91cd12bf.webp",
+              "alignment": "tc",
+              "title": "",
+              "subheading": "",
+              "text_content": "",
+              "btn_title": "Start shopping",
+              "link": "",
+              "style_btn": "1"
+            }
+          },
+          "1584624217313": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/Web_Banner_Dekstop.png",
+              "alignment": "tc",
+              "title": "",
+              "subheading": "",
+              "text_content": "",
+              "btn_title": "",
+              "link": "https://rockingreen.com/collections/all?page=1?&sort_by=best-selling",
+              "style_btn": "1"
+            }
+          },
+          "87404b3e-bb8d-4a3c-a8b6-3ac7dadaa82d": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/RG_End_Of_Summer_Web_Banner_2.png",
+              "alignment": "tr",
+              "title": "",
+              "subheading": "",
+              "text_content": "",
+              "btn_title": "",
+              "link": "shopify://collections",
+              "style_btn": "1"
+            }
+          },
+          "9ea8431a-d103-41f8-a7ff-7582a8816d01": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/RG_Web_Banner_2023_1_1.jpg",
+              "alignment": "tc",
+              "title": "",
+              "subheading": "",
+              "text_content": "",
+              "btn_title": "",
+              "link": "shopify://products/activewear-stain-remover-16-oz",
+              "style_btn": "2"
+            }
+          },
+          "5c7ce348-60d2-4a66-bc46-9de342082f3b": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify://shop_images/RG_Promotional_Banner_July_2023_1.jpg",
+              "alignment": "tc",
+              "title": "",
+              "subheading": "",
+              "text_content": "",
+              "btn_title": "Start shopping",
+              "link": "",
+              "style_btn": "1"
+            }
+          }
+        },
+        "block_order": [
+          "391889b7-1f23-4b81-b67a-9c503787d94a",
+          "image_Rx7xGD",
+          "image_YNzaGy",
+          "02c6c010-9efc-4218-a69b-70791f5a616b",
+          "6837674e-373c-4ceb-828d-cc1c33746eaa",
+          "1584624217313",
+          "87404b3e-bb8d-4a3c-a8b6-3ac7dadaa82d",
+          "9ea8431a-d103-41f8-a7ff-7582a8816d01",
+          "5c7ce348-60d2-4a66-bc46-9de342082f3b"
+        ],
+        "settings": {
+          "style_slider": "organic-slider",
+          "slider_speed": 7,
+          "use_dots": false,
+          "use_arrows": false,
+          "use_loop": true,
+          "use_autoplay": true,
+          "use_background_overlay": false,
+          "section_margin_top": "",
+          "section_margin_bottom": "",
+          "section_padding_top": "",
+          "section_padding_right": "",
+          "section_padding_bottom": "",
+          "section_padding_left": ""
+        }
+      },
+      "1513736761998": {
+        "type": "jas-featured-blog",
+        "settings": {
+          "title": "LATEST FROM THE BLOG",
+          "sub_title": "",
+          "style_title": "2",
+          "blog": "rockin-blog",
+          "post_limit": 3,
+          "post_design": "grid",
+          "post_per_row": 3,
+          "blog_show_author": false,
+          "blog_show_author_img": false,
+          "blog_show_date": false,
+          "blog_show_read_more": false,
+          "blog_show_comments": false,
+          "show_view_all": false,
+          "slider_speed": 2,
+          "use_autoplay": false,
+          "use_arrows": false,
+          "use_dots": false,
+          "use_loop": false,
+          "sidetoshow": 3,
+          "sidetoshow_first": 3,
+          "sidetoshow_center": 2,
+          "sidetoshow_last": 1,
+          "use_eq_height": true,
+          "image_size": "jas_cover",
+          "use_container": false,
+          "section_bg_color": "#f7f7f7",
+          "section_margin_top": "",
+          "section_margin_bottom": "",
+          "section_margin_left": "",
+          "section_margin_right": "",
+          "section_padding_top": "40px",
+          "section_padding_right": "",
+          "section_padding_bottom": "30px",
+          "section_padding_left": ""
+        }
+      },
+      "jas_filter": {
+        "type": "jas_filter",
+        "settings": {}
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "blocks": {
+          "1520390351188": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "active-wear-detergent",
+              "image": "shopify://shop_images/collections_list-01-min.png",
+              "width": "4",
+              "mobile_width": "12"
+            }
+          },
+          "1516008930495": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "cloth-diaper-detergent",
+              "image": "shopify://shop_images/collections_list-02-min.png",
+              "width": "4",
+              "mobile_width": "12"
+            }
+          },
+          "1520390455360": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "gift-sets-combos",
+              "image": "shopify://shop_images/collections-list-min.jpg",
+              "width": "4",
+              "mobile_width": "12"
+            }
+          }
+        },
+        "block_order": [
+          "1520390351188",
+          "1516008930495",
+          "1520390455360"
+        ],
+        "settings": {
+          "display_type": "selected",
+          "sort": "alphabetical",
+          "categories_count": "products",
+          "categories_view": "View products",
+          "categories_layout": "default",
+          "categories_design": "jas_cat_default",
+          "space_categories": "20",
+          "width": "3",
+          "mobile_width": "6",
+          "slider_speed": 6,
+          "use_autoplay": true,
+          "use_arrows": true,
+          "use_dots": false,
+          "use_loop": false,
+          "speed": 300,
+          "sidetoshow": 4,
+          "sidetoshow_first": 3,
+          "sidetoshow_center": 2,
+          "sidetoshow_last": 2,
+          "use_eq_height": true,
+          "image_size": "jas_cover"
+        }
+      },
+      "section_sidebar_shop": {
+        "type": "section_sidebar_shop",
+        "blocks": {
+          "1516065881505": {
+            "type": "category",
+            "settings": {
+              "title": "Product Categories",
+              "top_categories_source": "top_categories_link_list",
+              "top_categories_link_list": ""
+            }
+          },
+          "1516071032013": {
+            "type": "brand",
+            "settings": {
+              "hidden_block": false,
+              "title": "By Brand",
+              "arra_enter": "",
+              "use_auto_filter_tag": true,
+              "key": "Vendor"
+            }
+          },
+          "1516071051767": {
+            "type": "color",
+            "settings": {
+              "hidden_block": false,
+              "title": "By Color",
+              "arra_enter": "Red,White,Brown,Blue, Black, Green, Grey, Sliver,Pink",
+              "use_auto_filter_tag": false,
+              "key": "Color"
+            }
+          },
+          "1516074571053": {
+            "type": "size",
+            "settings": {
+              "hidden_block": false,
+              "title": "By Size",
+              "style": "1",
+              "arra_enter": "L,M,S,XL,XS",
+              "use_auto_filter_tag": false,
+              "key": "Size",
+              "key_2": ""
+            }
+          },
+          "1516074583281": {
+            "type": "tag",
+            "settings": {
+              "hidden_block": false,
+              "title": "By Tag",
+              "arra_enter": "blue,red,White",
+              "use_auto_filter_tag": false,
+              "key": "Tag",
+              "key_2": ""
+            }
+          },
+          "1516074632476": {
+            "type": "price",
+            "settings": {
+              "hidden_block": false,
+              "title": "By Other",
+              "arra_enter": "",
+              "use_auto_filter_tag": true,
+              "key": "Price"
+            }
+          },
+          "1516087575388": {
+            "type": "instagram",
+            "settings": {
+              "title": "Instagram",
+              "columns": 3,
+              "username": "jsfashionstock",
+              "limit": 12,
+              "open_link": "_self"
+            }
+          },
+          "1516089143779": {
+            "type": "collection",
+            "settings": {
+              "title": "Sale Products",
+              "featured_product_list_collection": "",
+              "featured_product_limit_all": "3"
+            }
+          },
+          "1516089162466": {
+            "type": "recently",
+            "settings": {
+              "title": "Recently Viewed Products"
+            }
+          },
+          "1516089171419": {
+            "type": "text",
+            "settings": {
+              "title": "Talk about your brand",
+              "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+            }
+          },
+          "1516089271570": {
+            "type": "html",
+            "settings": {
+              "title": "Custom HTML",
+              "code": "dgfgdfgdfgdf"
+            }
+          },
+          "1516089285727": {
+            "type": "shipping",
+            "settings": {
+              "title": "SHIPPING & DELIVERY",
+              "style": "2",
+              "shipping_1": "pe-7s-car,FREE SHIPPING,Free shipping on all US order or order above $200",
+              "shipping_2": "pe-7s-help2,SUPPORT 24/7,Contact us 24 hours a day, 7 days a week",
+              "shipping_3": "pe-7s-refresh,30 DAYS RETURN,Simply return it within 30 days for an exchange.",
+              "shipping_4": "pe-7s-door-lock,100% PAYMENT SECURE,We ensure secure payment with PEV",
+              "shipping_5": "",
+              "shipping_6": ""
+            }
+          }
+        },
+        "block_order": [
+          "1516065881505",
+          "1516071032013",
+          "1516071051767",
+          "1516074571053",
+          "1516074583281",
+          "1516074632476",
+          "1516087575388",
+          "1516089143779",
+          "1516089162466",
+          "1516089171419",
+          "1516089271570",
+          "1516089285727"
+        ],
+        "settings": {}
+      },
+      "section_sidebar_product": {
+        "type": "section_sidebar_product",
+        "blocks": {
+          "1516958594085": {
+            "type": "collection",
+            "settings": {
+              "title": "Sale Products",
+              "featured_product_list_collection": "",
+              "featured_product_limit_all": "3"
+            }
+          },
+          "1516958612449": {
+            "type": "shipping",
+            "settings": {
+              "title": "SHIPPING & DELIVERY",
+              "style": "2",
+              "shipping_1": "clock-o,Save up to 20%,limited time",
+              "shipping_2": "clock-o,Save up to 20%,limited time",
+              "shipping_3": "",
+              "shipping_4": "",
+              "shipping_5": "",
+              "shipping_6": ""
+            }
+          },
+          "1516958647909": {
+            "type": "instagram",
+            "settings": {
+              "title": "Instagram",
+              "columns": 3,
+              "username": "jsfashionstock",
+              "limit": 12,
+              "open_link": "_self"
+            }
+          },
+          "1516958653866": {
+            "type": "html",
+            "settings": {
+              "title": "Custom HTML",
+              "code": ""
+            }
+          },
+          "1516958656552": {
+            "type": "text",
+            "settings": {
+              "title": "Talk about your brand",
+              "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+            }
+          }
+        },
+        "block_order": [
+          "1516958594085",
+          "1516958612449",
+          "1516958647909",
+          "1516958653866",
+          "1516958656552"
+        ],
+        "settings": {}
+      },
+      "product-page-description": {
+        "type": "product-page-description",
+        "blocks": {
+          "1516961188309": {
+            "type": "description",
+            "settings": {
+              "title": "Product Description"
+            }
+          },
+          "1517191439457": {
+            "type": "meta",
+            "settings": {
+              "title": "tab 1"
+            }
+          },
+          "1516961587791": {
+            "type": "additional",
+            "settings": {
+              "title": "Additional Information"
+            }
+          },
+          "1516961575714": {
+            "type": "review",
+            "settings": {
+              "title": "Reviews",
+              "use_count_reviews": false
+            }
+          },
+          "1517192464296": {
+            "type": "meta",
+            "settings": {
+              "title": "tab 2"
+            }
+          },
+          "1517192494098": {
+            "type": "meta",
+            "settings": {
+              "title": "tab 3"
+            }
+          }
+        },
+        "block_order": [
+          "1516961188309",
+          "1517191439457",
+          "1516961587791",
+          "1516961575714",
+          "1517192464296",
+          "1517192494098"
+        ],
+        "settings": {}
+      },
+      "product-page-description-2": {
+        "type": "product-page-description-2",
+        "settings": {}
+      },
+      "mega_menu": {
+        "type": "mega_menu",
+        "blocks": {
+          "1520320587313": {
+            "type": "dropdown",
+            "settings": {
+              "title": "Shop",
+              "icon": "",
+              "button_link": "https://rockingreen.com/collections/all",
+              "label": "NEW",
+              "menu": "everyday-detergent",
+              "position": "left",
+              "color": "rgba(0,0,0,0)"
+            }
+          },
+          "1542727220331": {
+            "type": "dropdown",
+            "settings": {
+              "title": "Bundles",
+              "icon": "",
+              "button_link": "https://rockingreen.com/collections/bundles",
+              "label": "",
+              "menu": "bundles-menu",
+              "position": "left",
+              "color": "#ffffff"
+            }
+          },
+          "1520320779759": {
+            "type": "dropdown",
+            "settings": {
+              "title": "About",
+              "icon": "",
+              "button_link": "shopify://pages/about-our-company",
+              "label": "",
+              "menu": "about-1",
+              "position": "left",
+              "color": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "1520320587313",
+          "1542727220331",
+          "1520320779759"
+        ],
+        "settings": {
+          "label_1": "",
+          "color_1": "#2f9e3c",
+          "label_2": "",
+          "color_2": "",
+          "label_3": "",
+          "color_3": "",
+          "label_4": "",
+          "color_4": "",
+          "label_5": "",
+          "color_5": ""
+        }
+      },
+      "mega_menu_2": {
+        "type": "mega_menu_2",
+        "blocks": {
+          "1519381276019": {
+            "type": "menu_item_no_children",
+            "settings": {
+              "title": "Home",
+              "icon": "",
+              "button_link": "",
+              "label": "",
+              "color": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "1519381276019"
+        ],
+        "settings": {
+          "label_1": "",
+          "color_1": "",
+          "label_2": "",
+          "color_2": "",
+          "label_3": "",
+          "color_3": "",
+          "label_4": "",
+          "color_4": "",
+          "label_5": "",
+          "color_5": ""
+        }
+      },
+      "jas_footer": {
+        "type": "jas_footer",
+        "blocks": {
+          "1518170288810": {
+            "type": "text",
+            "settings": {
+              "logo_max_width": "200",
+              "logo_max_height": "95",
+              "title_logo": "Get in Touch",
+              "textarea": "<p><i class=\"fa fa-briefcase\"> </i>4444 South Blvd <br><span style=\"padding-left: 22px\">Charlotte, NC 28209 </span></p>\n\t<p><i class=\"fa fa-envelope-o\"></i> <a href=\"mailto:Customercare@rockingreen.com\">Customercare@rockingreen.com</a></p>\n\t<p><i class=\"fa fa-phone\">\n<a href=\"tel:+18557647627\">+1 (855) 764-7627 (Toll Free)</a> </i></p>\n<p><i class=\"fa fa-phone\">\n<a href=\"tel:+17405737372\">+1 (740) 573-7372</a> </i></p>",
+              "social_enabled": true,
+              "share_type": "2",
+              "width": "25%",
+              "width_tablet": "25%",
+              "width_mobile": "100%"
+            }
+          },
+          "1518170045061": {
+            "type": "menu",
+            "settings": {
+              "title": "Shop",
+              "menu": "laundry-detergent",
+              "width": "25%",
+              "width_tablet": "25%",
+              "width_mobile": "100%"
+            }
+          },
+          "1520332199393": {
+            "type": "menu",
+            "settings": {
+              "title": "Information",
+              "menu": "others",
+              "width": "25%",
+              "width_tablet": "25%",
+              "width_mobile": "100%"
+            }
+          },
+          "1542812847431": {
+            "type": "html",
+            "settings": {
+              "title": "",
+              "custom_html": "<div class=\"klaviyo-form-H26aw8\"></div>",
+              "width": "25%",
+              "width_tablet": "25%",
+              "width_mobile": "100%"
+            }
+          }
+        },
+        "block_order": [
+          "1518170288810",
+          "1518170045061",
+          "1520332199393",
+          "1542812847431"
+        ],
+        "custom_css": [],
+        "settings": {}
+      },
+      "mobile_categories": {
+        "type": "mobile_categories",
+        "settings": {}
+      },
+      "section_sidebar_blog": {
+        "type": "section_sidebar_blog",
+        "blocks": {
+          "1519463335656": {
+            "type": "search",
+            "settings": {
+              "title": "Search"
+            }
+          },
+          "1519463396401": {
+            "type": "categories",
+            "settings": {
+              "title": "Categories",
+              "menu": ""
+            }
+          },
+          "1519462979961": {
+            "type": "instagram",
+            "settings": {
+              "title": "Instagram",
+              "columns": 3,
+              "username": "jsfashionstock",
+              "limit": 9,
+              "open_link": "_self"
+            }
+          },
+          "1519462988313": {
+            "type": "tags",
+            "settings": {
+              "title": "Blog Tags"
+            }
+          },
+          "1519463004416": {
+            "type": "recently",
+            "settings": {
+              "title": "Recently Viewed Products"
+            }
+          },
+          "1519463350809": {
+            "type": "collection",
+            "settings": {
+              "title": "Sale Products",
+              "featured_product_list_collection": "",
+              "featured_product_limit_all": "3"
+            }
+          },
+          "1519463361892": {
+            "type": "recent",
+            "settings": {
+              "title": "Recent Post",
+              "featured_posts_limit_all": "5"
+            }
+          }
+        },
+        "block_order": [
+          "1519463335656",
+          "1519463396401",
+          "1519462979961",
+          "1519462988313",
+          "1519463004416",
+          "1519463350809",
+          "1519463361892"
+        ],
+        "settings": {}
+      },
+      "text_columns": {
+        "type": "text_columns",
+        "blocks": {
+          "1519699640073": {
+            "type": "text_block",
+            "settings": {
+              "title": "OUR MISSION",
+              "text": "<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, <em>totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae</em> vitae dicta sunt explicabo nemo enim ipsam.</p>"
+            }
+          },
+          "1519699643881": {
+            "type": "text_block",
+            "settings": {
+              "title": "OUR STORIES",
+              "text": "<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+            }
+          },
+          "1519699646999": {
+            "type": "text_block",
+            "settings": {
+              "title": "OUR APPROACH",
+              "text": "<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,&nbsp;<em>sed quia non numquam eius modi tempora incidunt ut labore</em>&nbsp;et dolore magnam aliquam quaerat voluptatem.</p>"
+            }
+          },
+          "1519699649959": {
+            "type": "text_block",
+            "settings": {
+              "title": "OUR PHILOSOPHY",
+              "text": "<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Quis nostrum exercitationem ullam.</p>"
+            }
+          }
+        },
+        "block_order": [
+          "1519699640073",
+          "1519699643881",
+          "1519699646999",
+          "1519699649959"
+        ],
+        "settings": {
+          "margin": "",
+          "padding": "",
+          "hidden_section": false
+        }
+      },
+      "testimonials": {
+        "type": "testimonials",
+        "blocks": {
+          "1519699658015": {
+            "type": "quote",
+            "settings": {
+              "quote": "<p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Quis nostrum exercitationem ullam.</p>"
+            }
+          }
+        },
+        "block_order": [
+          "1519699658015"
+        ],
+        "settings": {
+          "margin": "",
+          "padding": ""
+        }
+      },
+      "jas_member": {
+        "type": "jas_member",
+        "blocks": {
+          "1519699665282": {
+            "type": "memberss",
+            "settings": {
+              "image": "",
+              "title": "Lisa John",
+              "position": "Fashion Design",
+              "facebook": "#",
+              "twitter": "#",
+              "dribbble": "#",
+              "behance": "#"
+            }
+          },
+          "1519699669771": {
+            "type": "memberss",
+            "settings": {
+              "image": "",
+              "title": "Jane Doe",
+              "position": "Director",
+              "facebook": "#",
+              "twitter": "#",
+              "dribbble": "#",
+              "behance": "#"
+            }
+          },
+          "1520391095745": {
+            "type": "memberss",
+            "settings": {
+              "image": "",
+              "title": "Cartherin Forres",
+              "position": "Marketing Director",
+              "facebook": "#",
+              "twitter": "#",
+              "dribbble": "#",
+              "behance": "#"
+            }
+          }
+        },
+        "block_order": [
+          "1519699665282",
+          "1519699669771",
+          "1520391095745"
+        ],
+        "settings": {
+          "margin": "",
+          "padding": "",
+          "hidden_section": false
+        }
+      },
+      "faqs": {
+        "type": "faqs",
+        "blocks": {
+          "1519702288013": {
+            "type": "faq",
+            "settings": {
+              "title": "Does Gecko theme support section",
+              "text": "Of course, Gecko support section with drag & Drop"
+            }
+          },
+          "1519702294892": {
+            "type": "faq",
+            "settings": {
+              "title": "Does this theme have variant dropdown options?",
+              "text": "Yes, our theme support variant dropdown options."
+            }
+          },
+          "1520408449953": {
+            "type": "faq",
+            "settings": {
+              "title": "Does Gecko support one click install ?",
+              "text": "yes, Gecko support one click import demo config, that mean you just need click to choose the layout. After that, you need config banner, products you want to show !"
+            }
+          },
+          "1520408552550": {
+            "type": "faq",
+            "settings": {
+              "title": "How can the footer be changed?",
+              "text": "With Footer, after you import the demo layout, it already have Footer layout here. We supported a few block type and you can create unlimited Footer layout."
+            }
+          },
+          "1520408638415": {
+            "type": "faq",
+            "settings": {
+              "title": "Can I look at your documentation? do you have this online somewhere?",
+              "text": "Yes, you can check it from https://the4.co"
+            }
+          },
+          "1520408687779": {
+            "type": "faq",
+            "settings": {
+              "title": "Will it be possible to increase the number of rows of products for the fashion homepage",
+              "text": "My answer is YES"
+            }
+          },
+          "1520408732546": {
+            "type": "faq",
+            "settings": {
+              "title": "Is there any way Is to adjust the logo on mobile?",
+              "text": "yes, you can add the custom CSS and paste to Custom CSS with Mobile screen"
+            }
+          },
+          "1520408754849": {
+            "type": "faq",
+            "settings": {
+              "title": "If i want to have 2 languge in my website (English and Arabic ) is your theme support that with simple one click for the client ?",
+              "text": "You can use Langify app to have it"
+            }
+          },
+          "1520408834194": {
+            "type": "faq",
+            "settings": {
+              "title": "I just purchased this theme and when I upload it to shopify I get this error,  zip does not contain a valid theme: missing template “layout/theme.liquid”, missing template “templates/index.liquid”, missing template “templates/collection.liquid”, missing template “templates/product.liquid”, missing template “templates/page.liquid”, missing template “templates/cart.liquid”, and missing template “templates/blog.liquid”",
+              "text": "You need extract download package first before upload theme file."
+            }
+          },
+          "1520408907195": {
+            "type": "faq",
+            "settings": {
+              "title": "Is it possible to have a different banner (and text) above each collection?",
+              "text": "Yes, you can"
+            }
+          },
+          "1520408979877": {
+            "type": "faq",
+            "settings": {
+              "title": "How is your support system, you guys provide support if find any issue in theme?",
+              "text": "Yes, we can support you direct by email or you can post your question to our forum here: https://the4.co/forums/"
+            }
+          },
+          "1520409040196": {
+            "type": "faq",
+            "settings": {
+              "title": "Is it possible to show a live search form in mobile header?",
+              "text": "Yes, it's possible :)"
+            }
+          },
+          "1520409076279": {
+            "type": "faq",
+            "settings": {
+              "title": "My “registration” and “my account” page isn’t working. How do I activate it ?",
+              "text": "you need go to Setting > Checkout and check to require customer create account, it will work Thank you"
+            }
+          }
+        },
+        "block_order": [
+          "1519702288013",
+          "1519702294892",
+          "1520408449953",
+          "1520408552550",
+          "1520408638415",
+          "1520408687779",
+          "1520408732546",
+          "1520408754849",
+          "1520408834194",
+          "1520408907195",
+          "1520408979877",
+          "1520409040196",
+          "1520409076279"
+        ],
+        "settings": {}
+      },
+      "1513070020447": {
+        "type": "jas_product_categories",
+        "blocks": {
+          "1513070020447-0": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "active-wear-detergent",
+              "image": "shopify://shop_images/rg-jpeg-graphic-4.jpg",
+              "width": "3",
+              "mobile_width": "6"
+            }
+          },
+          "1513070020447-1": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "everyday-detergent",
+              "image": "shopify://shop_images/rg-jpeg-graphic2.jpg",
+              "width": "3",
+              "mobile_width": "6"
+            }
+          },
+          "1513070020447-3": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "cloth-diaper-detergent",
+              "image": "shopify://shop_images/rg-jpeg-graphic-3.jpg",
+              "width": "3",
+              "mobile_width": "6"
+            }
+          },
+          "featured_collection_CfdHXN": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "hard-water-detergent",
+              "image": "shopify://shop_images/Organic_1080x1080_2_v2.jpg",
+              "width": "3",
+              "mobile_width": "6"
+            }
+          }
+        },
+        "block_order": [
+          "1513070020447-0",
+          "1513070020447-1",
+          "1513070020447-3",
+          "featured_collection_CfdHXN"
+        ],
+        "settings": {
+          "title": "",
+          "sub_title": "",
+          "style_title": "2",
+          "categories_count": "",
+          "categories_view": "",
+          "categories_layout": "default",
+          "categories_design": "jas_cat_center",
+          "space_categories": "30",
+          "slider_speed": 1,
+          "use_autoplay": false,
+          "use_arrows": false,
+          "use_dots": true,
+          "use_loop": true,
+          "speed": 1000,
+          "sidetoshow": 4,
+          "sidetoshow_first": 4,
+          "sidetoshow_center": 2,
+          "sidetoshow_last": 2,
+          "use_container": false,
+          "section_bg_color": "#ffffff",
+          "section_margin_top": "",
+          "section_margin_bottom": "",
+          "section_margin_left": "",
+          "section_margin_right": "",
+          "section_padding_top": "10",
+          "section_padding_right": "",
+          "section_padding_bottom": "",
+          "section_padding_left": ""
+        }
+      },
+      "shortcode_pr": {
+        "type": "shortcode_pr",
+        "settings": {
+          "title": "SHOP THE LOOK",
+          "collection": "",
+          "style": "jas_pr_tc",
+          "grid_column": "4",
+          "grid_columns_mb": "6",
+          "paginate_index": "3",
+          "show_vendor": false,
+          "sale_countdown": false,
+          "countdown_style": "dark",
+          "use_eq_height": true,
+          "image_size": "jas_cover"
+        }
+      },
+      "shortcode_pr_owl": {
+        "type": "shortcode_pr_owl",
+        "settings": {
+          "title": "SHOP THE LOOK",
+          "collection": "",
+          "paginate_index": "8",
+          "style": "jas_default",
+          "show_vendor": false,
+          "sale_countdown": false,
+          "countdown_style": "dark",
+          "use_eq_height": true,
+          "image_size": "jas_cover",
+          "slider_speed": 6,
+          "use_autoplay": true,
+          "use_arrows": true,
+          "use_dots": false,
+          "use_loop": true,
+          "sidetoshow": 3,
+          "sidetoshow_first": 3,
+          "sidetoshow_center": 2,
+          "sidetoshow_last": 2
+        }
+      },
+      "shortcode_collection": {
+        "type": "shortcode_collection",
+        "blocks": {
+          "1520494082091": {
+            "type": "collection",
+            "settings": {
+              "image": ""
+            }
+          },
+          "1520494129007": {
+            "type": "collection",
+            "settings": {
+              "image": ""
+            }
+          },
+          "1520499552783": {
+            "type": "collection",
+            "settings": {
+              "image": ""
+            }
+          },
+          "1520499759597": {
+            "type": "collection",
+            "settings": {
+              "image": ""
+            }
+          },
+          "1520499770479": {
+            "type": "collection",
+            "settings": {
+              "image": ""
+            }
+          },
+          "1520499779595": {
+            "type": "collection",
+            "settings": {
+              "image": ""
+            }
+          },
+          "1520499792004": {
+            "type": "collection",
+            "settings": {
+              "image": ""
+            }
+          }
+        },
+        "block_order": [
+          "1520494082091",
+          "1520494129007",
+          "1520499552783",
+          "1520499759597",
+          "1520499770479",
+          "1520499779595",
+          "1520499792004"
+        ],
+        "settings": {
+          "title": "MY COLLECTIONS",
+          "padding": "10"
+        }
+      },
+      "gl_custom_color": {
+        "type": "gl_custom_color",
+        "settings": {}
+      },
+      "1542220652634": {
+        "type": "jas-advanced-content",
+        "blocks": {
+          "1542220652634-0": {
+            "type": "html",
+            "settings": {
+              "code": "<div class=\"for_center\">\n<h2>About Rockin' Green</h2>Our product line was developed by a mom who was fed up with the mis-labeling of supposed “green” cleaners and frankly, not happy with the performance of other so-called eco-friendly products. Our mission is to create green cleaning products that are hard working to meet the demands of every family, gentle on sensitive skin, AND Earth-friendly.  We work everyday to make sure we release only the best formulas to you, our customer.  Since 2009, Rockin’ Green has been bringing you safe, environmentally conscious, and economical cleaning products for your home and family AND Earth-friendly.</div>",
+              "width": "12",
+              "alignment": "tc"
+            }
+          }
+        },
+        "block_order": [
+          "1542220652634-0"
+        ],
+        "settings": {
+          "section_margin_top": "",
+          "section_margin_bottom": "",
+          "section_margin_left": "10px",
+          "section_margin_right": "10px",
+          "section_padding_top": "",
+          "section_padding_right": "",
+          "section_padding_bottom": "40px",
+          "section_padding_left": ""
+        }
+      },
+      "1542221503112": {
+        "type": "jas_promotion_banner",
+        "blocks": {
+          "1542221503112-0": {
+            "type": "promo_banner",
+            "settings": {
+              "image": "shopify://shop_images/screen_shot_2018-11-20_at_11.52.35_am.png",
+              "url": "https://rockingreen.com/pages/active-wear",
+              "hover_effect": "jas_zoom_img_banner",
+              "vertical_align": "middle",
+              "horizontal_align": "center",
+              "title": "",
+              "font_1": "",
+              "line_1": "",
+              "color_1": "#42b853",
+              "mb_1": "",
+              "text_2": "",
+              "font_2": "",
+              "line_2": "",
+              "color_2": "",
+              "mb_2": "",
+              "text_3": "",
+              "font_3": "",
+              "line_3": "",
+              "color_3": "#42b853",
+              "make_button": false,
+              "width": "4",
+              "mobile_width": "12"
+            }
+          },
+          "1542221503112-1": {
+            "type": "promo_banner",
+            "settings": {
+              "image": "shopify://shop_images/screen_shot_2018-11-20_at_11.52.48_am.png",
+              "url": "https://rockingreen.com/pages/diaper",
+              "hover_effect": "jas_zoom_img_banner",
+              "vertical_align": "middle",
+              "horizontal_align": "center",
+              "title": "",
+              "font_1": "",
+              "line_1": "",
+              "color_1": "",
+              "mb_1": "",
+              "text_2": "",
+              "font_2": "",
+              "line_2": "",
+              "color_2": "",
+              "mb_2": "",
+              "text_3": "",
+              "font_3": "",
+              "line_3": "",
+              "color_3": "",
+              "make_button": false,
+              "width": "4",
+              "mobile_width": "12"
+            }
+          },
+          "1542221503112-2": {
+            "type": "promo_banner",
+            "settings": {
+              "image": "shopify://shop_images/1_17.jpg",
+              "url": "https://rockingreen.com/pages/everyday",
+              "hover_effect": "jas_zoom_img_banner",
+              "vertical_align": "middle",
+              "horizontal_align": "center",
+              "title": "",
+              "font_1": "",
+              "line_1": "",
+              "color_1": "",
+              "mb_1": "",
+              "text_2": "",
+              "font_2": "",
+              "line_2": "",
+              "color_2": "",
+              "mb_2": "",
+              "text_3": "",
+              "font_3": "",
+              "line_3": "",
+              "color_3": "",
+              "make_button": false,
+              "width": "4",
+              "mobile_width": "12"
+            }
+          }
+        },
+        "block_order": [
+          "1542221503112-0",
+          "1542221503112-1",
+          "1542221503112-2"
+        ],
+        "settings": {
+          "title": "Learn more",
+          "sub_title": "About our different collections",
+          "style_title": "2",
+          "categories_layout": "masonry",
+          "space_categories": "30",
+          "slider_speed": 6,
+          "use_autoplay": false,
+          "use_arrows": false,
+          "use_dots": false,
+          "use_loop": false,
+          "speed": 300,
+          "sidetoshow": 3,
+          "sidetoshow_first": 3,
+          "sidetoshow_center": 3,
+          "sidetoshow_last": 3,
+          "use_container": true,
+          "section_bg_color": "#ffffff",
+          "section_margin_top": "",
+          "section_margin_bottom": "20px",
+          "section_margin_left": "",
+          "section_margin_right": "",
+          "section_padding_top": "40px",
+          "section_padding_right": "",
+          "section_padding_bottom": "",
+          "section_padding_left": ""
+        }
+      },
+      "1542293253898": {
+        "type": "jas-advanced-content",
+        "blocks": {
+          "1542293253898-0": {
+            "type": "html",
+            "settings": {
+              "code": "<img src=\"https://cdn2.shopify.com/s/files/1/1186/4870/files/new_trustmarks-25-min.jpg?1701\" class=\"fordesc\" alt=\"Our products are: Plant-Based, Eco-Friendly, SLS-Free, Biodegradable, and No Phthalates.\">",
+              "width": "12",
+              "alignment": "tc"
+            }
+          },
+          "22966028-6ef9-44cd-8c3c-9af4d8518d13": {
+            "type": "html",
+            "settings": {
+              "code": "<div class=\"imgg\"><img src=\"https://cdn.shopify.com/s/files/1/1186/4870/files/Screenshot_1_b567e568-77c5-434a-bd28-ee54314e502a_256x256_crop_center.png?v=1628748258\" class=\"xx\" style=\"width:48%\"></div>\n<div class=\"imgg\"><img src=\"https://cdn.shopify.com/s/files/1/1186/4870/files/Screenshot_2_b749b984-9ea6-460e-b555-55834fe632aa_256x256_crop_center.png?v=1628748316\" class=\"xx\" style=\"width:48%\"></div>\n\n\n\n\n\n<div class=\"imgg\"><img src=\"https://cdn.shopify.com/s/files/1/1186/4870/files/Screenshot_3_98b85642-6f7a-406c-b204-918cd276848a_256x256_crop_center.png?v=1628748656\" style=\"width:48%\" class=\"xx\"></div>\n<div class=\"imgg\">\n<img src=\"https://cdn.shopify.com/s/files/1/1186/4870/files/Screenshot_4_e2760c42-11ab-496a-9891-d3b61671f9ce_256x256_crop_center.png?v=1628748710\" class=\"xx\" style=\"width:48%\">\n</div>\n<div class=\"imgg\">\n<img src=\"https://cdn.shopify.com/s/files/1/1186/4870/files/Screenshot_5_90d65968-b6e1-4722-9d36-9e4e7579870d_256x256_crop_center.png?v=1628748834\" class=\"xx\" style=\"width:48%\">\n</div>",
+              "width": "12",
+              "alignment": "tc"
+            }
+          }
+        },
+        "block_order": [
+          "1542293253898-0",
+          "22966028-6ef9-44cd-8c3c-9af4d8518d13"
+        ],
+        "settings": {
+          "section_margin_top": "40px",
+          "section_margin_bottom": "20px",
+          "section_margin_left": "",
+          "section_margin_right": "",
+          "section_padding_top": "",
+          "section_padding_right": "",
+          "section_padding_bottom": "",
+          "section_padding_left": ""
+        }
+      },
+      "1546873178339": {
+        "type": "jas_promotion_banner_prallax",
+        "settings": {
+          "section_bg_color": "#19191b",
+          "full_height": false,
+          "style_text": "6",
+          "title": "Shop $45 or more and get",
+          "title_last": "FREE SHIPPING",
+          "button": "Shop now",
+          "link": "https://rockingreen.com/collections/all",
+          "section_margin_top": "",
+          "section_margin_bottom": "",
+          "section_margin_left": "",
+          "section_margin_right": "",
+          "section_padding_top": "",
+          "section_padding_right": "",
+          "section_padding_bottom": "",
+          "section_padding_left": "",
+          "use_parallax": true,
+          "use_background_overlay": false
+        }
+      },
+      "8b6bb1f7f6c1": {
+        "type": "jas_promotion_banner_video",
+        "disabled": true,
+        "settings": {
+          "video_url": "https://www.youtube.com/watch?v=09CN74CM2Q8",
+          "section_bg_color": "rgba(0,0,0,0)",
+          "full_height": true,
+          "style_text": "1",
+          "title": "",
+          "title_last": "",
+          "button": "",
+          "link": "",
+          "use_container": false,
+          "section_margin_top": "30px",
+          "section_margin_bottom": "30px",
+          "section_margin_left": "",
+          "section_margin_right": "",
+          "section_padding_top": "",
+          "section_padding_right": "400px",
+          "section_padding_bottom": "",
+          "section_padding_left": "400px",
+          "use_background_overlay": false
+        }
+      },
+      "b636ace275b0": {
+        "type": "jas-advanced-content",
+        "blocks": {
+          "15583825032ff3bdcf-0": {
+            "type": "html",
+            "settings": {
+              "code": "<div class=\"el-responsive-video\" style=\"margin-left: auto; margin-right: auto;\"><iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/09CN74CM2Q8\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"></iframe></div>",
+              "width": "12",
+              "alignment": "tc"
+            }
+          }
+        },
+        "block_order": [
+          "15583825032ff3bdcf-0"
+        ],
+        "settings": {
+          "section_margin_top": "",
+          "section_margin_bottom": "",
+          "section_margin_left": "",
+          "section_margin_right": "",
+          "section_padding_top": "",
+          "section_padding_right": "",
+          "section_padding_bottom": "",
+          "section_padding_left": ""
+        }
+      },
+      "1644438883da8d8dc2": {
+        "type": "jas_featured_collection",
+        "settings": {
+          "title": "Best Sellers",
+          "sub_title": "",
+          "style_title": "1",
+          "collection": "best-sellers",
+          "style": "jas_pr_tc",
+          "grid_column": "3",
+          "grid_columns_mb": "6",
+          "paginate_index": "4",
+          "use_pagination": "none",
+          "show_vendor": false,
+          "sale_countdown": false,
+          "countdown_style": "dark",
+          "use_eq_height": false,
+          "image_size": "jas_cover",
+          "use_container": true,
+          "section_margin_top": "30px",
+          "section_margin_bottom": "",
+          "section_margin_left": "",
+          "section_margin_right": "",
+          "section_padding_top": "",
+          "section_padding_right": "",
+          "section_padding_bottom": "",
+          "section_padding_left": ""
+        }
+      },
+      "1628078038b5dcec46": {
+        "type": "jas_promotion_banner",
+        "settings": {
+          "title": "Shop by Category",
+          "sub_title": "",
+          "style_title": "1",
+          "categories_layout": "default",
+          "space_categories": "30",
+          "slider_speed": 6,
+          "use_autoplay": true,
+          "use_arrows": true,
+          "use_dots": false,
+          "use_loop": false,
+          "speed": 300,
+          "sidetoshow": 4,
+          "sidetoshow_first": 3,
+          "sidetoshow_center": 2,
+          "sidetoshow_last": 2,
+          "use_container": true,
+          "section_bg_color": "#ffffff",
+          "section_margin_top": "60",
+          "section_margin_bottom": "",
+          "section_margin_left": "",
+          "section_margin_right": "",
+          "section_padding_top": "",
+          "section_padding_right": "",
+          "section_padding_bottom": "",
+          "section_padding_left": ""
+        }
+      },
+      "67670c31-7a11-450c-a0d0-97c92137c5c6": {
+        "type": "jas_promotion_banner_prallax",
+        "disabled": true,
+        "settings": {
+          "section_bg_color": "#19191b",
+          "full_height": false,
+          "style_text": "6",
+          "title": "BIG DISCOUNTS + FREE SHIPPING on orders $45+",
+          "title_last": "BLACK FRIDAY ROCKIN’ DEALS",
+          "button": "Shop now",
+          "link": "https://rockingreen.com/products",
+          "section_margin_top": "",
+          "section_margin_bottom": "",
+          "section_margin_left": "",
+          "section_margin_right": "",
+          "section_padding_top": "",
+          "section_padding_right": "",
+          "section_padding_bottom": "",
+          "section_padding_left": "",
+          "use_parallax": true,
+          "use_background_overlay": false
+        }
+      }
+    },
+    "content_for_index": [
+      "1512373313144",
+      "1546873178339",
+      "67670c31-7a11-450c-a0d0-97c92137c5c6",
+      "1644438883da8d8dc2",
+      "1628078038b5dcec46",
+      "1513070020447",
+      "1542220652634",
+      "8b6bb1f7f6c1",
+      "b636ace275b0",
+      "1542293253898",
+      "1542221503112",
+      "1513736761998"
+    ],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "8605505498557855500": {
+        "type": "shopify://apps/bogos-free-gift-buy-x-get-y/blocks/app-embed/0432bba6-720a-4e95-be5a-b868386f7aa6",
+        "disabled": false,
+        "settings": {}
+      },
+      "733389323033596483": {
+        "type": "shopify://apps/okendo/blocks/theme-settings/bb689e69-ea70-4661-8fb7-ad24a2e23c29",
+        "disabled": false,
+        "settings": {
+          "show_preview_data": true
+        }
+      }
+    }
+  }
+}
